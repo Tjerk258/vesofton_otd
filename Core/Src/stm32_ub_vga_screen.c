@@ -31,6 +31,8 @@ void P_VGA_InitTIM(void);
 void P_VGA_InitINT(void);
 void P_VGA_InitDMA(void);
 
+uint8_t VGA_RAM1[(VGA_DISPLAY_X+1)*VGA_DISPLAY_Y];
+VGA_t VGA;
 
 //--------------------------------------------------------------
 // Init VGA-Module
