@@ -21,10 +21,13 @@ int main(void)
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-	UB_VGA_FillScreen(VGA_COL_BLUE);
+	UB_VGA_FillScreen(VGA_COL_YELLOW);
 
   while(1)
   {
-
+	  for(uint8_t i=20; i<100; i++)
+	  {
+		  UB_VGA_SetPixel(160, i, VGA_COL_RED);
+	  }
   }
 }
