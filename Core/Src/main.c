@@ -13,6 +13,8 @@
 #include "main.h"
 #include "stm32_ub_vga_screen.h"
 #include <math.h>
+#define length 100
+#define beginpunt 20
 
 
 int main(void)
@@ -20,14 +22,14 @@ int main(void)
 	SystemInit(); // System speed to 168MHz
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
-
 	UB_VGA_FillScreen(VGA_COL_YELLOW);
 
   while(1)
   {
-	  for(uint8_t i=20; i<100; i++)
+	  uint8_t i;
+	  for(i=beginpunt; i<=length; i++)
 	  {
-		  UB_VGA_SetPixel(160, i, VGA_COL_RED);
+		  UB_VGA_SetPixel(160, i, VGA_COL_RED);	//Draw a vertical line in middle of the screen with a length of 80 pixels
 	  }
   }
 }
