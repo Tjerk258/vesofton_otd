@@ -1,3 +1,8 @@
+#folders
+Debug
+Release
+*.launch
+
 # Prerequisites
 *.d
 
