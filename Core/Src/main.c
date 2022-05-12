@@ -128,14 +128,17 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  draw_bitmap(1,10,10);
+  draw_bitmap(0,32,32);
   while (1)
   {
+
 	  if(input.command_execute_flag == TRUE)
 	  {
 		  // Do some stuff
-		  printf("yes\n");
-		  colorTest = ~colorTest; // Toggle screen color
-		  UB_VGA_FillScreen(colorTest);
+		  //printf("yes\n");
+		  //colorTest = ~colorTest; // Toggle screen color
+		  //UB_VGA_FillScreen(colorTest);
 
 		  // When finished reset the flag
 		  input.command_execute_flag = FALSE;
