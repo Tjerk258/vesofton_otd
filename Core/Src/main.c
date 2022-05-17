@@ -102,9 +102,9 @@ int main(void)
   UB_VGA_Screen_Init(); // Init VGA-Screen
 
   UB_VGA_FillScreen(VGA_COL_WHITE);
-  UB_VGA_SetPixel(10,10,10);
-  UB_VGA_SetPixel(0,0,0x00);
-  UB_VGA_SetPixel(319,0,0x00);
+  //UB_VGA_SetPixel(10,10,10);
+  //UB_VGA_SetPixel(0,0,0x00);
+  //UB_VGA_SetPixel(319,0,0x00);
 
   int i;
 
@@ -128,8 +128,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  draw_bitmap(1,10,10);
-  draw_bitmap(0,32,32);
+  //draw_bitmap(0,0,0);
+  //draw_bitmap(0,50,50);
+  draw_text(0, 0, VGA_COL_BLUE, "ABCDEFGHIJKL", "Consolas", 0, 0);
+  draw_text(0, 20, VGA_COL_BLUE, "ABCDEFGHIJKL", "Arial", 1, 1);
   while (1)
   {
 
