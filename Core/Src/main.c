@@ -128,17 +128,17 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  //draw_bitmap(0,0,0);
-  //draw_bitmap(0,50,50);
-  draw_text(0, 0, VGA_COL_BLUE, "ABCDEFGHIJKL", "Consolas", 0, 0);
-  draw_text(0, 20, VGA_COL_BLUE, "ABCDEFGHIJKL", "Arial", 1, 1);
+  //drawBitmap(0,0,0);
+  //drawBitmap(0,50,50);
+  drawText(0, 0, VGA_COL_BLUE, "ABCDEFGHIJKL", "Consolas", 0, 0);
+  drawText(0, 20, VGA_COL_BLUE, "ABCDEFGHIJKL", "Arial", 1, 1);
   while (1)
   {
 
 	  if(input.command_execute_flag == TRUE)
 	  {
-		  // Do some stuff
-		  //printf("yes\n");
+		  //Do some stuff
+		  printf("yes\n");
 		  //colorTest = ~colorTest; // Toggle screen color
 		  //UB_VGA_FillScreen(colorTest);
 
