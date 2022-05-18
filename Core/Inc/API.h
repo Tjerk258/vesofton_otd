@@ -19,7 +19,7 @@
  * @brief this function draws a single line from a to b
  *
  *@details 	This function starts with 5 variables, x and y coordinate for the begin and x and y coordinates for the end.
- *			last variable as color of the line.
+ *			The last variable as color of the line.
  *			The function first calculates the offset of both x and y coordinates.
  *			When either offsets is equal to zero,the line becomes straight.
  *			If y offset is zero the function draws horizontal line, else a vertical line.

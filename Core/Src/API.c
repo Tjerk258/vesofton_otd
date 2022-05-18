@@ -224,7 +224,7 @@ void drawFigure(uint8_t kleur, uint8_t nr_pointsgiven,...)
 	memset(figure_ram_y, 0, nr_pointsgiven+1);
 
 	va_start (argumenten, nr_pointsgiven); // All arguments after nr_pointsgiven are saved in va_list argumenten.
-	for (i = i; i < nr_pointsgiven*2; i++)
+	for (i = 0; i < nr_pointsgiven*2; i++)
 	{
 		if (i % 2 != 0) figure_ram_y[(i / 2)] = va_arg(argumenten, int); // Every odd number of coordinate arguments are saved in the y array
 		else figure_ram_x[(i / 2)] = va_arg(argumenten, int); // The even number of arguments of coordinate are saved to x array
