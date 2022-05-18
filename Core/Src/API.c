@@ -287,11 +287,14 @@ void drawFigure(uint8_t kleur, uint8_t nr_pointsgiven,...)
  * */
 void drawBitmap(int nr, int x_1up, int y_1up)
 {
-	if (nr > strlen((const char*)bitmaps))
+	if ((nr > strlen((const char*)bitmaps)) || ((0 < x_1up) && (x_1up > *bitmap)) || ((0 < y_1up) && (y_1up > *bitmap)))
 	{
 		softonErrorHandler(ERROR_BITMAP_NOT_FOUND);
 	}
-	//if (x_1up )
+	if (((x_1up+(uint16_t)(bitmap[BITMAP_WIDTH_LOW])) > VGA_DISPLAY_X) && ((y_1up + (uint16_t)(bitmap[BITMAP_WIDTH_HIGH] > VGA_DISPLAY_Y))))
+	{
+		softonErrorHandler(ERROR_BITMAP_OUT_OF_RANGE);
+	}
 	int i, j = 0;
 	const uint8_t *bitmap = bitmaps[nr];
 	for (i= 0; i < bitmap[0]; i++)		//Bitmap first byte is the Y boundary.
@@ -327,6 +330,22 @@ void drawBitmap(int nr, int x_1up, int y_1up)
  * */
 void drawText(int x, int y, char colour, char tekst[], char fontname[], char fontsize, char fontstyle)
 {
+	if (((x > 0) && (x > VGA_DISPLAY_X)) || ((y > 0) && (y > VGA_DISPLAY_Y)))
+	{
+		softonErrorHandler(ERROR_FONT_OUT_OF_RANGE);
+	}
+	if (color > COLORMAX)
+	{
+		softonErrorHandler(ERROR_FONT_OUT_OF_RANGE);
+	}
+	if (fontsize > 1)
+	{
+		softonErrorHandler(ERROR_FONTSIZE_OUT_OF_RANGE);
+	}
+	if (fontstyle > 2)
+	{
+		softonErrorHandler(ERROR_FONTSTYLE_OUT_OF_RANGE);
+	}
 	int i, j, k, l = 0;
     int x_old = 0;
 	const char *letter;		//Pointer to the array of letter
@@ -352,6 +371,10 @@ void drawText(int x, int y, char colour, char tekst[], char fontname[], char fon
 		puts(width_array);
 #endif
 			break;
+		}
+		else
+		{
+			softonErrorHandler(ERROR_FONT_NOT_FOUND);	//Typo, The fonts doesn't exist.
 		}
 	}
 	for(i = 0; i < strlen(tekst); i++)
