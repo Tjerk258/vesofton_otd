@@ -59,38 +59,9 @@ void FL_UART_Check()
 		printf("%s",input.line_rx_buffer);
 		printf("okay");
 		//call logic layer fucntion
-//		logic_layer(input.line_rx_buffer);
+		logic_layer(input.line_rx_buffer);
 		input.command_execute_flag = FALSE;
 	}
+	  printf("while\n");
 }
-
-
-void error(int errorCode)
-{
-	switch(errorCode)
-	{
-	case 1:
-		printf("error 1");
-		break;
-	default:
-		printf("Unknown error occurred");
-	}
-}
-
-void help()
-{
-	printf("Standaard commando’s:/n\
-			lijn, x, y, x’, y’, kleur, dikte/n\
-			rechthoek, x_lup, y_lup, breedte, hoogte, kleur, gevuld (1,0) [als 1: rand (1px) met kleur]/n\
-			tekst, x, y, kleur, tekst, fontnaam (arial, consolas), fontgrootte (1,2), fontstijl (normaal, vet, cursief)/n\
-			bitmap, nr, x-lup, y-lup  [tenminste: pijl (in 4 richtingen), smiley (boos, blij)]/n\
-			clearscherm, kleur/n\
-			/n\
-			Bonus-commando’s (voor bonuspunten):/n\
-			wacht, msecs/n\
-			herhaal, aantal (laatst uitgevoerde commando’s), hoevaak (herhalen)/n\
-			cirkel, x, y, radius, kleur/n\
-			figuur, x1,y1, x2,y2, x3,y3, x4,y4, x5,y5, kleur/n");
-}
-
 
