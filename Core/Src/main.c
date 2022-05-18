@@ -102,12 +102,10 @@ int main(void)
   UB_VGA_Screen_Init(); // Init VGA-Screen
 
   UB_VGA_FillScreen(VGA_COL_WHITE);
-  UB_VGA_SetPixel(10,10,10);
-  UB_VGA_SetPixel(0,0,0x00);
-  UB_VGA_SetPixel(319,0,0x00);
+
 
   int i;
-
+  char testie_array[]={"cirkel,100,100,50,3"};
   for(i = 0; i < LINE_BUFLEN; i++)
 	  input.line_rx_buffer[i] = 0;
 
@@ -123,7 +121,7 @@ int main(void)
 
   // Test to see if the screen reacts to UART
   unsigned char colorTest = TRUE;
-
+  logic_layer(testie_array);
   /* USER CODE END 2 */
 
   /* Infinite loop */

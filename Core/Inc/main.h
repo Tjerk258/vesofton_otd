@@ -37,6 +37,7 @@ extern "C" {
 #include "stdio.h"
 #include "string.h"
 #include "API.h"
+#include "logic_layer.h"
 #include <stdlib.h>
 
 #include "stm32_ub_vga_screen.h"

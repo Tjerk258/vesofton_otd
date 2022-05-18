@@ -18,7 +18,7 @@
 /**
  * @brief this function draws a single line from a to b
  *
- * @details This function starts with 5 variables, x and y coordinate for the begin and coordinates for the end.
+ * @details This function starts with 5 variables, x and y coordinate for the begin and x and y coordinates for the end.
  * 			last variable as color of the line.
  * 			First calculated the offset of both x and y coordinate.
  * 			If either of the offset is equal to zero, the line has to be straight.
@@ -32,11 +32,21 @@
  * 			This determines if some parameter is positive or negative.
  * 			Lastly the function looks at orientation of the line with respect to the x axis, which decides which parameter is the start point and end point of the calculation.
  *
+ *@details 	This function starts with 5 variables, x and y coordinate for the begin and x and y coordinates for the end.
+ *			last variable as color of the line.
+ *			The function first calculates the offset of both x and y coordinates.
+ *			When either offsets is equal to zero,the line becomes straight.
+ *			If y offset is zero the function draws horizontal line, else a vertical line.
+ *			In the situation that neither offset are zero,the function calculates the derivative of the line.
+ *			The derivative of the line determines the agle that the line has.
+ *			A derivative value lower than one has a small angle.
+ *			If the angle is *small* (derivative<1) the y coordinates is calculated with the derivative.
+ * 			If the angle is *big* (derivative>1) it is the inverse of the calculation of the smaller angle.
+ * 			After the function looks whether the derivative is higher than one,
+ *
  * @param x_begin,y_begin Coordinates where the line starts.
  * @param x_eind,y_eind Coordinates where the line ends.
  * @param kleur Color of the line
- * @var x_offset,y_offset An offset variable for x and y coordinate
- * @var derivative A variable that represents the derivative of the line.
  * @retval None
  * @author Osman Pekcan
  * @note Possible to optimize this function, since there was a finite amount of time this project needed to handed in.
@@ -91,6 +101,7 @@ void drawRect(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8
  *@param radius This is the radius of the circle.
  *@param kleur This is the color of the circle
  *<a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a>
+ *@retval None
  *
  *@author Osman Pekcan
  */
@@ -106,8 +117,7 @@ void drawCircle(uint16_t x_pos, uint16_t y_pos,uint8_t radius,uint8_t kleur);
  * 			with these to arrays the function can draw its figure with a for loop.
  * @param kleur This parameter is for color of the lines
  * @param nr_pointgiven Locked the number of points
- * @var figure_ram_x The array where the x coordinates are saved.
- * @var figure_ram_y The array where the y coordinates are saved.
+ *@retval None
  *
  * @author Osman Pekcan
  */
