@@ -103,6 +103,9 @@ int main(void)
 
   UB_VGA_FillScreen(VGA_COL_WHITE);
 
+  //UB_VGA_SetPixel(10,10,10);
+  //UB_VGA_SetPixel(0,0,0x00);
+  //UB_VGA_SetPixel(319,0,0x00);
 
   int i;
   char testie_array[]={"cirkel,100,100,50,3"};
@@ -126,14 +129,19 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  //drawBitmap(0,0,0);
+  //drawBitmap(0,50,50);
+  drawText(0, 0, VGA_COL_BLUE, "ABCDEFGHIJKL", "Consolas", 0, 0);
+  drawText(0, 20, VGA_COL_BLUE, "ABCDEFGHIJKL", "Arial", 1, 1);
   while (1)
   {
+
 	  if(input.command_execute_flag == TRUE)
 	  {
-		  // Do some stuff
+		  //Do some stuff
 		  printf("yes\n");
-		  colorTest = ~colorTest; // Toggle screen color
-		  UB_VGA_FillScreen(colorTest);
+		  //colorTest = ~colorTest; // Toggle screen color
+		  //UB_VGA_FillScreen(colorTest);
 
 		  // When finished reset the flag
 		  input.command_execute_flag = FALSE;
