@@ -18,6 +18,7 @@
 
 #include "front_layer.h"
 #include "usart.h"
+#include "error.h"
 
 input_vars input;
 
@@ -66,7 +67,6 @@ void FL_Parser()
 	}
 }
 
-
 void softonErrorHandler(uint8_t error)
 {
 	switch(error)
@@ -75,6 +75,21 @@ void softonErrorHandler(uint8_t error)
 		puts("The number of bitmap you have chosen doesn't exist!");
 		break;
 	case ERROR_FIGURE_OUT_OFF_RANGE:
+		puts("Chosen fonts doesn't exist!");
+		break;
+	case ERROR_FONT_NOT_FOUND:
+		puts("Font not found");
+		break;
+	case ERROR_FONT_OUT_OF_RANGE:
+		puts("blabla");
+		break;
+	case ERROR_FONTSIZE_OUT_OF_RANGE:
+		puts("blabla");
+		break;
+	case ERROR_FONTSTYLE_OUT_OF_RANGE:
+		puts("blabla");
+		break;
+	case ERROR_BITMAP_OUT_OF_RANGE:
 		puts("blabla");
 		break;
 	default:
