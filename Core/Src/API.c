@@ -8,6 +8,22 @@
   
 #include "API.h"
 
+//Bitmap header
+#include "bitmap.h"
+//Fonts headers
+#include "fonts/Arial_32.h"
+#include "fonts/Arial_8.h"
+#include "fonts/Arial_Italic_32.h"
+#include "fonts/Arial_Italic_8.h"
+#include "fonts/Arial_Bold_32.h"
+#include "fonts/Arial_Bold_8.h"
+#include "fonts/Consolas_32.h"
+#include "fonts/Consolas_8.h"
+#include "fonts/Consolas_Italic_32.h"
+#include "fonts/Consolas_Italic_8.h"
+#include "fonts/Consolas_Bold_32.h"
+#include "fonts/Consolas_Bold_8.h"
+
 void myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t kleur)
 {
 	uint8_t i=0;
@@ -357,3 +373,4 @@ void drawText(int x, int y, char colour, char tekst[], char fontname[], char fon
 		}
 		x_old += k + SPACE_BETWEEN_LETTER;	//Space between the letters (SPACE_BETWEEN_LETTER =2).
 	}
+}

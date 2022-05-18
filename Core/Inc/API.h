@@ -6,21 +6,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
   
-//Bitmap header
-#include "bitmap.h"
-//Fonts headers
-#include "fonts/Arial_32.h"
-#include "fonts/Arial_8.h"
-#include "fonts/Arial_Italic_32.h"
-#include "fonts/Arial_Italic_8.h"
-#include "fonts/Arial_Bold_32.h"
-#include "fonts/Arial_Bold_8.h"
-#include "fonts/Consolas_32.h"
-#include "fonts/Consolas_8.h"
-#include "fonts/Consolas_Italic_32.h"
-#include "fonts/Consolas_Italic_8.h"
-#include "fonts/Consolas_Bold_32.h"
-#include "fonts/Consolas_Bold_8.h"
 //VGA
 #include "stm32_ub_vga_screen.h"
 
