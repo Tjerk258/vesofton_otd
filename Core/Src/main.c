@@ -115,7 +115,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  FL_UART_Check();
+	  FL_Parser();
 
     /* USER CODE END WHILE */
 
@@ -168,8 +168,6 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
-//Retargets the C library printf function to the USART
 
 #ifdef __GNUC__
 	#define USART_PRINTF int __io_putchar(int ch)		//With GCC/RAISONANCE printf calls __io_putchar()

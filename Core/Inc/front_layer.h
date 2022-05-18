@@ -20,6 +20,4 @@ typedef struct
 extern input_vars input;
 
 void FL_UART_Init();
-void FL_UART_Check();
-void error(int errorCode);
-void help();
+void FL_Parser();

@@ -52,16 +52,13 @@ void FL_UART_Init()
  *
  *@author Tjerk ten Dam
  */
-void FL_UART_Check()
+void FL_Parser()
 {
 	if(input.command_execute_flag == TRUE)
 	{
-		printf("%s",input.line_rx_buffer);
-		printf("okay");
 		//call logic layer fucntion
 		logic_layer(input.line_rx_buffer);
 		input.command_execute_flag = FALSE;
 	}
-	  printf("while\n");
 }
 
