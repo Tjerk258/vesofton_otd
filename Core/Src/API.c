@@ -202,7 +202,7 @@ void drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t kleur)
 {
 	float i=0; // Float because it hold division of PI which are decimal numbers.
 	uint16_t plaats_x = 0, plaats_y = 0;
-	for (i = 0; i < (2 * M_PI); i += (M_PI/3600))
+	for (i = 0; i < (2 * M_PI); i += (M_PI/RADIUS_INCREMENT_CIRCLE))
 	{   // Needs an addition because the original formula makes a circle start at point (0,0)
 		plaats_x = (VGA_DISPLAY_X/2) + round(radius * cos(i)); // X = r*cosine(θ)
 		plaats_y = (VGA_DISPLAY_Y/2) + round(radius * sin(i));  // Y = r*sine(θ)

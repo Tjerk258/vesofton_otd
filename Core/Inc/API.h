@@ -14,6 +14,7 @@
 //#define DEBUG_RECT_BOUNDS
 //#define DEBUG_LIJN_DIKTE
 
+#define RADIUS_INCREMENT_CIRCLE 3600
 
 /**
  * @brief this function draws a single line from a to b
