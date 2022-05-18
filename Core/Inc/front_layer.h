@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include "main.h"
+#include "error.h"
 
 
 #define BYTE_BUFLEN 	 1

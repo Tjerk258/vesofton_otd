@@ -104,18 +104,21 @@ int main(void)
   FL_UART_Init();
 
   UB_VGA_FillScreen(VGA_COL_WHITE);
-  UB_VGA_SetPixel(10,10,10);
-  UB_VGA_SetPixel(0,0,0x00);
-  UB_VGA_SetPixel(319,0,0x00);
 
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  //drawBitmap(0,0,0);
+  //drawBitmap(0,50,50);
+  drawText(0, 0, VGA_COL_BLUE, "ABCDEFGHIJKL", "Consolas", 0, 0);
+  drawText(0, 20, VGA_COL_BLUE, "ABCDEFGHIJKL", "Arial", 1, 1);
   while (1)
   {
+
 	  FL_Parser();
+
 
     /* USER CODE END WHILE */
 
