@@ -56,6 +56,9 @@ void FL_Parser()
 {
 	if(input.command_execute_flag == TRUE)
 	{
+#if DEBUG_PARSER
+		printf("Parser result = %s", (char*)input.line_rx_buffer);
+#endif
 		//call logic layer fucntion
 		logic_layer(input.line_rx_buffer);
 		input.command_execute_flag = FALSE;
