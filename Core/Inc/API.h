@@ -18,20 +18,6 @@
 /**
  * @brief this function draws a single line from a to b
  *
- * @details This function starts with 5 variables, x and y coordinate for the begin and x and y coordinates for the end.
- * 			last variable as color of the line.
- * 			First calculated the offset of both x and y coordinate.
- * 			If either of the offset is equal to zero, the line has to be straight.
- * 			If y offset is zero the function draws horizontal line, else a vertical line.
- * 			If neither offset is zero, the function calculate the derivative.
- * 			The derivative determines the angle with the line has.
- * 			A derivative value lower than one has a small angle.
- * 			If the angle is *small* (derivative<1) the y coordinates is calculated with the derivative.
- * 			If the angle is *big* (derivative>1) it is the inverse of the calculation of the smaller angle.
- * 			After the function looked whether the derivative is higher than 1,the function looks if the derivative is positive or negative.
- * 			This determines if some parameter is positive or negative.
- * 			Lastly the function looks at orientation of the line with respect to the x axis, which decides which parameter is the start point and end point of the calculation.
- *
  *@details 	This function starts with 5 variables, x and y coordinate for the begin and x and y coordinates for the end.
  *			last variable as color of the line.
  *			The function first calculates the offset of both x and y coordinates.
@@ -42,7 +28,10 @@
  *			A derivative value lower than one has a small angle.
  *			If the angle is *small* (derivative<1) the y coordinates is calculated with the derivative.
  * 			If the angle is *big* (derivative>1) it is the inverse of the calculation of the smaller angle.
- * 			After the function looks whether the derivative is higher than one,
+ * 			After the function looks whether the derivative is higher than one,the function looks if the derivative is positive or negative.
+ * 			This determines if some parameter is positive or negative.
+ * 			Lastly the function looks at orientation of the line with respect to the x axis, which decides which parameter is the start point and end point of the calculation.
+ *
  *
  * @param x_begin,y_begin Coordinates where the line starts.
  * @param x_eind,y_eind Coordinates where the line ends.

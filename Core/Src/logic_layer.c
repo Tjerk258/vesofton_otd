@@ -1,34 +1,50 @@
 #include "logic_layer.h"
 
+/**
+ *@brief	this function looks at input array and calls function the input array calls for
+ *
+ *@details	First script commando's are split up and put into array: commando_filled.
+ *			Then the function looks which script is called.
+ *			If the function found the script is called to, the corresponding function is called.
+ *
+ *@param commando This is the script commando.
+ *@authors Osman Pekcan,Tjerk ten Dam
+ */
 void logic_layer(char commando[])
 {
-	char commando_list[NUMBER_OF_COMMANDS][20] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm", "cirkel", "figuur" };
-	char commando_filled[10][20];
+	char commando_list[NUMBER_OF_COMMANDS][20] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm", "cirkel", "figuur" }; // The script commando that the project needs to do.
+	char commando_filled[10][20]; // Here is the script split into multiple array.
 	uint8_t i=0, j=0, k=0;
 
+#ifdef DEBUG_COMMANDO
+	puts(commando);
+#endif
 
 	for(i=0, j=0;commando[i]!='\0';i++, k++)
 	{
-
 		if(commando[i]==44)
 		{
-			commando_filled[j][k]='\0';
-			j++;
-			i++;
-			k=0;
+			commando_filled[j][k]='\0'; // Add end string for strcmp.
+			j++; // Go to the new array in the double array.
+			i++; // To skip the comma in the commando array.
+			k=0; // Start at the begin
 		}
 		commando_filled[j][k]=commando[i];
 	}
 
 	for(i=0;i<NUMBER_OF_COMMANDS;i++)
 	{
-		if(strcmp(commando_list[i], commando_filled[0])==0)
+		if(strcmp(commando_list[i], commando_filled[0])==0) // If the first script commando is one of the commando in the list.
 		{
-			drawLines(100,200,200,200,0x1F,5);
-			switch(i)
+#ifdef DEBUG_NUMBEROFCOMMANDO
+				printf("In commando list \t");puts(commando_list[i]);
+				printf("In commando filled \t");puts(commando_filled[i]);
+				printf("value of i is \t%d",i);
+#endif
+			switch(i) // find the number of commands
 			{
 			case 0:
-				drawLines(100,50,200,50,0x03,5);
+
 				drawLines((uint16_t)atoi((char*)commando_filled[1]),
 						(uint16_t)atoi((char*)commando_filled[2]),
 						(uint16_t)atoi((char*)commando_filled[3]),
@@ -37,7 +53,6 @@ void logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[6]));
 				break;
 			case 1:
-				drawLines(100,150,200,150,0x03,5);
 				drawRect((uint16_t)atoi((char*)commando_filled[1]),
 						(uint16_t)atoi((char*)commando_filled[2]),
 						(uint16_t)atoi((char*)commando_filled[3]),
@@ -70,7 +85,7 @@ void logic_layer(char commando[])
 						(uint8_t)atoi((char*)commando_filled[4]));
 				break;
 			case 6:
-				/*drawFigure((uint16_t)atoi((char*)commando_filled[11]),
+				drawFigure((uint16_t)atoi((char*)commando_filled[11]),
 						POINT_OF_FIGURE,
 						(uint16_t)atoi((char*)commando_filled[1]),
 						(uint16_t)atoi((char*)commando_filled[2]),
@@ -81,13 +96,12 @@ void logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[7]),
 						(uint16_t)atoi((char*)commando_filled[8]),
 						(uint16_t)atoi((char*)commando_filled[9]),
-						(uint16_t)atoi((char*)commando_filled[10]));*/
+						(uint16_t)atoi((char*)commando_filled[10]));
 				break;
 			case 7:
 				//lijn
 				break;
 			default:
-				drawLines(200,150,200,200,0xFC,5);
 				printf("place holder");
 			}
 			break;

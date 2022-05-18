@@ -244,5 +244,4 @@ void drawFigure(uint8_t kleur, uint8_t nr_pointsgiven,...)
 #endif
 	for (i = 0; i < nr_pointsgiven-1; i++)
 		myLijntekenaar(figure_ram_x[i], figure_ram_y[i], figure_ram_x[i+1], figure_ram_y[i+1], kleur); // Draws a line with coordinates from the array's
-
 }
