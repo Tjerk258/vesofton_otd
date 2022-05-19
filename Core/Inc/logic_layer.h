@@ -15,4 +15,4 @@
 //#define DEBUG_COMMANDO
 //#define DEBUG_NUMBEROFCOMMANDO
 
-
+void logic_layer(char commando[]);

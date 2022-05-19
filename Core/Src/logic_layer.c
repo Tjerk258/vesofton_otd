@@ -136,7 +136,6 @@ void logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[6]));
 				break;
 			case 2:
-//				drawLines(100,10,200,10,0x1F,5);
 				drawText((uint16_t)atoi((char*)commando_filled[1]),
 						(uint16_t)atoi((char*)commando_filled[2]),
 						kleur_decoder((char*)commando_filled[3]),
@@ -174,7 +173,7 @@ void logic_layer(char commando[])
 						(uint16_t)kleur_decoder((char*)commando_filled[10]));
 				break;
 			case 7:
-				//lijn
+				//wait
 				break;
 			default:
 				printf("place holder");
