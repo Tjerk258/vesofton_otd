@@ -1,4 +1,79 @@
 #include "logic_layer.h"
+#include "stm32_ub_vga_screen.h"
+#include "error.h"
+
+
+/**
+ *@brief	This function translates font_style tekst to variable.
+ *
+ *@param command This is the font_style string.
+ *
+ *@retval Variable for tekst function
+ *@retval 0 = normal tekst
+ *@retval 1 = bold tekst
+ *@retval 2 = Italic tekst
+ *
+ *@authors Osman Pekcan,Tjerk ten Dam
+ */
+uint8_t font_style(char command[])
+{
+	char styles_array[NUMBER_OF_FONT_STYLES][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"normaal","vet","cursief"};
+	uint8_t i;
+	for(i = 0; i< NUMBER_OF_FONT_STYLES;i++)
+	{
+		if(!strcmp(styles_array[i],command))
+		{
+			return i;
+		}
+	}
+	softonErrorHandler(ERROR_FONTSTYLE_NOT_FOUND);
+	return 0;
+}
+
+/**
+ *@brief	This function translates color tekst to 8 bit color variable.
+ *
+ *@param command This is the color string.
+ *@retval Returns 8bit color value.
+ *@authors Osman Pekcan,Tjerk ten Dam
+ */
+uint8_t kleur_decoder(char command[])
+{
+	char styles_array[NUMBER_OF_COLORS][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"zwart","blauw","groen","rood","wit","lichtcyaan","magenta","geel","grijs","bruin"};
+		uint8_t i;
+		for(i = 0; i< NUMBER_OF_COLORS;i++)
+		{
+			if(!strcmp(styles_array[i],command))
+			{
+				switch(i)
+				{
+				case 0:
+					return VGA_COL_BLACK;
+				case 1:
+					return VGA_COL_BLUE;
+				case 2:
+					return VGA_COL_GREEN;
+				case 3:
+					return VGA_COL_RED;
+				case 4:
+					return VGA_COL_WHITE;
+				case 5:
+					return VGA_COL_CYAN;
+				case 6:
+					return VGA_COL_MAGENTA;
+				case 7:
+					return VGA_COL_YELLOW;
+				case 8:
+					return VGA_COL_GRIJS;
+				case 9:
+					return VGA_COL_BROWN;
+				}
+			}
+		}
+	softonErrorHandler(ERROR_COLOR_NOT_FOUND);
+	return 0;
+}
+
 
 /**
  *@brief	This function looks at input array and calls function the input array calls for
@@ -20,7 +95,7 @@ void logic_layer(char commando[])
 	puts(commando);
 #endif
 
-	for(i=0, j=0;commando[i]!='\0';i++, k++)
+	for(i=0, j=0;commando[i]!='\0' && commando[i] != 0x0D ;i++, k++)
 	{
 		if(commando[i]==ASCII_OF_COMMA)
 		{
@@ -49,7 +124,7 @@ void logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[2]),
 						(uint16_t)atoi((char*)commando_filled[3]),
 						(uint16_t)atoi((char*)commando_filled[4]),
-						(uint16_t)atoi((char*)commando_filled[5]),
+						(uint16_t)kleur_decoder((char*)commando_filled[5]),
 						(uint16_t)atoi((char*)commando_filled[6]));
 				break;
 			case 1:
@@ -57,32 +132,31 @@ void logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[2]),
 						(uint16_t)atoi((char*)commando_filled[3]),
 						(uint16_t)atoi((char*)commando_filled[4]),
-						(uint16_t)atoi((char*)commando_filled[5]),
+						(uint16_t)kleur_decoder((char*)commando_filled[5]),
 						(uint16_t)atoi((char*)commando_filled[6]));
 				break;
-			/*case 2:
-				drawLines(100,10,200,10,0x1F,5);
-				/*drawText((uint16_t)atoi((char*)commando_filled[1]),
+			case 2:
+				drawText((uint16_t)atoi((char*)commando_filled[1]),
 						(uint16_t)atoi((char*)commando_filled[2]),
-						(uint16_t)atoi((char*)commando_filled[3]),
+						kleur_decoder((char*)commando_filled[3]),
 						(char*)commando_filled[4],
 						(char*)commando_filled[5],
-						(uint16_t)atoi((char*)commando_filled[6]),
-						(char*)commando_filled[7]);*/
+						(uint16_t)atoi((char*)commando_filled[6])-1,
+						font_style((char*)commando_filled[7]));
 				break;
 			case 3:
-				/*drawBitmap((uint16_t)atoi((char*)commando_filled[1]),
+				drawBitmap((uint16_t)atoi((char*)commando_filled[1]),
 						(uint16_t)atoi((char*)commando_filled[2]),
-						(uint16_t)atoi((char*)commando_filled[3]));*/
+						(uint16_t)atoi((char*)commando_filled[3]));
 				break;
 			case 4:
-				/*clearScreen((uint16_t)atoi((char*)commando_filled[1]));*/
+				UB_VGA_FillScreen(kleur_decoder((char*)commando_filled[1]));
 				break;
 			case 5:
 				drawCircle((uint16_t)atoi((char*)commando_filled[1]),
 						(uint16_t)atoi((char*)commando_filled[2]),
 						(uint8_t)atoi((char*)commando_filled[3]),
-						(uint8_t)atoi((char*)commando_filled[4]));
+						(uint8_t)kleur_decoder((char*)commando_filled[4]));
 				break;
 			case 6:
 				drawFigure((uint16_t)atoi((char*)commando_filled[11]),
@@ -96,10 +170,10 @@ void logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[7]),
 						(uint16_t)atoi((char*)commando_filled[8]),
 						(uint16_t)atoi((char*)commando_filled[9]),
-						(uint16_t)atoi((char*)commando_filled[10]));
+						(uint16_t)kleur_decoder((char*)commando_filled[10]));
 				break;
 			case 7:
-				//lijn
+				//wait
 				break;
 			default:
 				printf("place holder");
@@ -107,6 +181,5 @@ void logic_layer(char commando[])
 			break;
 		}
 	}
-
-
 }
+

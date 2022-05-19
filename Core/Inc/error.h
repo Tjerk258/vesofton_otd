@@ -15,5 +15,7 @@
 #define ERROR_FONTSTYLE_OUT_OF_RANGE 	6
 #define ERROR_BITMAP_OUT_OF_RANGE		7
 
+#define ERROR_FONTSTYLE_NOT_FOUND		255
+#define ERROR_COLOR_NOT_FOUND 			254
 //prototypes
 void softonErrorHandler(uint8_t error);
