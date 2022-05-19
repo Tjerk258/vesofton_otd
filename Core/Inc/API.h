@@ -36,10 +36,9 @@
 #define COLORMAX				255	//Color between 0 and 255
 #define COLORMIN				0	//Min color digit.
 #define LINE_WIDTH				10	//								<----*
-#define X_BEGIN					0
-#define Y_BEGIN					0
-#define MAX_FIGURE_POINTS		10
-#define MIN_FIGURE_POINTS		1
+#define X_BEGIN					0x00
+#define Y_BEGIN					0x00
+#define FIGURE_POINTS			5
 #define RADIUS_INCREMENT_CIRCLE 3600	//Radius of circle
 
  //Prototypes function
