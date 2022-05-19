@@ -120,9 +120,10 @@ int main(void)
   //drawText(0, 20, VGA_COL_BLUE, "ABCDEFGHIJKL", "Arial", 1, 1);
   //drawLines(1,1,50,50,254,11);
   //drawRect(10,10,5,352,VGA_COL_BLUE,1);
-  drawCircle(120,160,500,VGA_COL_BLUE);
+  //drawCircle(120,160,500,VGA_COL_BLUE);
   //drawText(0, 20, VGA_COL_BLUE, "ABCDEFGHIJKL", "Arial", 1, 1);
   //drawText(0, 20, VGA_COL_BLUE, "ABCDEFGHIJKL", "Arials", 1, 1);
+  drawFigure(10,10,100,100,200,150,150,210,80,210,VGA_COL_BLUE);
   while (1)
   {
 

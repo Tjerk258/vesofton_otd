@@ -31,6 +31,16 @@ void myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_
 		softonErrorHandler(ERROR_LINE_OUT_OF_RANGE);
 		return;
 	}
+//	if(((x_begin+x_eind) > VGA_DISPLAY_X) || ((y_begin+y_eind) > VGA_DISPLAY_Y))
+//	{
+//		softonErrorHandler(ERROR_LINE_TOO_LONG);
+//		return;
+//	}
+	if((x_begin < 0) || (y_begin < 0) || (x_eind > VGA_DISPLAY_X) || (y_eind < VGA_DISPLAY_Y))
+	{
+		softonErrorHandler(ERROR_LINE_OUT_OF_RANGE);
+		return;
+	}
 	if (kleur > COLORMAX || kleur < COLORMIN)
 	{
 		softonErrorHandler(ERROR_LINE_COLOR_OUT_OF_RANGE);
@@ -114,7 +124,7 @@ void myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_
 				{
 					line_var = round((1/derivative)*(i-y_begin))+ x_begin;
 #ifdef DEBUG_LINE_VAR
-					printf("lijn variable : \t %d\n", line_var);
+				printf("lijn variable : \t %d\n", line_var);
 #endif
 					UB_VGA_SetPixel(line_var, y_begin + (i-y_begin), kleur);
 				}
@@ -269,7 +279,7 @@ void drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, u
 	}
 }
 
-	void drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t kleur)
+void drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t kleur)
 {
 	float i=0; // Float because it hold division of PI which are decimal numbers.
 	uint16_t plaats_x = 0, plaats_y = 0;
@@ -282,7 +292,7 @@ void drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, u
 			softonErrorHandler(ERROR_CIRCLE_OUT_OF_RANGE);
 			return;
 		}
-		#ifdef DEBUG_CIRCLE_PLAATS
+#ifdef DEBUG_CIRCLE_PLAATS
 		if(i=M_PI) printf("plaats x is \t %d \n plaats y is \t %d",plaats_x, plaats_y);
 #endif
 		UB_VGA_SetPixel(plaats_x, plaats_y, kleur);
@@ -296,7 +306,7 @@ void drawFigure(uint8_t kleur, uint8_t nr_pointsgiven,...)
 		softonErrorHandler(ERROR_FIGURE_COLOR_OUT_OF_RANGE);
 		return;
 	}
-	if ((nr_pointsgiven > MAX_FIGURE_POINTS) || (nr_pointsgiven <= MIN_FIGURE_POINTS))
+	if ((nr_pointsgiven > FIGURE_POINTS) || (nr_pointsgiven <= FIGURE_POINTS))
 	{
 		softonErrorHandler(ERROR_FIGURE_LENGTH_OUT_OF_RANGE);
 		return;
@@ -388,6 +398,9 @@ void drawBitmap(int nr, int x_1up, int y_1up)
  * */
 void drawText(int x, int y, uint8_t color, char tekst[], char fontname[], uint8_t fontsize, uint8_t fontstyle)
 {
+	//while(((x >= 0) && (x < VGA_DISPLAY_X)) && ((y >= 0) && (y < VGA_DISPLAY_Y)) && (color < COLORMAX) && (color >= 0 ) && (fontsize < 1) && (fontsize >= 0) && (fontstyle < 2) && (fontstyle >= 0));
+	//for (i = 0; i > ;i++)
+	//{
 	if (((x < 0) || (x > VGA_DISPLAY_X)) || ((y < 0) || (y > VGA_DISPLAY_Y)))
 	{
 		softonErrorHandler(ERROR_FONT_OUT_OF_RANGE);
