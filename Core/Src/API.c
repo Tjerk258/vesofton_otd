@@ -7,6 +7,7 @@
   */
   
 #include "API.h"
+#include "front_layer.h"
 
 //Bitmap header
 #include "bitmap.h"
@@ -26,7 +27,7 @@
 
 void myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t kleur)
 {
-	uint8_t i=0;
+	uint16_t i=0;
 	float derivative = 0.0; // Float since the formula creates decimal numbers that are needed to calculate line_var
 	int16_t x_offset=0, y_offset=0;
 	uint16_t start_point = 0, end_point = 0;
@@ -202,14 +203,14 @@ void drawLines(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_e
 
 void drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, uint8_t kleur, uint8_t filled)
 {
-	uint8_t i = 0;
+	uint16_t i = 0;
 	if (filled == 0) // If the rectangle does not need to be filled
 	{
 #ifdef DEBUG_RECT_BOUNDS
 		printf("x-begin: \t %d \n x-eind: \t %d ", x_pos, x_pos + length-1);
 		printf("y-begin: \t %d \n y-eind: \t %d ", y_pos,y_pos+(width-1));
 #endif
-		for (i = 0; i <= 1; i ++)
+		for (i = 0; i <= 1; i++)
 		{
 			myLijntekenaar(x_pos, y_pos+(width-1)*i, x_pos + length-1, y_pos+(width-1)*i, kleur); // Draws a horizontal line.
 			myLijntekenaar(x_pos + (length -1) * i, y_pos, x_pos + (length-1 ) * i,y_pos+width-1, kleur); //Draws a Vertical line.
@@ -287,14 +288,14 @@ void drawFigure(uint8_t kleur, uint8_t nr_pointsgiven,...)
  * */
 void drawBitmap(int nr, int x_1up, int y_1up)
 {
-	if ((nr > strlen((const char*)bitmaps)) || ((0 < x_1up) && (x_1up > *bitmap)) || ((0 < y_1up) && (y_1up > *bitmap)))
-	{
-		softonErrorHandler(ERROR_BITMAP_NOT_FOUND);
-	}
-	if (((x_1up+(uint16_t)(bitmap[BITMAP_WIDTH_LOW])) > VGA_DISPLAY_X) && ((y_1up + (uint16_t)(bitmap[BITMAP_WIDTH_HIGH] > VGA_DISPLAY_Y))))
-	{
-		softonErrorHandler(ERROR_BITMAP_OUT_OF_RANGE);
-	}
+//	if ((nr > strlen((const char*)bitmaps)) || ((0 < x_1up) && (x_1up > *bitmaps)) || ((0 < y_1up) && (y_1up > *bitmaps)))
+//	{
+//		softonErrorHandler(ERROR_BITMAP_NOT_FOUND);
+//	}
+//	if (((x_1up+(uint16_t)(bitmaps[BITMAP_WIDTH_LOW])) > VGA_DISPLAY_X) && ((y_1up + (uint16_t)(bitmaps[BITMAP_WIDTH_HIGH] > VGA_DISPLAY_Y))))
+//	{
+//		softonErrorHandler(ERROR_BITMAP_OUT_OF_RANGE);
+//	}
 	int i, j = 0;
 	const uint8_t *bitmap = bitmaps[nr];
 	for (i= 0; i < bitmap[0]; i++)		//Bitmap first byte is the Y boundary.
@@ -328,24 +329,24 @@ void drawBitmap(int nr, int x_1up, int y_1up)
  *@param frontstyle is the style of fonts, this can be chosen of Italic, Bold.
  *@author Djalil & Tjerk
  * */
-void drawText(int x, int y, char colour, char tekst[], char fontname[], char fontsize, char fontstyle)
+void drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_t fontsize, uint8_t fontstyle)
 {
-	if (((x > 0) && (x > VGA_DISPLAY_X)) || ((y > 0) && (y > VGA_DISPLAY_Y)))
-	{
-		softonErrorHandler(ERROR_FONT_OUT_OF_RANGE);
-	}
-	if (color > COLORMAX)
-	{
-		softonErrorHandler(ERROR_FONT_OUT_OF_RANGE);
-	}
-	if (fontsize > 1)
-	{
-		softonErrorHandler(ERROR_FONTSIZE_OUT_OF_RANGE);
-	}
-	if (fontstyle > 2)
-	{
-		softonErrorHandler(ERROR_FONTSTYLE_OUT_OF_RANGE);
-	}
+//	if (((x > 0) && (x > VGA_DISPLAY_X)) || ((y > 0) && (y > VGA_DISPLAY_Y)))
+//	{
+//		softonErrorHandler(ERROR_FONT_OUT_OF_RANGE);
+//	}
+//	if (color > COLORMAX)
+//	{
+//		softonErrorHandler(ERROR_FONT_OUT_OF_RANGE);
+//	}
+//	if (fontsize > 1)
+//	{
+//		softonErrorHandler(ERROR_FONTSIZE_OUT_OF_RANGE);
+//	}
+//	if (fontstyle > 2)
+//	{
+//		softonErrorHandler(ERROR_FONTSTYLE_OUT_OF_RANGE);
+//	}
 	int i, j, k, l = 0;
     int x_old = 0;
 	const char *letter;		//Pointer to the array of letter
@@ -354,7 +355,7 @@ void drawText(int x, int y, char colour, char tekst[], char fontname[], char fon
 	const char **fonts[] = {Arial_8_addr, Arial_32_addr, Arial_Italic_8_addr, Arial_Italic_32_addr, Arial_Bold_8_addr, Arial_Bold_32_addr,
 			Consolas_8_addr, Consolas_32_addr, Consolas_Italic_8_addr, Consolas_Italic_32_addr, Consolas_Bold_8_addr, Consolas_Bold_32_addr};
 
-	char font_name[FONT_NUMBER][FONT_NAME_SIZE] = {"Arial", "Consolas"};	//Names of fonts in array.
+	char font_name[FONT_NUMBER][FONT_NAME_SIZE] = {"arial", "consolas"};	//Names of fonts in array.
 	const char **font;
 	const char *width_array;
 	for(i = 0; i<FONT_NUMBER; i++)
@@ -372,10 +373,10 @@ void drawText(int x, int y, char colour, char tekst[], char fontname[], char fon
 #endif
 			break;
 		}
-		else
-		{
-			softonErrorHandler(ERROR_FONT_NOT_FOUND);	//Typo, The fonts doesn't exist.
-		}
+//		else
+//		{
+//			softonErrorHandler(ERROR_FONT_NOT_FOUND);	//Typo, The fonts doesn't exist.
+//		}
 	}
 	for(i = 0; i < strlen(tekst); i++)
 	{
