@@ -24,19 +24,27 @@
 #define BITMAP_WIDTH_HIGH		2	//The 3rd byte is the Width high
 #define BITMAP_WIDTH_LOW		1	//The 2nd byte is the Width Low
 #define FONT_TYPES				6	//The font type, from byte 6 is Consolas, else font type is Arial
-#define FONT_SIZE				2	//The font size is 2 different sizes
 #define BYTE_SIZE				8	//The size of a byte
 #define FONT_NUMBER				2	//The amount of fonts, this can be expended.
 #define FONT_NAME_SIZE			20	//The Size of fontname.
+#define FONT_SIZE				1	//Size of font, 0=8 and 1=32
+#define FONT_STYLE				2	//Style of font, 0=standard, 1=Italic and 2=Bold
 #define SPACE_BETWEEN_LETTER 	2	//The space between the letter.
 #define LETTER_BITS				31	//Letter bits
 #define LETTER_WIDTH_BITS		32	//Character bits
 #define FONT_SIZE_POSITION		3	//Position of font size in the array for each fonts.
-#define RADIUS_INCREMENT_CIRCLE 3600
+#define COLORMAX				255	//Color between 0 and 255
+#define COLORMIN				0	//Min color digit.
+#define LINE_WIDTH				10	//								<----*
+#define X_BEGIN					0
+#define Y_BEGIN					0
+#define MAX_FIGURE_POINTS		10
+#define MIN_FIGURE_POINTS		1
+#define RADIUS_INCREMENT_CIRCLE 3600	//Radius of circle
 
  //Prototypes function
 void drawBitmap(int nr, int x_1up, int y_1up);
-void drawText(int x, int y, char kleur, char tekst[], char fontname[], char fontgrootte, char fontstyle);
+void drawText(int x, int y, uint8_t kleur, char tekst[], char fontname[], uint8_t fontgrootte, uint8_t fontstyle);
 
 /**
  * @brief this function draws a single line from a to b
