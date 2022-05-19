@@ -24,27 +24,27 @@
 #include "fonts/Consolas_Bold_32.h"
 #include "fonts/Consolas_Bold_8.h"
 
-void myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t kleur)
+int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t kleur)
 {
-	if((x_begin < 0) || (y_begin < 0) || (x_eind > VGA_DISPLAY_X) || (y_eind < VGA_DISPLAY_Y))
+	if((x_begin < 0) || (y_begin < 0) || (x_eind > VGA_DISPLAY_X) || (y_eind > VGA_DISPLAY_Y))
 	{
 		softonErrorHandler(ERROR_LINE_OUT_OF_RANGE);
-		return;
+		return 8;
 	}
 //	if(((x_begin+x_eind) > VGA_DISPLAY_X) || ((y_begin+y_eind) > VGA_DISPLAY_Y))
 //	{
-//		softonErrorHandler(ERROR_LINE_TOO_LONG);
-//		return;
+//		softonErrorHandler(ERROR_LINE_OUT_OF_RANGE);
+//		return 8;
 //	}
-	if((x_begin < 0) || (y_begin < 0) || (x_eind > VGA_DISPLAY_X) || (y_eind < VGA_DISPLAY_Y))
-	{
-		softonErrorHandler(ERROR_LINE_OUT_OF_RANGE);
-		return;
-	}
+//	if((x_begin < 0) || (y_begin < 0) || (x_eind > VGA_DISPLAY_X) || (y_eind < VGA_DISPLAY_Y))
+//	{
+//		softonErrorHandler(ERROR_LINE_OUT_OF_RANGE);
+//		return 8;
+//	}
 	if (kleur > COLORMAX || kleur < COLORMIN)
 	{
 		softonErrorHandler(ERROR_LINE_COLOR_OUT_OF_RANGE);
-		return;
+		return 10;
 	}
 	uint8_t i=0;
 	float derivative = 0.0; // Float since the formula creates decimal numbers that are needed to calculate line_var
@@ -201,7 +201,7 @@ void myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_
 
 void drawLines(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind, uint8_t kleur, uint8_t lijn_dikte)
 {
-	if(x_begin < 0x00)
+	if(x_begin < X_BEGIN)
 	{
 		softonErrorHandler(ERROR_LINE_OUT_OF_RANGE);
 		return;
@@ -241,7 +241,7 @@ void drawLines(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_e
 
 void drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, uint8_t kleur, uint8_t filled)
 {
-	if(((x_pos+length) > VGA_DISPLAY_X) || ((y_pos+width) > VGA_DISPLAY_Y) || ((x_pos+length) < VGA_DISPLAY_X) || ((y_pos+width) < VGA_DISPLAY_Y))
+	if(((x_pos+length) > VGA_DISPLAY_X) || ((y_pos+width) > VGA_DISPLAY_Y) || ((x_pos+length) < X_BEGIN) || ((y_pos+width) < Y_BEGIN))
 	{
 		softonErrorHandler(ERROR_RECT_OUT_OF_RANGE);
 		return;
@@ -261,8 +261,8 @@ void drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, u
 	{
 
 #ifdef DEBUG_RECT_BOUNDS
-		printf("x-begin: \t %d \n x-eind: \t %d ", x_pos, x_pos + length-1);
-		printf("y-begin: \t %d \n y-eind: \t %d ", y_pos,y_pos+(width-1));
+	printf("x-begin: \t %d \n x-eind: \t %d ", x_pos, x_pos + length-1);
+	printf("y-begin: \t %d \n y-eind: \t %d ", y_pos,y_pos+(width-1));
 #endif
 		for (i = 0; i <= 1; i ++)
 		{
@@ -273,9 +273,7 @@ void drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, u
 	else
 	{
 		for (i = y_pos; i < width +y_pos; i++) // Loops around the y axis
-		{
 			myLijntekenaar(x_pos, i, x_pos + length-1, i, kleur); // Draws around the x axis
-		}
 	}
 }
 
