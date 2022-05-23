@@ -14,15 +14,17 @@ In this paragraph all the functions of the code will be discussed
 
 The following script commandos can be send to the microcontroller to be executed.
 
-> - lijn, x, y, x’, y’, color, width
-> - rechthoek, x_lup, y_lup, width, heigth, color, filled
-> - tekst, x, y, color, text, fontname (arial, consolas), fontsize (1,2), fontstyle (normal, bold, cursive)
-> - bitmap, nr, x-lup, y-lup
-> - clearscherm, color
-> - wacht, msecs
-> - herhaal, aantal (laatst uitgevoerde commando’s), hoevaak (herhalen)
-> - cirkel, x, y, radius, kleur
-> - figuur, x1,y1, x2,y2, x3,y3, x4,y4, x5,y5, kleur
+~~~   
+lijn, x, y, x’, y’, color, width  
+rechthoek, x_lup, y_lup, width, heigth, color, filled  
+tekst, x, y, color, text, fontname (arial, consolas), fontsize (1,2), fontstyle (normal, bold, cursive)  
+bitmap, nr, x-lup, y-lup  
+clearscherm, color  
+wacht, msecs  
+herhaal, aantal (laatst uitgevoerde commando’s), hoevaak (herhalen)  
+cirkel, x, y, radius, kleur  
+figuur, x1,y1, x2,y2, x3,y3, x4,y4, x5,y5, kleur   
+~~~
 
 ### Supported colors
 - zwart  
@@ -42,6 +44,7 @@ The following script commandos can be send to the microcontroller to be executed
 - wit
 
 ### Bitmap numbers
+
 0. Smiley
 1. Angry simley
 2. Arrow left
@@ -60,25 +63,30 @@ If a error ocurs the error code and what the error is will be printed over UART 
 ### Supported text types
 There are a couple of fonts included in this code wich wil be discussed.
 #### Fonts
+
 > - Arial
 > - Consolas
 
 #### Font size
 For font size there are two optionsto choose from
+
 1. Normal
 2. Big
 
 #### Font Type
+
 > - Normal
 > - Italic
 > - Bold
 
 ## Adding fonts
+
 1. Import the header file into fonts folder.
 2. Add all the fonts into **fonts[].
 3. Add fontnames into font_name[][].
 4. Change the Define FONT_NUMBER
 
 ## Adding bitmaps
+
 1. Add bitmap array into bitmap.h
 2. At the buttom of bitmap.h change the array and add the name of bitmap.
