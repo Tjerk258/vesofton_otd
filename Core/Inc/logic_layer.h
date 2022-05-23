@@ -13,4 +13,5 @@
 //#define DEBUG_COMMANDO
 //#define DEBUG_NUMBEROFCOMMANDO
 
-
+//Prototypes
+int logic_layer(char commando[]);

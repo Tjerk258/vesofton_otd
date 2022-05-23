@@ -19,6 +19,7 @@
 #include "front_layer.h"
 #include "usart.h"
 #include "error.h"
+#include "logic_layer.h"
 
 input_vars input;
 
@@ -77,6 +78,9 @@ void softonErrorHandler(uint8_t error)
 	case ERROR_BITMAP_OUT_OF_RANGE:
 		puts("Bitmap out of range!");
 		break;
+	case ERROR_BITMAP_POSITION_OUT_OF_RANGE:
+		puts("Bitmap positioning out of range!");
+		break;
 	case ERROR_FONT_NOT_FOUND:
 		puts("Font not found!");
 		break;
@@ -95,8 +99,8 @@ void softonErrorHandler(uint8_t error)
 	case ERROR_LINE_LENGTH_OUT_OF_RANGE:
 		puts("Line length out of range");
 		break;
-	case ERROR_LINE_COLOR_OUT_OF_RANGE:
-		puts("Line color out of range!");
+	case ERROR_LINE_COLOUR_OUT_OF_RANGE:
+		puts("Line colour out of range!");
 		break;
 	case ERROR_LINE_WIDTH_OUT_OF_RANGE:
 		puts("Line width out of range!");
@@ -104,20 +108,20 @@ void softonErrorHandler(uint8_t error)
 	case ERROR_RECT_OUT_OF_RANGE:
 		puts("Rectangle out of range!");
 		break;
-	case ERROR_RECT_COLOR_OUT_OF_RANGE:
-		puts("Ractangle color out of range!");
+	case ERROR_RECT_COLOUR_OUT_OF_RANGE:
+		puts("Ractangle colour out of range!");
 		break;
 	case ERROR_FILLED_OUT_OF_RANGE:
 		puts("Filled out of range!");
 		break;
-	case ERROR_CIRCLE_COLOR_OUT_OF_RANGE:
-		puts("Circle color out of range!");
+	case ERROR_CIRCLE_COLOUR_OUT_OF_RANGE:
+		puts("Circle colour out of range!");
 		break;
 	case ERROR_CIRCLE_OUT_OF_RANGE:
 		puts("Circle out of range!");
 		break;
-	case ERROR_FIGURE_COLOR_OUT_OF_RANGE:
-		puts("Figure color out of range!");
+	case ERROR_FIGURE_COLOUR_OUT_OF_RANGE:
+		puts("Figure colour out of range!");
 		break;
 	case ERROR_FIGURE_LENGTH_OUT_OF_RANGE:
 		puts("Figure length out of range!");

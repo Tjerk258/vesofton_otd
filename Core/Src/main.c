@@ -103,20 +103,17 @@ int main(void)
 
   FL_UART_Init();
 
-  UB_VGA_FillScreen(VGA_COL_WHITE);
-
+  UB_VGA_FillScreen(VGA_COL_BLACK);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  //drawBitmap(0,0,0);
-  //drawBitmap(0,50,50);
+
   while (1)
   {
 
 	  FL_Parser();
-
 
     /* USER CODE END WHILE */
 
