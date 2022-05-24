@@ -95,32 +95,6 @@ uint8_t r3g3b2_Colour(char command[])
 		return 0;
 }
 
-void clearspaces(char *buf)
-{
-	int i, j=0, k=0;
-	for(i = 0; i+j < strlen(buf); i++)
-	{
-		if(buf[i] == ' ') //if there is a space in the array
-		{
-			j++;
-		}
-		else
-			break;
-	}
-	for(i = strlen(buf); i>0; i--)
-	{
-		if(buf[i] == ' ')
-		{
-			k++;
-		}
-	}
-	buf[strlen(buf) - j - k] = '\0';
-	for(i = 0; i+j < strlen(buf); i++)
-	{
-		buf[i] = buf[i+j];
-	}
-}
-
 /**
  *@brief	This function looks at input array and calls function the input array calls for
  *
@@ -140,22 +114,29 @@ int logic_layer(char commando[])
 	puts(commando);
 #endif
 
-	for(i=0, j=0;commando[i]!='\0' && commando[i] != 0x0D ;i++, k++)
+
+	while(1)
 	{
+		if(!k)
+			for(; commando[i] == ' '; i++);
+
 		if(commando[i]==ASCII_OF_COMMA || commando[i]=='\0')
 		{
+			for(; commando_filled[j][k-1] == ' '; k--);
 			commando_filled[j][k]='\0'; // Add end string for strcmp.
-			clearspaces(commando_filled[j]);
 			j++; // Go to the new array in the double array.
 			i++; // To skip the comma in the commando array.
 			k=0; // Start at the begin
+			if(commando[i]=='\0')
+				break;
 		}
-
-		commando_filled[j][k]=commando[i];
+		else
+		{
+			commando_filled[j][k]=commando[i];
+			i++;
+			k++;
+		}
 	}
-	k++;
-	commando_filled[j][k]='\0';
-	clearspaces(commando_filled[j]);
 
 	for(i=0;i<NUMBER_OF_COMMANDS;i++)
 	{
