@@ -31,50 +31,6 @@ uint8_t font_style(char command[])
 }
 
 /**
- *@brief	This function translates color tekst to 8 bit color variable.
- *
- *@param command This is the color string.
- *@retval Returns 8bit color value.
- *@authors Osman Pekcan,Tjerk ten Dam
- */
-uint8_t kleur_decoder(char command[])
-{
-	char styles_array[NUMBER_OF_COLORS][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"zwart","blauw","groen","rood","wit","lichtcyaan","magenta","geel","grijs","bruin"};
-		uint8_t i;
-		for(i = 0; i< NUMBER_OF_COLORS;i++)
-		{
-			if(!strcmp(styles_array[i],command))
-			{
-				switch(i)
-				{
-				case 0:
-					return VGA_COL_BLACK;
-				case 1:
-					return VGA_COL_BLUE;
-				case 2:
-					return VGA_COL_GREEN;
-				case 3:
-					return VGA_COL_RED;
-				case 4:
-					return VGA_COL_WHITE;
-				case 5:
-					return VGA_COL_CYAN;
-				case 6:
-					return VGA_COL_MAGENTA;
-				case 7:
-					return VGA_COL_YELLOW;
-				case 8:
-					return VGA_COL_GRIJS;
-				case 9:
-					return VGA_COL_BROWN;
-				}
-			}
-		}
-	softonErrorHandler(ERROR_COLOR_NOT_FOUND);
-	return 0;
-}
-
-/**
  *@brief	This function is the 8 bit color designation
  *			8bit color (R3G3B2)
  * 			Red   (3bit) -> Bit7-Bit5
@@ -92,7 +48,7 @@ uint8_t r3g3b2_Colour(char command[])
 		uint8_t colourNumber = (sizeof(colourList) / sizeof(colourList[0])); //Define maken voor positie nul?
 		for (i=0; i < colourNumber; i++)
 		{
-			if(!strcmp(r3g3b2_Colour[i], command))
+			if(!strcmp(colourList[i], command))
 			{
 				switch(i)
 				{
@@ -186,7 +142,7 @@ int logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[2]),
 						(uint16_t)atoi((char*)commando_filled[3]),
 						(uint16_t)atoi((char*)commando_filled[4]),
-						(uint16_t)kleur_decoder((char*)commando_filled[5]),
+						(uint16_t)r3g3b2_Colour((char*)commando_filled[5]),
 						(uint16_t)atoi((char*)commando_filled[6]));
 				break;
 			case 1:
@@ -199,13 +155,13 @@ int logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[2]),
 						(uint16_t)atoi((char*)commando_filled[3]),
 						(uint16_t)atoi((char*)commando_filled[4]),
-						(uint16_t)kleur_decoder((char*)commando_filled[5]),
+						(uint16_t)r3g3b2_Colour((char*)commando_filled[5]),
 						(uint16_t)atoi((char*)commando_filled[6]));
 				break;
 			case 2:
 				drawText((uint16_t)atoi((char*)commando_filled[1]),
 						(uint16_t)atoi((char*)commando_filled[2]),
-						kleur_decoder((char*)commando_filled[3]),
+						r3g3b2_Colour((char*)commando_filled[3]),
 						(char*)commando_filled[4],
 						(char*)commando_filled[5],
 						(uint16_t)atoi((char*)commando_filled[6])-1,
@@ -217,13 +173,13 @@ int logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[3]));
 				break;
 			case 4:
-				UB_VGA_FillScreen(kleur_decoder((char*)commando_filled[1]));
+				UB_VGA_FillScreen(r3g3b2_Colour((char*)commando_filled[1]));
 				break;
 			case 5:
 				drawCircle((uint16_t)atoi((char*)commando_filled[1]),
 						(uint16_t)atoi((char*)commando_filled[2]),
 						(uint8_t)atoi((char*)commando_filled[3]),
-						(uint8_t)kleur_decoder((char*)commando_filled[4]));
+						(uint8_t)r3g3b2_Colour((char*)commando_filled[4]));
 				break;
 			case 6:
 				drawFigure((uint16_t)atoi((char*)commando_filled[11]),
@@ -237,7 +193,7 @@ int logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[7]),
 						(uint16_t)atoi((char*)commando_filled[8]),
 						(uint16_t)atoi((char*)commando_filled[9]),
-						(uint16_t)kleur_decoder((char*)commando_filled[10]));
+						(uint16_t)r3g3b2_Colour((char*)commando_filled[10]));
 				break;
 			case 7:
 				//wait
