@@ -74,7 +74,6 @@ uint8_t kleur_decoder(char command[])
 	return 0;
 }
 
-
 /**
  *@brief	This function looks at input array and calls function the input array calls for
  *
@@ -85,12 +84,11 @@ uint8_t kleur_decoder(char command[])
  *@param commando This is the script commando.
  *@authors Osman Pekcan,Tjerk ten Dam
  */
-void logic_layer(char commando[])
+int logic_layer(char commando[])
 {
 	char commando_list[NUMBER_OF_COMMANDS][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm", "cirkel", "figuur" }; // The script commando that the project needs to do.
 	char commando_filled[MAX_SCRIPT_COMMANDOS][MAX_NUMBER_OF_SCRIPT_CHARACTER]; // Here is the script split into multiple array.
 	uint8_t i=0, j=0, k=0;
-
 #ifdef DEBUG_COMMANDO
 	puts(commando);
 #endif
@@ -128,6 +126,11 @@ void logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[6]));
 				break;
 			case 1:
+				if (atoi((char*)commando_filled[5]) > 255)
+				{
+					softonErrorHandler(ERROR_RECT_COLOUR_OUT_OF_RANGE);
+					return 13;
+				}
 				drawRect((uint16_t)atoi((char*)commando_filled[1]),
 						(uint16_t)atoi((char*)commando_filled[2]),
 						(uint16_t)atoi((char*)commando_filled[3]),
@@ -181,5 +184,6 @@ void logic_layer(char commando[])
 			break;
 		}
 	}
+	return 0;
 }
 

@@ -19,6 +19,7 @@
 #include "front_layer.h"
 #include "usart.h"
 #include "error.h"
+#include "logic_layer.h"
 
 input_vars input;
 
@@ -74,23 +75,56 @@ void softonErrorHandler(uint8_t error)
 	case ERROR_BITMAP_NOT_FOUND:
 		puts("The number of bitmap you have chosen doesn't exist!");
 		break;
-	case ERROR_FIGURE_OUT_OFF_RANGE:
-		puts("Chosen fonts doesn't exist!");
+	case ERROR_BITMAP_OUT_OF_RANGE:
+		puts("Bitmap out of range!");
+		break;
+	case ERROR_BITMAP_POSITION_OUT_OF_RANGE:
+		puts("Bitmap positioning out of range!");
 		break;
 	case ERROR_FONT_NOT_FOUND:
-		puts("Font not found");
+		puts("Font not found!");
 		break;
 	case ERROR_FONT_OUT_OF_RANGE:
-		puts("blabla");
+		puts("Font out of range!");
 		break;
 	case ERROR_FONTSIZE_OUT_OF_RANGE:
-		puts("blabla");
+		puts("Font size out of range!");
 		break;
 	case ERROR_FONTSTYLE_OUT_OF_RANGE:
-		puts("blabla");
+		puts("Font style out of range!");
 		break;
-	case ERROR_BITMAP_OUT_OF_RANGE:
-		puts("blabla");
+	case ERROR_LINE_OUT_OF_RANGE:
+		puts("Line out of range!");
+		break;
+	case ERROR_LINE_LENGTH_OUT_OF_RANGE:
+		puts("Line length out of range");
+		break;
+	case ERROR_LINE_COLOUR_OUT_OF_RANGE:
+		puts("Line colour out of range!");
+		break;
+	case ERROR_LINE_WIDTH_OUT_OF_RANGE:
+		puts("Line width out of range!");
+		break;
+	case ERROR_RECT_OUT_OF_RANGE:
+		puts("Rectangle out of range!");
+		break;
+	case ERROR_RECT_COLOUR_OUT_OF_RANGE:
+		puts("Ractangle colour out of range!");
+		break;
+	case ERROR_FILLED_OUT_OF_RANGE:
+		puts("Filled out of range!");
+		break;
+	case ERROR_CIRCLE_COLOUR_OUT_OF_RANGE:
+		puts("Circle colour out of range!");
+		break;
+	case ERROR_CIRCLE_OUT_OF_RANGE:
+		puts("Circle out of range!");
+		break;
+	case ERROR_FIGURE_COLOUR_OUT_OF_RANGE:
+		puts("Figure colour out of range!");
+		break;
+	case ERROR_FIGURE_LENGTH_OUT_OF_RANGE:
+		puts("Figure length out of range!");
 		break;
 	default:
 		puts("Unknown Error!");
