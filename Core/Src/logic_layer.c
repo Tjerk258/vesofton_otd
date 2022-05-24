@@ -2,6 +2,70 @@
 #include "error.h"
 
 /**
+ *@brief	This function is the 8 bit color designation
+ *			8bit color (R3G3B2)
+ * 			Red   (3bit) -> Bit7-Bit5
+ *			Green (3bit) -> Bit4-Bit2
+ * 			Blue  (2bit) -> Bit1-Bit0
+ *
+ *@param commando[] this is the
+ *@authors Djalil
+ */
+uint8_t r3g3b2_Colour(char command[])
+{
+	char colourList[COLOUR_LIST][COLOUR_CHAR_MAX]= { "zwart", "blauw", "lichtblauw", "groen", "lichtgroen", "rood", "lichtrood", "wit",
+													 "cyaan", "lichtcyaan", "magenta", "lichtmagenta", "bruin", "geel", "grijs", "roos", "paars" };
+		uint8_t i= 0;
+		uint8_t colourNumber = (sizeof(colourList) / sizeof(colourList[0])); //Define maken voor positie nul?
+		for (i=0; i < colourNumber; i++)
+		{
+			if(!strcmp(r3g3b2_Colour[i], command))
+			{
+				switch(i)
+				{
+				case 0:
+					return VGA_COL_BLACK;
+				case 1:
+					return VGA_COL_BLUE;
+				case 2:
+					return VGA_COL_LIGHT_BLUE;
+				case 3:
+					return VGA_COL_GREEN;
+				case 4:
+					return VGA_COL_LIGHT_GREEN;
+				case 5:
+					return VGA_COL_RED;
+				case 6:
+					return VGA_COL_LIGHT_RED;
+				case 7:
+					return VGA_COL_WHITE;
+				case 8:
+					return VGA_COL_CYAN;
+				case 9:
+					return VGA_COL_LIGHT_CYAN;
+				case 10:
+					return VGA_COL_MAGENTA;
+				case 11:
+					return VGA_COL_LIGHT_MAGENTA;
+				case 12:
+					return VGA_COL_BROWN;
+				case 13:
+					return VGA_COL_YELLOW;
+				case 14:
+					return VGA_COL_GRAY;
+				case 15:
+					return VGA_COL_PINK;
+				case 16:
+					return VGA_COL_VIOLET;
+				default:
+					softonErrorHandler(ERROR_COLOUR_NOT_FOUND);
+					return 20;
+				}
+			}
+		}
+		return 0;
+}
+/**
  *@brief	This function looks at input array and calls function the input array calls for
  *
  *@details	First script commando's are split up and put into array: commando_filled.

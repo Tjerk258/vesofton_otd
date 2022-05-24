@@ -26,6 +26,7 @@
 #define ERROR_CIRCLE_OUT_OF_RANGE			17
 #define ERROR_FIGURE_COLOUR_OUT_OF_RANGE 	18
 #define ERROR_FIGURE_LENGTH_OUT_OF_RANGE 	19
+#define ERROR_COLOUR_NOT_FOUND				20
 
 //prototypes
 void softonErrorHandler(uint8_t error);
