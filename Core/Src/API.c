@@ -264,14 +264,14 @@ int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, ui
 	return 0;
 }
 
-int drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t kleur)
+int drawCircle(Uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t kleur)
 {
 	float i=0; // Float because it hold division of PI which are decimal numbers.
-	uint16_t plaats_x = 0, plaats_y = 0;
+	int32_t plaats_x = 0, plaats_y = 0;
 	for (i = 0; i < (2 * M_PI); i += (M_PI/RADIUS_INCREMENT_CIRCLE))
 	{   // Needs an addition because the original formula makes a circle start at point (0,0)
-		plaats_x = (VGA_DISPLAY_X/2) + round(radius * cos(i)); // X = r*cosine(θ)
-		plaats_y = (VGA_DISPLAY_Y/2) + round(radius * sin(i));  // Y = r*sine(θ)
+		plaats_x = round(radius * cos(i)); // X = r*cosine(θ)
+		plaats_y = round(radius * sin(i));  // Y = r*sine(θ)
 		if ((plaats_x < 0 || plaats_x > VGA_DISPLAY_X) || (plaats_y < 0 || plaats_y > VGA_DISPLAY_Y))
 		{
 			softonErrorHandler(ERROR_CIRCLE_OUT_OF_RANGE);

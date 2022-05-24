@@ -125,6 +125,8 @@ void softonErrorHandler(uint8_t error)
 		break;
 	case ERROR_FIGURE_LENGTH_OUT_OF_RANGE:
 		puts("Figure length out of range!");
+	case ERROR_COLOUR_NOT_FOUND:
+		puts("The colour you have entered, doesn't exist!");
 		break;
 	default:
 		puts("Unknown Error!");

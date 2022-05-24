@@ -103,7 +103,7 @@ int main(void)
 
   FL_UART_Init();
 
-  UB_VGA_FillScreen(VGA_COL_BLACK);
+  UB_VGA_FillScreen(VGA_COL_WHITE);
 
   /* USER CODE END 2 */
 
