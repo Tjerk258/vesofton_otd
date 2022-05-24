@@ -21,10 +21,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_it.h"
-#include "front_layer.h"
-#include "logic_layer.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "front_layer.h"
+#include "logic_layer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -267,6 +267,7 @@ void USART2_IRQHandler(void)
 			input.command_execute_flag = TRUE;
 			// Store the message length for processing
 			input.msglen = input.char_counter;
+			input.line_rx_buffer[input.char_counter] = '\0';
 			// Reset the counter for the next line
 			input.char_counter = 0;
 			//Gently exit interrupt

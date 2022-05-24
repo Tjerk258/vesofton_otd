@@ -27,7 +27,6 @@
 extern "C" {
 #endif
 
-
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
 
@@ -61,7 +60,6 @@ extern "C" {
 
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
-//USART_PRINTF;
 
 /* USER CODE BEGIN EFP */
 

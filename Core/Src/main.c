@@ -23,11 +23,11 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-#include "logic_layer.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "logic_layer.h"
+#include "front_layer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -103,7 +103,7 @@ int main(void)
   UB_VGA_Screen_Init(); // Init VGA-Screen
 
   FL_UART_Init();
-
+  HAL_TIM_Base_Start_IT(&htim5);
   buffer_init();
 
   UB_VGA_FillScreen(VGA_COL_WHITE);

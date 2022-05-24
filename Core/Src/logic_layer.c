@@ -4,6 +4,7 @@
 #include "tim.h"
 #include <string.h>
 
+wait_vars wait;
 
 /**
  *@brief	This function translates font_style tekst to variable.
@@ -268,9 +269,8 @@ int logic_layer(char commando[])
 			case 8:
 			    wait.waitFlag = 1;
 			    __HAL_TIM_SET_AUTORELOAD(&htim5,(atoi((char*)commando_filled[1]) * 2));
-			    __HAL_TIM_CLEAR_IT(&htim5 ,TIM_IT_UPDATE);
+			    __HAL_TIM_CLEAR_IT(&htim5, TIM_IT_UPDATE);
 			    HAL_TIM_Base_Start_IT(&htim5);
-			    return 1;
 			    break;
 			default:
 				printf("place holder");
