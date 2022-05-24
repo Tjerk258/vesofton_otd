@@ -1,6 +1,8 @@
 #include "logic_layer.h"
 #include "stm32_ub_vga_screen.h"
 #include "error.h"
+#include "tim.h"
+#include <string.h>
 
 
 /**
@@ -94,6 +96,46 @@ uint8_t r3g3b2_Colour(char command[])
 		}
 		return 0;
 }
+
+void buffer_init()
+{
+	wait.head = 0;
+	wait.waitFlag = 0;
+	wait.counter = -1;
+	wait.executed = 0;
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  if(htim->Instance==TIM5)
+  {
+	  wait.waitFlag = 0;
+	  HAL_TIM_Base_Stop_IT(&htim5);
+  }
+}
+
+void writeBuffer(char buf[])
+{
+	if(wait.head == BUFFER_SIZE-1)
+		wait.head = 0;
+
+	else
+		wait.head++;
+
+	strcpy(wait.buffer[wait.head], buf);
+}
+
+int indexBuffer(int index)
+{
+	if(index >= BUFFER_SIZE)
+		return(index - BUFFER_SIZE);
+	else if(index < 0)
+		return(index + BUFFER_SIZE);
+	else
+		return index;
+}
+
+
 /**
  *@brief	This function looks at input array and calls function the input array calls for
  *
@@ -106,7 +148,7 @@ uint8_t r3g3b2_Colour(char command[])
  */
 int logic_layer(char commando[])
 {
-	char commando_list[NUMBER_OF_COMMANDS][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm", "cirkel", "figuur" }; // The script commando that the project needs to do.
+	char commando_list[NUMBER_OF_COMMANDS][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm", "cirkel", "figuur", "herhaal", "wacht"}; // The script commando that the project needs to do.
 	char commando_filled[MAX_SCRIPT_COMMANDOS][MAX_NUMBER_OF_SCRIPT_CHARACTER]; // Here is the script split into multiple array.
 	uint8_t i=0, j=0, k=0;
 #ifdef DEBUG_COMMANDO
@@ -196,8 +238,40 @@ int logic_layer(char commando[])
 						(uint16_t)r3g3b2_Colour((char*)commando_filled[10]));
 				break;
 			case 7:
-				//wait
-				break;
+			    if(wait.counter > 0)
+			    {
+			        wait.counter--;
+			        wait.executed = wait.executed - atoi((char*)commando_filled[1]) - 1;
+			    }
+			    else if(wait.counter == 0)
+			    {
+			        wait.counter = -1;
+			    }
+			    else if(wait.counter == -1)
+			    {
+			        if(atoi((char*)commando_filled[3]))
+			        {
+			            char temp[MAX_NUMBER_OF_SCRIPT_CHARACTER];
+			            for(int m = 0; m< (atoi((char*)commando_filled[1])) / 2 + 1; m++)
+			            {
+			                strcpy(temp, wait.buffer[indexBuffer(wait.executed - 1 - m)]);
+			                strcpy(wait.buffer[indexBuffer(wait.executed - 1 - m)], wait.buffer[indexBuffer(wait.executed - atoi((char*)commando_filled[1]) - 1 + m)]);
+			                strcpy(wait.buffer[indexBuffer(wait.executed - atoi((char*)commando_filled[1]) - 1 + m)], temp);
+			            }
+			        }
+			        wait.counter = atoi((char*)commando_filled[2])-1;
+			        wait.executed = wait.executed - atoi((char*)commando_filled[1]) - 1;
+			    }
+			    indexBuffer(wait.executed);
+
+			    break;
+			case 8:
+			    wait.waitFlag = 1;
+			    __HAL_TIM_SET_AUTORELOAD(&htim5,(atoi((char*)commando_filled[1]) * 2));
+			    __HAL_TIM_CLEAR_IT(&htim5 ,TIM_IT_UPDATE);
+			    HAL_TIM_Base_Start_IT(&htim5);
+			    return 1;
+			    break;
 			default:
 				printf("place holder");
 			}
