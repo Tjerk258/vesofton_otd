@@ -27,5 +27,7 @@
 #define ERROR_FIGURE_COLOUR_OUT_OF_RANGE 	18
 #define ERROR_FIGURE_LENGTH_OUT_OF_RANGE 	19
 
+#define ERROR_FONTSTYLE_NOT_FOUND		255
+#define ERROR_COLOR_NOT_FOUND 			254
 //prototypes
 void softonErrorHandler(uint8_t error);

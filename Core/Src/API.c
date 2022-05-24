@@ -7,6 +7,7 @@
   */
 
 #include "API.h"
+#include "front_layer.h"
 
 #include "error.h"
 #include "bitmap.h"
@@ -36,7 +37,7 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
 		softonErrorHandler(ERROR_LINE_COLOUR_OUT_OF_RANGE);
 		return 11;
 	}
-	uint8_t i=0;
+	uint16_t i=0;
 	float derivative = 0.0; // Float since the formula creates decimal numbers that are needed to calculate line_var
 	int16_t x_offset=0, y_offset=0;
 	uint16_t start_point = 0, end_point = 0;
@@ -240,6 +241,7 @@ int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, ui
 		softonErrorHandler(ERROR_FILLED_OUT_OF_RANGE);
 		return 15;
 	}
+
 	uint16_t i = 0;
 	if (filled == 0) // If the rectangle does not need to be filled
 	{
@@ -248,7 +250,7 @@ int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, ui
 	printf("x-begin: \t %d \n x-eind: \t %d ", x_pos, x_pos + length-1);
 	printf("y-begin: \t %d \n y-eind: \t %d ", y_pos,y_pos+(width-1));
 #endif
-		for (i = 0; i <= 1; i ++)
+		for (i = 0; i <= 1; i++)
 		{
 			myLijntekenaar(x_pos, y_pos+(width-1)*i, x_pos + length-1, y_pos+(width-1)*i, kleur); // Draws a horizontal line.
 			myLijntekenaar(x_pos + (length -1) * i, y_pos, x_pos + (length-1 ) * i,y_pos+width-1, kleur); //Draws a Vertical line.
@@ -339,6 +341,7 @@ int drawFigure(uint8_t kleur, uint8_t nr_pointsgiven,...)
  * */
 int drawBitmap(int nr, uint8_t x_1up, uint8_t y_1up)
 {
+
 	int i, j, sizebitmaps = 0;
 	const uint8_t *bitmap = bitmaps[nr];
 	uint16_t width = (uint16_t)(bitmap[BITMAP_WIDTH_HIGH] | (bitmap[BITMAP_WIDTH_LOW]<<8)); //Shift 8 bits is needed to calculate the the width of bitmaps.
@@ -397,8 +400,6 @@ int drawBitmap(int nr, uint8_t x_1up, uint8_t y_1up)
  *@param fontsize is the size of the font. The size can be chosen from 8 or 32. 0 = 8 and 1 = 32.
  *@param frontstyle is the style of fonts, this can be chosen of Italic, Bold.
  *@author Djalil & Tjerk
- *
- */
 
 int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_t fontsize, uint8_t fontstyle)
 {
@@ -422,6 +423,7 @@ int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_
 		softonErrorHandler(ERROR_FONTSTYLE_OUT_OF_RANGE);
 		return 8;
 	}
+  
 	int i, j, k, l = 0;
     int x_old = 0;
 	const char *letter;		//Pointer to the array of letter
@@ -430,7 +432,7 @@ int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_
 	const char **fonts[] = {Arial_8_addr, Arial_32_addr, Arial_Italic_8_addr, Arial_Italic_32_addr, Arial_Bold_8_addr, Arial_Bold_32_addr,
 			Consolas_8_addr, Consolas_32_addr, Consolas_Italic_8_addr, Consolas_Italic_32_addr, Consolas_Bold_8_addr, Consolas_Bold_32_addr};
 
-	char font_name[FONT_NUMBER][FONT_NAME_SIZE] = {"Arial", "Consolas"};	//Names of fonts in array.
+	char font_name[FONT_NUMBER][FONT_NAME_SIZE] = {"arial", "consolas"};	//Names of fonts in array.
 	const char **font;
 	const char *width_array;
 	for(i = 0; i<FONT_NUMBER; i++)
