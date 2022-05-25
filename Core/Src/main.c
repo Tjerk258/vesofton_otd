@@ -23,11 +23,11 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-#include "front_layer.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "logic_layer.h"
+#include "front_layer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,11 +97,14 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM2_Init();
   MX_USART2_UART_Init();
+  MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
 
   UB_VGA_Screen_Init(); // Init VGA-Screen
 
   FL_UART_Init();
+  HAL_TIM_Base_Start_IT(&htim5);
+  buffer_init();
 
   UB_VGA_FillScreen(VGA_COL_WHITE);
 
@@ -111,8 +114,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-	  FL_Parser();
+	  if(wait.head != wait.executed && !wait.waitFlag)
+	  {
+		  wait.executed++;
+		  wait.executed = indexBuffer(wait.executed);
+		  logic_layer(wait.buffer[wait.executed]);
+	  }
 
     /* USER CODE END WHILE */
 
