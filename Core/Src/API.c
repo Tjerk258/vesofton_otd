@@ -505,3 +505,24 @@ int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_
 	softonErrorHandler(ERROR_FONT_NOT_FOUND);
 	return 4;
 }
+
+int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_radius,uint16_t l_angle,uint16_t h_angle,uint8_t kleur)
+{
+	float i=0; // Float because it hold division of PI which are decimal numbers.
+	uint8_t j=0;
+	int32_t plaats_x = 0, plaats_y = 0;
+
+#ifdef DEBUG_ANGLE_OF_CIRCLE
+	printf("lower boundary \t %d \n higher boundary \t %d \n ", l_angle, h_angle);
+#endif
+	for(i=((float)l_angle/(float)HALF_CIRCLE_DEGREE)*M_PI;i<((float)h_angle/(float)HALF_CIRCLE_DEGREE)*M_PI;i += (M_PI/RADIUS_INCREMENT_CIRCLE))
+	{ // Loop from lower angle to higher angle
+		for(j=l_radius;j<h_radius;j++) // From lower boundary of the radius to the higher boundary
+		{
+			plaats_x = x_pos+round(j * cos(i)); // X = r*cosine(θ)
+			plaats_y = y_pos+round(j * sin(-i));  // Y = r*sine(θ)
+			drawPixel(plaats_x, plaats_y, kleur);
+		}
+	}
+	return 0;
+}
