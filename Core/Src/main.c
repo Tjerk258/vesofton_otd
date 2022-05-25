@@ -114,8 +114,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-//	  FL_Parser();
 	  if(wait.head != wait.executed && !wait.waitFlag)
 	  {
 		  wait.executed++;
