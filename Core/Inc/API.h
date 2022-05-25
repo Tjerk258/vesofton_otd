@@ -202,4 +202,5 @@ int drawCircle(uint16_t x_pos, uint16_t y_pos,uint8_t radius,uint8_t kleur,uint8
  */
 int drawFigure(uint8_t kleur,uint8_t lijn_dikte,uint8_t nr_pointsgiven,...);
 int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_radius,uint16_t l_angle,uint16_t h_angle,uint8_t kleur);
+int drawParallelogram(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_t angle,uint8_t kleur);
 

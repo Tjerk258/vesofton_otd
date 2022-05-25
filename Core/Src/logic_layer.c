@@ -180,7 +180,7 @@ int indexBuffer(int index)
  */
 int logic_layer(char commando[])
 {
-	char commando_list[NUMBER_OF_COMMANDS][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm", "cirkel", "figuur", "herhaal", "wacht","cirkel2"}; // The script commando that the project needs to do.
+	char commando_list[NUMBER_OF_COMMANDS][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm", "cirkel", "figuur", "herhaal", "wacht","cirkel2","parallelogram"}; // The script commando that the project needs to do.
 	char commando_filled[MAX_SCRIPT_COMMANDOS][MAX_NUMBER_OF_SCRIPT_CHARACTER]; // Here is the script split into multiple array.
 	uint8_t i=0, j=0, k=0;
 #ifdef DEBUG_COMMANDO
@@ -328,6 +328,14 @@ int logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[5]),
 						(uint16_t)atoi((char*)commando_filled[6]),
 						(uint8_t)r3g3b2_Colour((char*)commando_filled[7]));
+				break;
+			case 10:
+				drawParallelogram((uint16_t)atoi((char*)commando_filled[1]),
+						(uint16_t)atoi((char*)commando_filled[2]),
+						(uint16_t)atoi((char*)commando_filled[3]),
+						(uint16_t)atoi((char*)commando_filled[4]),
+						(uint8_t)atoi((char*)commando_filled[5]),
+						(uint8_t)r3g3b2_Colour((char*)commando_filled[6]));
 				break;
 			default:
 				printf("place holder");

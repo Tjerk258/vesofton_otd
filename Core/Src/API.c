@@ -526,3 +526,15 @@ int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_ra
 	}
 	return 0;
 }
+
+int drawParallelogram(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_t angle,uint8_t kleur)
+{
+	uint8_t x_corner=0,y_corner =0,i=0;
+
+	y_corner = y_pos + length;
+	x_corner = x_pos - round((float)x_pos/tan(((float)angle/(float)HALF_CIRCLE_DEGREE)*M_PI));
+
+	for(i=0;i<width;i++)
+		myLijntekenaar(x_pos+i,y_pos,x_corner+i,y_corner,kleur);
+	return 0;
+}
