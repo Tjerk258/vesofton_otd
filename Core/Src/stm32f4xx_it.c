@@ -265,6 +265,7 @@ void USART2_IRQHandler(void)
 			input.command_execute_flag = TRUE;
 			// Store the message length for processing
 			input.msglen = input.char_counter;
+			input.line_rx_buffer[input.char_counter] = '\0';
 			// Reset the counter for the next line
 			input.char_counter = 0;
 			//Gently exit interrupt

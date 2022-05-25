@@ -94,6 +94,7 @@ uint8_t r3g3b2_Colour(char command[])
 		}
 		return 0;
 }
+
 /**
  *@brief	This function looks at input array and calls function the input array calls for
  *
@@ -113,16 +114,28 @@ int logic_layer(char commando[])
 	puts(commando);
 #endif
 
-	for(i=0, j=0;commando[i]!='\0' && commando[i] != 0x0D ;i++, k++)
+
+	while(1)
 	{
-		if(commando[i]==ASCII_OF_COMMA)
+		if(!k)
+			for(; commando[i] == ' '; i++);		//removing spaces add the beginnning of every script command
+
+		if(commando[i]==ASCII_OF_COMMA || commando[i]=='\0')
 		{
+			for(; commando_filled[j][k-1] == ' '; k--);		//removing spaces add the end of every script command
 			commando_filled[j][k]='\0'; // Add end string for strcmp.
 			j++; // Go to the new array in the double array.
 			i++; // To skip the comma in the commando array.
 			k=0; // Start at the begin
+			if(commando[i]=='\0')
+				break;
 		}
-		commando_filled[j][k]=commando[i];
+		else
+		{
+			commando_filled[j][k]=commando[i];
+			i++;
+			k++;
+		}
 	}
 
 	for(i=0;i<NUMBER_OF_COMMANDS;i++)
