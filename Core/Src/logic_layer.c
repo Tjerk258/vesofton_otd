@@ -229,7 +229,8 @@ int logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[3]),
 						(uint16_t)atoi((char*)commando_filled[4]),
 						(uint16_t)r3g3b2_Colour((char*)commando_filled[5]),
-						(uint16_t)atoi((char*)commando_filled[6]));
+						(uint8_t)atoi((char*)commando_filled[6]),
+						(uint8_t)atoi((char*)commando_filled[7]));
 				break;
 			case 1:
 				if (atoi((char*)commando_filled[5]) > 255)
@@ -242,7 +243,9 @@ int logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[3]),
 						(uint16_t)atoi((char*)commando_filled[4]),
 						(uint16_t)r3g3b2_Colour((char*)commando_filled[5]),
-						(uint16_t)atoi((char*)commando_filled[6]));
+						(uint8_t)atoi((char*)commando_filled[6]),
+						(uint8_t)atoi((char*)commando_filled[7]),
+						(uint16_t)r3g3b2_Colour((char*)commando_filled[8]));
 				break;
 			case 2:
 				drawText((uint16_t)atoi((char*)commando_filled[1]),
@@ -265,10 +268,12 @@ int logic_layer(char commando[])
 				drawCircle((uint16_t)atoi((char*)commando_filled[1]),
 						(uint16_t)atoi((char*)commando_filled[2]),
 						(uint8_t)atoi((char*)commando_filled[3]),
-						(uint8_t)r3g3b2_Colour((char*)commando_filled[4]));
+						(uint8_t)r3g3b2_Colour((char*)commando_filled[4]),
+						(uint8_t)atoi((char*)commando_filled[5]));
 				break;
 			case 6:
-				drawFigure((uint16_t)atoi((char*)commando_filled[11]),
+				drawFigure((uint16_t)r3g3b2_Colour((char*)commando_filled[11]),
+						(uint8_t)atoi((char*)commando_filled[12]),
 						POINT_OF_FIGURE,
 						(uint16_t)atoi((char*)commando_filled[1]),
 						(uint16_t)atoi((char*)commando_filled[2]),
@@ -279,7 +284,7 @@ int logic_layer(char commando[])
 						(uint16_t)atoi((char*)commando_filled[7]),
 						(uint16_t)atoi((char*)commando_filled[8]),
 						(uint16_t)atoi((char*)commando_filled[9]),
-						(uint16_t)r3g3b2_Colour((char*)commando_filled[10]));
+						(uint16_t)atoi((char*)commando_filled[10]));
 				break;
 			case 7:
 			    if(wait.counter > 0)	// if it is repeating

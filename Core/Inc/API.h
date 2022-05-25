@@ -45,7 +45,7 @@
 #define X_BEGIN					0
 #define Y_BEGIN					0
 #define FIGURE_POINTS			5
-#define RADIUS_INCREMENT_CIRCLE 3600	//Radius of circle
+#define RADIUS_INCREMENT_CIRCLE 360	//Radius of circle
 
 
 /**
@@ -149,7 +149,7 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
  *@retval None
  *@author Osman Pekcan
  */
-int drawLines( uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t kleur,uint8_t lijn_dikte);
+int drawLines( uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t kleur,uint8_t lijn_dikte,uint8_t mid_lijn);
 
 /**
  * @brief This function draws a rectangle either filled or not.
@@ -166,7 +166,7 @@ int drawLines( uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_e
  *
  *@author Osman Pekcan
  */
-int drawRect(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_t kleur,uint8_t filled);
+int drawRect(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_t kleur,uint8_t filled,uint8_t rectborder,uint8_t border_colour);
 
 /**
  * @brief This function draws a circle
@@ -183,7 +183,7 @@ int drawRect(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_
  *
  *@author Osman Pekcan
  */
-int drawCircle(uint16_t x_pos, uint16_t y_pos,uint8_t radius,uint8_t kleur);
+int drawCircle(uint16_t x_pos, uint16_t y_pos,uint8_t radius,uint8_t kleur,uint8_t lradius);
 /**
  * @brief This functions draw a figure with X amount of points
  *
@@ -199,5 +199,5 @@ int drawCircle(uint16_t x_pos, uint16_t y_pos,uint8_t radius,uint8_t kleur);
  *
  * @author Osman Pekcan
  */
-int drawFigure(uint8_t kleur,uint8_t nr_pointsgiven,...);
+int drawFigure(uint8_t kleur,uint8_t lijn_dikte,uint8_t nr_pointsgiven,...);
 

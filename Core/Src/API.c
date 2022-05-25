@@ -207,7 +207,7 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
 	return 0;
 }
 
-int drawLines(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind, uint8_t kleur, uint8_t lijn_dikte)
+int drawLines(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind, uint8_t kleur, uint8_t lijn_dikte, uint8_t mid_lijn)
 {
 	uint8_t i = 0; uint8_t lijnwaarde = 0; float derivative = 0.0;
 	lijnwaarde = lijn_dikte / 2; // Since the function wants to put original x and y coordinates as the middle line.
@@ -221,7 +221,7 @@ int drawLines(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_ei
 	{
 		if (fabs(derivative) < 1)
 		{
-			if (((x_begin+lijn_dikte) > VGA_DISPLAY_X) || ((x_begin+lijn_dikte) > X_BEGIN))
+			if (((x_begin+lijn_dikte) > VGA_DISPLAY_X) || ((x_begin-lijn_dikte) < X_BEGIN))
 			{
 				softonErrorHandler(ERROR_LINE_WIDTH_OUT_OF_RANGE);
 				return 12;
@@ -231,7 +231,6 @@ int drawLines(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_ei
 		{
 			if (((y_begin-lijnwaarde) > VGA_DISPLAY_Y) || ((y_begin-lijnwaarde) < Y_BEGIN))
 				{
-					printf("ALS DERIVATIVE GROTER IS");
 					softonErrorHandler(ERROR_LINE_WIDTH_OUT_OF_RANGE);
 					return 12;
 				}
@@ -241,11 +240,12 @@ int drawLines(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_ei
 				if (fabs(derivative) > 1) myLijntekenaar(x_begin + (-lijnwaarde + i), y_begin, x_eind + (-lijnwaarde + i), y_eind,kleur);
 				else myLijntekenaar(x_begin, y_begin + (-lijnwaarde + i), x_eind, y_eind + (-lijnwaarde + i),kleur);
 			}
+		if(mid_lijn==1) myLijntekenaar(x_begin, y_begin, x_eind, y_eind,VGA_COL_BLACK); // if the user wants a new line in the middle write new line
 	}
 	return 0;
 }
 
-int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, uint8_t kleur, uint8_t filled)
+int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, uint8_t kleur, uint8_t filled,uint8_t rectborder,uint8_t border_colour)
 {
 	if(((x_pos+length) > VGA_DISPLAY_X) || ((y_pos+width) > VGA_DISPLAY_Y) || ((x_pos+length) < X_BEGIN) || ((y_pos+width) < Y_BEGIN))
 	{
@@ -259,30 +259,37 @@ int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, ui
 	}
 
 	uint16_t i = 0;
-	if (filled == 0) // If the rectangle does not need to be filled
+	if(filled == 0) // this code might not be elegant , comment if this zo "belgisch"
 	{
-
-#ifdef DEBUG_RECT_BOUNDS
-	printf("x-begin: \t %d \n x-eind: \t %d ", x_pos, x_pos + length-1);
-	printf("y-begin: \t %d \n y-eind: \t %d ", y_pos,y_pos+(width-1));
-#endif
+		for (i = y_pos; i < width +y_pos; i++) // Loops around the y axis
+			myLijntekenaar(x_pos, i, x_pos + length-1, i, kleur); // Draws around the x axis
+	}
+	if (rectborder == 1 && filled ==0 )
+	{
+		for (i = y_pos; i < width +y_pos; i++) // Loops around the y axis
+			myLijntekenaar(x_pos, i, x_pos + length-1, i, kleur); // Draws around the x axis
+		for (i = 0; i <= 1; i++)
+		{
+			myLijntekenaar(x_pos, y_pos+(width-1)*i, x_pos + length-1, y_pos+(width-1)*i,border_colour); // Draws a horizontal line.
+			myLijntekenaar(x_pos + (length -1) * i, y_pos, x_pos + (length-1 ) * i,y_pos+width-1,border_colour); //Draws a Vertical line.
+		}
+	}
+	else
+	{
 		for (i = 0; i <= 1; i++)
 		{
 			myLijntekenaar(x_pos, y_pos+(width-1)*i, x_pos + length-1, y_pos+(width-1)*i, kleur); // Draws a horizontal line.
 			myLijntekenaar(x_pos + (length -1) * i, y_pos, x_pos + (length-1 ) * i,y_pos+width-1, kleur); //Draws a Vertical line.
 		}
 	}
-	else
-	{
-		for (i = y_pos; i < width +y_pos; i++) // Loops around the y axis
-			myLijntekenaar(x_pos, i, x_pos + length-1, i, kleur); // Draws around the x axis
-	}
+
 	return 0;
 }
 
-int drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t kleur)
+int drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t kleur,uint8_t lradius)
 {
 	float i=0; // Float because it hold division of PI which are decimal numbers.
+	uint8_t j=0;
 	int32_t plaats_x = 0, plaats_y = 0;
 	if((x_pos-radius < 0) || (y_pos-radius < 0) || (x_pos+radius > VGA_DISPLAY_X) ||  (y_pos+radius > VGA_DISPLAY_Y))
 	{
@@ -291,18 +298,20 @@ int drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t kleur)
 	}
 	for (i = 0; i < (2 * M_PI); i += (M_PI/RADIUS_INCREMENT_CIRCLE))
 	{   // Needs an addition because the original formula makes a circle start at point (0,0)
-		plaats_x = round(radius * cos(i)); // X = r*cosine(θ)
-		plaats_y = round(radius * sin(i));  // Y = r*sine(θ)
-
+		for(j=lradius;j<radius;j++) // lower boundarie of the radius
+		{
+			plaats_x = x_pos+round(j * cos(i)); // X = r*cosine(θ)
+			plaats_y = y_pos+round(j * sin(i));  // Y = r*sine(θ)
+			drawPixel(plaats_x, plaats_y, kleur);
+		}
 #ifdef DEBUG_CIRCLE_PLAATS
 		if(i=M_PI) printf("plaats x is \t %d \n plaats y is \t %d",plaats_x, plaats_y);
 #endif
-		drawPixel(plaats_x, plaats_y, kleur);
 	}
 	return 0;
 }
 
-int drawFigure(uint8_t kleur, uint8_t nr_pointsgiven,...)
+int drawFigure(uint8_t kleur, uint8_t lijn_dikte, uint8_t nr_pointsgiven,...)
 {
 	if (kleur > COLOURMAX || kleur < COLOURMIN)
 	{
@@ -327,7 +336,7 @@ int drawFigure(uint8_t kleur, uint8_t nr_pointsgiven,...)
 #ifdef DEBUG_FIGURE_COR
 	for (i = 0; i < nr_pointsgiven; i++)
 	{
-		printf("X \t %d", figure_ram_x[i]);
+		printf("X \t %d ", figure_ram_x[i]);
 		puts("");
 	}
 	for (i = 0; i < nr_pointsgiven; i++)
@@ -337,7 +346,7 @@ int drawFigure(uint8_t kleur, uint8_t nr_pointsgiven,...)
 	}
 #endif
 	for (i = 0; i < nr_pointsgiven-1; i++)
-		myLijntekenaar(figure_ram_x[i], figure_ram_y[i], figure_ram_x[i+1], figure_ram_y[i+1], kleur); // Draws a line with coordinates from the array's
+		drawLines(figure_ram_x[i], figure_ram_y[i], figure_ram_x[i+1], figure_ram_y[i+1], kleur,lijn_dikte,0); // Draws a line with coordinates from the array's
 	return 0;
 }
 
