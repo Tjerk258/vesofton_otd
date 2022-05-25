@@ -20,6 +20,10 @@
 //#define DEBUG_LIJN_DIKTE
 //#define DEBUG_BITMAP_SIZE
 
+#ifndef __weak
+	#define __weak   __attribute__((weak))
+#endif /* __weak */
+
 //Defines
 #define BEGGINING_OF_BITMAP 	3	//The first 3 bytes are reserved for Y and X of screen
 #define BITMAP_WIDTH_HIGH		2	//The 3rd byte is the Width high
