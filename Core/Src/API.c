@@ -25,6 +25,22 @@
 #include "fonts/Consolas_Bold_32.h"
 #include "fonts/Consolas_Bold_8.h"
 
+/**
+ *@brief Weak decleared Draw pixel function for if the user wants to impelemnt his own desplay interface.
+ *
+ *@details  By declaring this function in the user his own code the user can implement his own display interface code and still use this graphics library.
+ *
+ *
+ *@param x x coördinate of the pixel
+ *@param y y coördinate of the pixel
+ *@param color color of the pixel
+ *@author Tjerk ten Dam
+ * */
+__weak void drawPixel(uint16_t xp, uint16_t yp, uint8_t color)
+{
+	UB_VGA_SetPixel(xp, yp, color);
+}
+
 int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t kleur)
 {
 	if((x_begin < 0) || (y_begin < 0) || (x_eind > VGA_DISPLAY_X) || (y_eind > VGA_DISPLAY_Y))
@@ -51,8 +67,8 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
 	printf("Here value of y offset \t %d \n", y_offset);
 #endif
 
-	UB_VGA_SetPixel(x_begin, y_begin, kleur); // The arithmetic of the function something does not write the start point or end point.
-	UB_VGA_SetPixel(x_eind, y_eind, kleur); // ""
+	drawPixel(x_begin, y_begin, kleur); // The arithmetic of the function something does not write the start point or end point.
+	drawPixel(x_eind, y_eind, kleur); // ""
 
 	if (x_offset == 0 || y_offset == 0) // If the line is a line either one of the offset is zero.
 	{
@@ -70,7 +86,7 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
 			}
 			for (i = start_point; i < end_point + 1; i++)
 			{
-				UB_VGA_SetPixel(x_begin, (start_point)+(i-start_point), kleur);
+				drawPixel(x_begin, (start_point)+(i-start_point), kleur);
 			}
 		}
 		if (y_offset == 0) // If the line is vertical the offset from the y axis is zero
@@ -87,7 +103,7 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
 			}
 			for (i = start_point; i < end_point + 1; i++)
 			{
-				UB_VGA_SetPixel((start_point)+(i - start_point), y_begin, kleur);
+				drawPixel((start_point)+(i - start_point), y_begin, kleur);
 			}
 		}
 	}
@@ -117,7 +133,7 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
 #ifdef DEBUG_LINE_VAR
 				printf("lijn variable : \t %d\n", line_var);
 #endif
-					UB_VGA_SetPixel(line_var, y_begin + (i-y_begin), kleur);
+					drawPixel(line_var, y_begin + (i-y_begin), kleur);
 				}
 			}
 			else
@@ -138,7 +154,7 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
 #ifdef DEBUG_LINE_VAR
 					printf("lijn variable : \t %d\n", line_var);
 #endif
-					UB_VGA_SetPixel(line_var, y_begin + (i-y_begin), kleur);
+					drawPixel(line_var, y_begin + (i-y_begin), kleur);
 				}
 			}
 		}
@@ -162,7 +178,7 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
 #ifdef DEBUG_LINE_VAR
 					printf("lijn variable : \t %d\n", line_var);
 #endif
-					UB_VGA_SetPixel(x_begin+(i-x_begin), line_var, kleur);
+					drawPixel(x_begin+(i-x_begin), line_var, kleur);
 				}
 			}
 			else
@@ -183,7 +199,7 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
 #ifdef DEBUG_LINE_VAR
 					printf("lijn variable : \t %d\n", line_var);
 #endif
-					UB_VGA_SetPixel(x_eind-(i-x_begin), line_var, kleur);
+					drawPixel(x_eind-(i-x_begin), line_var, kleur);
 				}
 			}
 		}
@@ -281,7 +297,7 @@ int drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t kleur)
 #ifdef DEBUG_CIRCLE_PLAATS
 		if(i=M_PI) printf("plaats x is \t %d \n plaats y is \t %d",plaats_x, plaats_y);
 #endif
-		UB_VGA_SetPixel(plaats_x, plaats_y, kleur);
+		drawPixel(plaats_x, plaats_y, kleur);
 	}
 	return 0;
 }
@@ -374,7 +390,7 @@ int drawBitmap(int nr, uint8_t x_1up, uint8_t y_1up)
 	{
 		for(j=0; j < width; j++)	//The first byte of the bitmap is the Y-axis and the other 2 bytes are SUM of the X-axis.
 		{
-			UB_VGA_SetPixel(j+x_1up, i+y_1up, bitmap[j+i*(width)+ BEGGINING_OF_BITMAP]); //Bytes to set the beginning of the bitmap.
+			drawPixel(j+x_1up, i+y_1up, bitmap[j+i*(width)+ BEGGINING_OF_BITMAP]); //Bytes to set the beginning of the bitmap.
 		}
 	}
 	return 0;
@@ -470,7 +486,7 @@ int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_
 					if ((letter[j*width+k] >> l) & 0x01)	//Compare the LSB with 0x01 (AND) if so, print pixel (font) on the screen.
 					{
 
-						UB_VGA_SetPixel(x+x_old + k, y+j*BYTE_SIZE+l, colour);
+						drawPixel(x+x_old + k, y+j*BYTE_SIZE+l, colour);
 					}
 				}
 			}
