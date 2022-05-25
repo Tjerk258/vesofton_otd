@@ -48,26 +48,6 @@ void FL_UART_Init()
 	HAL_UART_Receive_IT(&huart2, input.byte_buffer_rx, BYTE_BUFLEN);
 }
 
-/**
- * @brief Function to check if the UART buffer is filled.
- *
- * @details Checks if UART buffer is filled and if it's filled the logic layer is called for further processing.
- *
- *@author Tjerk ten Dam
- */
-void FL_Parser()
-{
-	if(input.command_execute_flag == TRUE)
-	{
-#if DEBUG_PARSER
-		printf("Parser result = %s", (char*)input.line_rx_buffer);
-#endif
-		//call logic layer fucntion
-		logic_layer(input.line_rx_buffer);
-		input.command_execute_flag = FALSE;
-	}
-}
-
 void softonErrorHandler(uint8_t error)
 {
 	switch(error)

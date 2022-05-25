@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "API.h"
 
-#define NUMBER_OF_COMMANDS 7
+#define NUMBER_OF_COMMANDS 9
 #define POINT_OF_FIGURE 5
 #define MAX_NUMBER_OF_SCRIPT_CHARACTER 200
 #define MAX_SCRIPT_COMMANDOS 15
@@ -18,7 +18,24 @@
 //#define DEBUG_COMMANDO
 //#define DEBUG_NUMBEROFCOMMANDO
 
+#define BUFFER_SIZE 100
+
+
+typedef struct
+{
+	char buffer[BUFFER_SIZE][MAX_NUMBER_OF_SCRIPT_CHARACTER];
+	int counter;
+	int waitFlag;
+	int head;
+	int executed;
+}wait_vars;
+
+extern wait_vars wait;
 
 //Prototypes
 int logic_layer(char commando[]);
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
+void buffer_init();
+void writeBuffer(char buf[]);
+int indexBuffer(int index);
 

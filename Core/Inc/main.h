@@ -27,7 +27,6 @@
 extern "C" {
 #endif
 
-
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
 
@@ -37,8 +36,6 @@ extern "C" {
 
 #include "stdio.h"
 #include "string.h"
-//#include "API.h"
-#include "logic_layer.h"
 #include <stdlib.h>
 #include "stm32_ub_vga_screen.h"
 
@@ -61,7 +58,6 @@ extern "C" {
 
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
-//USART_PRINTF;
 
 /* USER CODE BEGIN EFP */
 
