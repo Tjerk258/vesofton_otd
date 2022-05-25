@@ -180,7 +180,7 @@ int indexBuffer(int index)
  */
 int logic_layer(char commando[])
 {
-	char commando_list[NUMBER_OF_COMMANDS][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm", "cirkel", "figuur", "herhaal", "wait"}; // The script commando that the project needs to do.
+	char commando_list[NUMBER_OF_COMMANDS][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm", "cirkel", "figuur", "herhaal", "wacht"}; // The script commando that the project needs to do.
 	char commando_filled[MAX_SCRIPT_COMMANDOS][MAX_NUMBER_OF_SCRIPT_CHARACTER]; // Here is the script split into multiple array.
 	uint8_t i=0, j=0, k=0;
 #ifdef DEBUG_COMMANDO
