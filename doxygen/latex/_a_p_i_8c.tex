@@ -1,0 +1,247 @@
+\hypertarget{_a_p_i_8c}{}\doxysection{Core/\+Src/\+API.c File Reference}
+\label{_a_p_i_8c}\index{Core/Src/API.c@{Core/Src/API.c}}
+
+
+\+: Library for Graphics.  
+
+
+{\ttfamily \#include \char`\"{}API.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}front\+\_\+layer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bitmap.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts/\+Arial\+\_\+32.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts/\+Arial\+\_\+8.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts/\+Arial\+\_\+\+Italic\+\_\+32.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts/\+Arial\+\_\+\+Italic\+\_\+8.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts/\+Arial\+\_\+\+Bold\+\_\+32.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts/\+Arial\+\_\+\+Bold\+\_\+8.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts/\+Consolas\+\_\+32.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts/\+Consolas\+\_\+8.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts/\+Consolas\+\_\+\+Italic\+\_\+32.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts/\+Consolas\+\_\+\+Italic\+\_\+8.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts/\+Consolas\+\_\+\+Bold\+\_\+32.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts/\+Consolas\+\_\+\+Bold\+\_\+8.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_a_p_i_8c_a1bc1193f15c9247c751bdecef4fdb2e6}{my\+Lijntekenaar}} (uint16\+\_\+t x\+\_\+begin, uint16\+\_\+t y\+\_\+begin, uint16\+\_\+t x\+\_\+eind, uint16\+\_\+t y\+\_\+eind, uint8\+\_\+t kleur)
+\begin{DoxyCompactList}\small\item\em this function draws a single line from a to b \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_p_i_8c_ae23921117ee7fd3cb5b9a4e3e9a1bb7b}{draw\+Lines}} (uint16\+\_\+t x\+\_\+begin, uint16\+\_\+t y\+\_\+begin, uint16\+\_\+t x\+\_\+eind, uint16\+\_\+t y\+\_\+eind, uint8\+\_\+t kleur, uint8\+\_\+t lijn\+\_\+dikte)
+\begin{DoxyCompactList}\small\item\em This function draws multiple lines using mylijntekenaar function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_p_i_8c_a9b8680e16a18e527bda500039f049fdb}{draw\+Rect}} (uint16\+\_\+t x\+\_\+pos, uint16\+\_\+t y\+\_\+pos, uint16\+\_\+t length, uint16\+\_\+t width, uint8\+\_\+t kleur, uint8\+\_\+t filled)
+\begin{DoxyCompactList}\small\item\em This function draws a rectangle either filled or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_p_i_8c_a71cda68eb66cb04c866a666c0bbd1d03}{draw\+Circle}} (uint16\+\_\+t x\+\_\+pos, uint16\+\_\+t y\+\_\+pos, uint8\+\_\+t radius, uint8\+\_\+t kleur)
+\begin{DoxyCompactList}\small\item\em This function draws a circle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_p_i_8c_ac4ad5c13603a59a2aab3700e6b63744c}{draw\+Figure}} (uint8\+\_\+t kleur, uint8\+\_\+t nr\+\_\+pointsgiven,...)
+\begin{DoxyCompactList}\small\item\em This functions draw a figure with X amount of points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_p_i_8c_a86881add4d4814c0b017aee94f92cd3c}{draw\+Bitmap}} (int nr, int x\+\_\+1up, int y\+\_\+1up)
+\begin{DoxyCompactList}\small\item\em Draw bitmap function, this function draws the bitmap; smiley, angry and the four arrows on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_p_i_8c_a304c05f31c0a48f4bb4a7f532946ae18}{draw\+Text}} (int x, int y, uint8\+\_\+t colour, char tekst\mbox{[}$\,$\mbox{]}, char fontname\mbox{[}$\,$\mbox{]}, uint8\+\_\+t fontsize, uint8\+\_\+t fontstyle)
+\begin{DoxyCompactList}\small\item\em Draw text function, this function prints the text on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Library for Graphics. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_a_p_i_8c_a86881add4d4814c0b017aee94f92cd3c}\label{_a_p_i_8c_a86881add4d4814c0b017aee94f92cd3c}} 
+\index{API.c@{API.c}!drawBitmap@{drawBitmap}}
+\index{drawBitmap@{drawBitmap}!API.c@{API.c}}
+\doxysubsubsection{\texorpdfstring{drawBitmap()}{drawBitmap()}}
+{\footnotesize\ttfamily void draw\+Bitmap (\begin{DoxyParamCaption}\item[{int}]{nr,  }\item[{int}]{x\+\_\+1up,  }\item[{int}]{y\+\_\+1up }\end{DoxyParamCaption})}
+
+
+
+Draw bitmap function, this function draws the bitmap; smiley, angry and the four arrows on the screen. 
+
+Bitmap has 6 icons; smiley, angry and the four arrows. smiley\+\_\+map=0, angry\+\_\+map=1, Arrow left=2, Arrow up= The user can choose between smiley=0, angry=1, left=2, up=3, right=4, right=5. Add more bitmapguide\+: Step 1\+: Add bitmap array into \mbox{\hyperlink{bitmap_8h_source}{bitmap.\+h}} Step 2\+: At the buttom of \mbox{\hyperlink{bitmap_8h_source}{bitmap.\+h}} change the array and add the name of bitmap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr} & is the bitmap number to draw. \\
+\hline
+{\em x\+\_\+1up} & and y\+\_\+1up is the position of the bitmap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Djalil \& Tjerk 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{_a_p_i_8c_a71cda68eb66cb04c866a666c0bbd1d03}\label{_a_p_i_8c_a71cda68eb66cb04c866a666c0bbd1d03}} 
+\index{API.c@{API.c}!drawCircle@{drawCircle}}
+\index{drawCircle@{drawCircle}!API.c@{API.c}}
+\doxysubsubsection{\texorpdfstring{drawCircle()}{drawCircle()}}
+{\footnotesize\ttfamily void draw\+Circle (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x\+\_\+pos,  }\item[{uint16\+\_\+t}]{y\+\_\+pos,  }\item[{uint8\+\_\+t}]{radius,  }\item[{uint8\+\_\+t}]{kleur }\end{DoxyParamCaption})}
+
+
+
+This function draws a circle. 
+
+By using {\bfseries{elementary}} mathematics the function draw a circle. The for loop draws points of the circle until it drew the whole circle. The for loop goes through every angle between 0 -\/ 2 PI radius
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+pos,y\+\_\+pos} & These are the x and y coordinates of the middle of the circle. \\
+\hline
+{\em radius} & This is the radius of the circle. \\
+\hline
+{\em kleur} & This is the color of the circle \href{https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/}{\texttt{ mathematic proof}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyAuthor}{Author}
+Osman Pekcan 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{_a_p_i_8c_ac4ad5c13603a59a2aab3700e6b63744c}\label{_a_p_i_8c_ac4ad5c13603a59a2aab3700e6b63744c}} 
+\index{API.c@{API.c}!drawFigure@{drawFigure}}
+\index{drawFigure@{drawFigure}!API.c@{API.c}}
+\doxysubsubsection{\texorpdfstring{drawFigure()}{drawFigure()}}
+{\footnotesize\ttfamily void draw\+Figure (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{kleur,  }\item[{uint8\+\_\+t}]{nr\+\_\+pointsgiven,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+This functions draw a figure with X amount of points. 
+
+With the function mylijntekenaar,this function draws multiple line that are chained to each other. With va\+\_\+list the argument after nr\+\_\+pointsgiven are saved in a list. Using va\+\_\+arg the argument are put into two array.\+figure\+\_\+ram\+\_\+x and figure\+\_\+ram\+\_\+y. with arithmetic code the argument that represent x coordinate are put into figure\+\_\+ram\+\_\+x. likewise for the y coordinates. with these to arrays the function can draw its figure with a for loop. 
+\begin{DoxyParams}{Parameters}
+{\em kleur} & This parameter is for color of the lines \\
+\hline
+{\em nr\+\_\+pointgiven} & Locked the number of points \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyAuthor}{Author}
+Osman Pekcan 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{_a_p_i_8c_ae23921117ee7fd3cb5b9a4e3e9a1bb7b}\label{_a_p_i_8c_ae23921117ee7fd3cb5b9a4e3e9a1bb7b}} 
+\index{API.c@{API.c}!drawLines@{drawLines}}
+\index{drawLines@{drawLines}!API.c@{API.c}}
+\doxysubsubsection{\texorpdfstring{drawLines()}{drawLines()}}
+{\footnotesize\ttfamily void draw\+Lines (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x\+\_\+begin,  }\item[{uint16\+\_\+t}]{y\+\_\+begin,  }\item[{uint16\+\_\+t}]{x\+\_\+eind,  }\item[{uint16\+\_\+t}]{y\+\_\+eind,  }\item[{uint8\+\_\+t}]{kleur,  }\item[{uint8\+\_\+t}]{lijn\+\_\+dikte }\end{DoxyParamCaption})}
+
+
+
+This function draws multiple lines using mylijntekenaar function. 
+
+By repeating the function mylijntekenaar, this draws multiple lines. To do this it checks the parameter which concludes the width of the sum of lines. If it is one, the function just calls the function mylijntekenaar once. Else draws the lines around the middle line(original x and y positions). For the function to know whether to draw extra line in the x axis or y axis it looks at the derivative. If the derivative is higher than one its draw from the x axis, else its draws from the y axis
+
+
+\begin{DoxyParams}{Parameters}
+{\em lijn\+\_\+dikte} & The variable that dictate how big the line width is. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_a_p_i_8c_a1bc1193f15c9247c751bdecef4fdb2e6}{my\+Lijntekenaar(uint16\+\_\+t x\+\_\+begin, uint16\+\_\+t y\+\_\+begin, uint16\+\_\+t x\+\_\+eind, uint16\+\_\+t y\+\_\+eind,uint8\+\_\+t kleur)}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyAuthor}{Author}
+Osman Pekcan 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{_a_p_i_8c_a9b8680e16a18e527bda500039f049fdb}\label{_a_p_i_8c_a9b8680e16a18e527bda500039f049fdb}} 
+\index{API.c@{API.c}!drawRect@{drawRect}}
+\index{drawRect@{drawRect}!API.c@{API.c}}
+\doxysubsubsection{\texorpdfstring{drawRect()}{drawRect()}}
+{\footnotesize\ttfamily void draw\+Rect (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x\+\_\+pos,  }\item[{uint16\+\_\+t}]{y\+\_\+pos,  }\item[{uint16\+\_\+t}]{length,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint8\+\_\+t}]{kleur,  }\item[{uint8\+\_\+t}]{filled }\end{DoxyParamCaption})}
+
+
+
+This function draws a rectangle either filled or not. 
+
+This function draw either a filled or unfilled rectangle, using filled parameter to decide which one. If it filled, its loops from y axis, drawing lines (using mylijntekenaar) from x axis. If it unfilled draws four lines of the unfilled rectangle
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+pos,y\+\_\+pos} & Upper left position of the rectangle. \\
+\hline
+{\em length,width} & Length and width of the rectangle. \\
+\hline
+{\em kleur} & Color of rectangle. \\
+\hline
+{\em filled} & Parameter that determines whether the rectangle is filled or not \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyAuthor}{Author}
+Osman Pekcan 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{_a_p_i_8c_a304c05f31c0a48f4bb4a7f532946ae18}\label{_a_p_i_8c_a304c05f31c0a48f4bb4a7f532946ae18}} 
+\index{API.c@{API.c}!drawText@{drawText}}
+\index{drawText@{drawText}!API.c@{API.c}}
+\doxysubsubsection{\texorpdfstring{drawText()}{drawText()}}
+{\footnotesize\ttfamily void draw\+Text (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{uint8\+\_\+t}]{colour,  }\item[{char}]{tekst\mbox{[}$\,$\mbox{]},  }\item[{char}]{fontname\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{fontsize,  }\item[{uint8\+\_\+t}]{fontstyle }\end{DoxyParamCaption})}
+
+
+
+Draw text function, this function prints the text on the screen. 
+
+This function prints/draws the text on the screen. The user can choose between Arial= 0 en Consolas=1. Each fonts have 3 styles\+: Standard, Italic and Bold Each fonts have 2 sizes\+: 8, 32 Fontstyle Standard=0, Italic=1 and Bold=2. Fontsize 8=0, 32=1. Add more fonts\+: Step 1\+: Import the header file into fonts folder. Step 2\+: Add all the fonts into $\ast$$\ast$fonts\mbox{[}\mbox{]}. Step 3\+: Add fontnames into font\+\_\+name\mbox{[}\mbox{]}\mbox{[}\mbox{]}. Step 4\+: Change the Define FONT\+\_\+\+NUMBER
+
+
+\begin{DoxyParams}{Parameters}
+{\em x,y} & Is the position of the starting point of the first letter. \\
+\hline
+{\em colour} & Is the fonts colour. \\
+\hline
+{\em tekst\mbox{[}$\,$\mbox{]}} & Is an array with text. \\
+\hline
+{\em fontname} & Can be chosen from fonts of Arial and Consolas. \\
+\hline
+{\em fontsize} & is the size of the font. The size can be chosen from 8 or 32. 0 = 8 and 1 = 32. \\
+\hline
+{\em frontstyle} & is the style of fonts, this can be chosen of Italic, Bold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Djalil \& Tjerk 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{_a_p_i_8c_a1bc1193f15c9247c751bdecef4fdb2e6}\label{_a_p_i_8c_a1bc1193f15c9247c751bdecef4fdb2e6}} 
+\index{API.c@{API.c}!myLijntekenaar@{myLijntekenaar}}
+\index{myLijntekenaar@{myLijntekenaar}!API.c@{API.c}}
+\doxysubsubsection{\texorpdfstring{myLijntekenaar()}{myLijntekenaar()}}
+{\footnotesize\ttfamily void my\+Lijntekenaar (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x\+\_\+begin,  }\item[{uint16\+\_\+t}]{y\+\_\+begin,  }\item[{uint16\+\_\+t}]{x\+\_\+eind,  }\item[{uint16\+\_\+t}]{y\+\_\+eind,  }\item[{uint8\+\_\+t}]{kleur }\end{DoxyParamCaption})}
+
+
+
+this function draws a single line from a to b 
+
+This function starts with 5 variables, x and y coordinate for the begin and x and y coordinates for the end. The last variable as color of the line. The function first calculates the offset of both x and y coordinates. When either offsets is equal to zero,the line becomes straight. If y offset is zero the function draws horizontal line, else a vertical line. In the situation that neither offset are zero,the function calculates the derivative of the line. The derivative of the line determines the agle that the line has. A derivative value lower than one has a small angle. If the angle is {\itshape small} (derivative\texorpdfstring{$<$}{<}1) the y coordinates is calculated with the derivative. If the angle is {\itshape big} (derivative\texorpdfstring{$>$}{>}1) it is the inverse of the calculation of the smaller angle. After the function looks whether the derivative is higher than one,the function looks if the derivative is positive or negative. This determines if some parameter is positive or negative. Lastly the function looks at orientation of the line with respect to the x axis, which decides which parameter is the start point and end point of the calculation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+begin,y\+\_\+begin} & Coordinates where the line starts. \\
+\hline
+{\em x\+\_\+eind,y\+\_\+eind} & Coordinates where the line ends. \\
+\hline
+{\em kleur} & Color of the line \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyAuthor}{Author}
+Osman Pekcan 
+\end{DoxyAuthor}
+\begin{DoxyNote}{Note}
+Possible to optimize this function, since there was a finite amount of time this project needed to handed in. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+It is possible to relocate the derivative calculation but when the x offset is zero, the calculate would have a division by zero. 
+\end{DoxyWarning}

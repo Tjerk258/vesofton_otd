@@ -1,0 +1,99 @@
+With this software you can easily print different types of graphics on a vga screen over UART.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{examples}\label{md__r_e_a_d_m_e_autotoc_md1}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Usages}\label{md__r_e_a_d_m_e_autotoc_md2}
+In this paragraph all the functions of the code will be discussed\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{Comandos}\label{md__r_e_a_d_m_e_autotoc_md3}
+The following script commandos can be send to the microcontroller to be executed.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{lijn, x, y, x’, y’, color, width  }
+\DoxyCodeLine{rechthoek, x\_lup, y\_lup, width, heigth, color, filled  }
+\DoxyCodeLine{tekst, x, y, color, text, fontname (arial, consolas), fontsize (1,2), fontstyle (normal, bold, cursive)  }
+\DoxyCodeLine{bitmap, nr, x-\/lup, y-\/lup  }
+\DoxyCodeLine{clearscherm, color  }
+\DoxyCodeLine{wacht, msecs  }
+\DoxyCodeLine{herhaal, aantal (laatst uitgevoerde commando’s), hoevaak (herhalen)  }
+\DoxyCodeLine{cirkel, x, y, radius, kleur  }
+\DoxyCodeLine{figuur, x1,y1, x2,y2, x3,y3, x4,y4, x5,y5, kleur   }
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{Supported colors}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item zwart ~\newline
+
+\item blauw ~\newline
+
+\item lichtblauw ~\newline
+
+\item groen ~\newline
+
+\item lichtgroen ~\newline
+
+\item cyaan ~\newline
+
+\item lichtcyaan ~\newline
+
+\item rood ~\newline
+
+\item lichtrood ~\newline
+
+\item magenta ~\newline
+
+\item lichtmagenta ~\newline
+
+\item bruin ~\newline
+
+\item geel ~\newline
+
+\item grijs ~\newline
+
+\item wit
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{Bitmap numbers}\label{md__r_e_a_d_m_e_autotoc_md5}
+0. Smiley
+\begin{DoxyEnumerate}
+\item Angry simley
+\item Arrow left
+\item Arrow right
+\item Arrow up
+\item Arrow down
+\item Smiley 2
+\item Angry smiley 2
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{max screen size}\label{md__r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyItemize}
+\item 320$\ast$240
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{error handeling}\label{md__r_e_a_d_m_e_autotoc_md7}
+If a error ocurs the error code and what the error is will be printed over UART back to the user interface.\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{Supported text types}\label{md__r_e_a_d_m_e_autotoc_md8}
+There are a couple of fonts included in this code wich wil be discussed. \hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsubsection{Fonts}\label{md__r_e_a_d_m_e_autotoc_md9}
+\begin{quote}
+-\/ Arial
+\begin{DoxyItemize}
+\item Consolas 
+\end{DoxyItemize}\end{quote}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsubsection{Font size}\label{md__r_e_a_d_m_e_autotoc_md10}
+For font size there are two optionsto choose from
+
+
+\begin{DoxyEnumerate}
+\item Normal
+\item Big
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysubsubsection{Font Type}\label{md__r_e_a_d_m_e_autotoc_md11}
+\begin{quote}
+-\/ Normal
+\begin{DoxyItemize}
+\item Italic
+\item Bold 
+\end{DoxyItemize}\end{quote}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysection{Adding fonts}\label{md__r_e_a_d_m_e_autotoc_md12}
+
+\begin{DoxyEnumerate}
+\item Import the header file into fonts folder.
+\item Add all the fonts into $\ast$$\ast$fonts\mbox{[}\mbox{]}.
+\item Add fontnames into font\+\_\+name\mbox{[}\mbox{]}\mbox{[}\mbox{]}.
+\item Change the Define FONT\+\_\+\+NUMBER
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysection{Adding bitmaps}\label{md__r_e_a_d_m_e_autotoc_md13}
+
+\begin{DoxyEnumerate}
+\item Add bitmap array into \mbox{\hyperlink{bitmap_8h_source}{bitmap.\+h}}
+\item At the buttom of \mbox{\hyperlink{bitmap_8h_source}{bitmap.\+h}} change the array and add the name of bitmap. 
+\end{DoxyEnumerate}
