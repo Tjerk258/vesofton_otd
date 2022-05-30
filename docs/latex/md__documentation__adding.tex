@@ -1,0 +1,32 @@
+\label{md__documentation__adding_Adding}%
+\Hypertarget{md__documentation__adding_Adding}%
+ On this page we will discuss how different fonts and bitmaps can be added to the code. ~\newline
+\hypertarget{md__documentation__adding_Bitmap}{}\doxysection{Bitmap}\label{md__documentation__adding_Bitmap}
+To add a bitmap to the code follow the following steps. ~\newline
+
+\begin{DoxyEnumerate}
+\item Add bitmap array into \mbox{\hyperlink{bitmap_8h_source}{bitmap.\+h}}
+\item change the first byte to the height of the picture
+\item change the second and third byte to the width of the picture wherby the second byte is the higher byte and the third byte is the lower byte.
+\item At the buttom of \mbox{\hyperlink{bitmap_8h_source}{bitmap.\+h}} change the array and add the name of bitmap. ~\newline
+
+\item You have succesfully added a bitmap to the code.
+\end{DoxyEnumerate}\hypertarget{md__documentation__adding_Fonts}{}\doxysection{Fonts}\label{md__documentation__adding_Fonts}
+To add a font to the code follow the following steps. ~\newline
+ Credit of the script for font generation is going to \href{https://github.com/jdmorise}{\texttt{ https\+://github.\+com/jdmorise}}.
+
+
+\begin{DoxyEnumerate}
+\item create a font with the python scirpt included in the repository.
+\begin{DoxyEnumerate}
+\item run the python scirpt in folder Font generator\textbackslash{}\+TTF2\+BMH-\/master\textbackslash{}src\textbackslash{}ttf2bmh.\+py with the following arguments \begin{DoxyVerb} python3 .\ttf2bmh.py --ascii --font <font> --variable_width -s <Hight in pixels> --square
+\end{DoxyVerb}
+ and generate the font to your likings in normal, Bold and italic in 8px height and 32px height.
+\end{DoxyEnumerate}
+\item add the files to /\+Core/\+Inc/fonts.
+\item In \mbox{\hyperlink{_a_p_i_8h_source}{API.\+h}} increase the value of FONT\+\_\+\+NUMBER with 1.
+\item In \mbox{\hyperlink{_a_p_i_8c}{API.\+c}} include al the font files
+\item In \mbox{\hyperlink{_a_p_i_8c}{API.\+c}} in the function \mbox{\hyperlink{_a_p_i_8c_a304c05f31c0a48f4bb4a7f532946ae18}{draw\+Text()}} add to the variable $\ast$$\ast$fonts\mbox{[}\mbox{]} the differnt fonts in the same order as the previous fonts.
+\item In \mbox{\hyperlink{_a_p_i_8c}{API.\+c}} in the function \mbox{\hyperlink{_a_p_i_8c_a304c05f31c0a48f4bb4a7f532946ae18}{draw\+Text()}} add to the variable font\+\_\+name the font name you added to be called by the script.
+\item You now have succesfully added a font to the code. 
+\end{DoxyEnumerate}

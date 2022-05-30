@@ -1,0 +1,65 @@
+\hypertarget{front__layer_8c}{}\doxysection{Core/\+Src/front\+\_\+layer.c File Reference}
+\label{front__layer_8c}\index{Core/Src/front\_layer.c@{Core/Src/front\_layer.c}}
+{\ttfamily \#include \char`\"{}front\+\_\+layer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}usart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{front__layer_8c_a6206b4e1a93bff0ae434d4808e3c2637}{FL\+\_\+\+UART\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Function for initialisatie of the UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{front__layer_8c_a3453d42c4849d5305ce47584eee502ce}{FL\+\_\+\+Parser}} ()
+\begin{DoxyCompactList}\small\item\em Function to check if the UART buffer is filled. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{front__layer_8c_a4b788d81a35005d3687d4b4b18901ad5}\label{front__layer_8c_a4b788d81a35005d3687d4b4b18901ad5}} 
+void {\bfseries softon\+Error\+Handler} (uint8\+\_\+t error)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{front__layer_8c_a0d0c46791672d829075326a134858672}\label{front__layer_8c_a0d0c46791672d829075326a134858672}} 
+\mbox{\hyperlink{structinput__vars}{input\+\_\+vars}} {\bfseries input}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Tjerk ten Dam 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\hypertarget{front__layer_8c_LICENSE}{}\doxysubsection{LICENSE}\label{front__layer_8c_LICENSE}
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\hypertarget{front__layer_8c_DESCRIPTION}{}\doxysubsection{DESCRIPTION}\label{front__layer_8c_DESCRIPTION}
+The time class represents a moment of time. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{front__layer_8c_a3453d42c4849d5305ce47584eee502ce}\label{front__layer_8c_a3453d42c4849d5305ce47584eee502ce}} 
+\index{front\_layer.c@{front\_layer.c}!FL\_Parser@{FL\_Parser}}
+\index{FL\_Parser@{FL\_Parser}!front\_layer.c@{front\_layer.c}}
+\doxysubsubsection{\texorpdfstring{FL\_Parser()}{FL\_Parser()}}
+{\footnotesize\ttfamily void FL\+\_\+\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to check if the UART buffer is filled. 
+
+Checks if UART buffer is filled and if it\textquotesingle{}s filled the logic layer is called for further processing.
+
+\begin{DoxyAuthor}{Author}
+Tjerk ten Dam 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{front__layer_8c_a6206b4e1a93bff0ae434d4808e3c2637}\label{front__layer_8c_a6206b4e1a93bff0ae434d4808e3c2637}} 
+\index{front\_layer.c@{front\_layer.c}!FL\_UART\_Init@{FL\_UART\_Init}}
+\index{FL\_UART\_Init@{FL\_UART\_Init}!front\_layer.c@{front\_layer.c}}
+\doxysubsubsection{\texorpdfstring{FL\_UART\_Init()}{FL\_UART\_Init()}}
+{\footnotesize\ttfamily void FL\+\_\+\+UART\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function for initialisatie of the UART. 
+
+First the function empties out the buffer and initialist the HAL UART
+
+\begin{DoxyAuthor}{Author}
+Tjerk ten Dam 
+\end{DoxyAuthor}

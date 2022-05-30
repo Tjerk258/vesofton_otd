@@ -5,7 +5,8 @@ With this software you can easily print different types of graphics on a vga scr
 This software can generate a VGA signal of 240 x 320 pixels.
 
 @section Flowchart
-The beautiful flowchart.
+The beautiful flowchart.  
+
 ![Flowchart](doxygen/images/test.png)
 
 @section subscript Script usages
