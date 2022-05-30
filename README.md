@@ -4,5 +4,5 @@ With this software you can easily print different types of graphics on a vga scr
 
 ## Documantation
 
-For documantation go to <https://tjerk258.github.io>
+For documantation go to <https://tjerk258.github.io/vesofton_otd/>
 
