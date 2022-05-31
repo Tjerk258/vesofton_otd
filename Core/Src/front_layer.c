@@ -108,6 +108,18 @@ void softonErrorHandler(uint8_t error)
 	case ERROR_COLOUR_NOT_FOUND:
 		puts("The colour you have entered, doesn't exist!");
 		break;
+	case ERROR_CIRCLE_WRONG_RADIUS:
+		puts("The circle input has wrong radius!");
+		break;
+	case ERROR_CIRCLE_OUT_OF_ANGLE:
+		puts("The circle angle is out of range!");
+		break;
+	case ERROR_PARALLELOGRAM_OUT_OF_RANGE:
+		puts("The Parallelogram is out of range!");
+		break;
+	case ERROR_PARALLELOGRAM_OUT_OF_ANGLE:
+		puts("The parallelogram out of range!");
+		break;
 	default:
 		puts("Unknown Error!");
 	}

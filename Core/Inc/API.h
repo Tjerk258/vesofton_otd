@@ -35,7 +35,7 @@
 #define BYTE_SIZE				8	//The size of a byte
 #define FONT_NUMBER				2	//The amount of fonts, this can be expended.
 #define FONT_NAME_SIZE			20	//The Size of fontname.
-#define FONT_SIZE				1	//Size of font, 0=8 and 1=32
+#define FONT_SIZE				2	//Size of font, 1=8 and 2=32
 #define FONT_STYLE				2	//Style of font, 0=standard, 1=Italic and 2=Bold
 #define SPACE_BETWEEN_LETTER 	2	//The space between the letter.
 #define LETTER_BITS				31	//Letter bits
@@ -73,6 +73,7 @@
  * @warning
  *
  */
+__weak void drawPixel(uint16_t xp, uint16_t yp, uint8_t colour);
 
 int drawBitmap(int nr, uint8_t x_1up, uint8_t y_1up);
 
@@ -104,7 +105,7 @@ int drawBitmap(int nr, uint8_t x_1up, uint8_t y_1up);
  * @warning
  */
 
-int drawText(int x, int y, uint8_t kleur, char tekst[], char fontname[], uint8_t fontgrootte, uint8_t fontstyle);
+int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_t fontgrootte, uint8_t fontstyle, uint8_t spaces, uint8_t linefeed);
 
 /**
  * @brief this function draws a single line from a to b
@@ -126,7 +127,7 @@ int drawText(int x, int y, uint8_t kleur, char tekst[], char fontname[], uint8_t
  *
  * @param x_begin,y_begin Coordinates where the line starts.
  * @param x_eind,y_eind Coordinates where the line ends.
- * @param kleur colour of the line
+ * @param colour colour of the line
  * @retval None
  * @author Osman Pekcan
  * @note Possible to optimize this function, since there was a finite amount of time this project needed to handed in.
@@ -134,7 +135,7 @@ int drawText(int x, int y, uint8_t kleur, char tekst[], char fontname[], uint8_t
  *
  */
 
-int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t kleur);
+int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t colour);
 
 /**
  * @brief This function draws multiple lines using mylijntekenaar function.
@@ -147,11 +148,11 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
  * 			If the derivative is higher than one its draw from the x axis, else its draws from the y axis
  *
  *@param lijn_dikte The variable that dictate how big the line width is.
- *@see myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t kleur)
+ *@see myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t colour)
  *@retval None
  *@author Osman Pekcan
  */
-int drawLines( uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t kleur,uint8_t lijn_dikte,uint8_t mid_lijn);
+int drawLines( uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t colour,uint8_t lijn_dikte,uint8_t mid_lijn);
 
 /**
  * @brief This function draws a rectangle either filled or not.
@@ -162,13 +163,13 @@ int drawLines( uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_e
  *
  *@param x_pos,y_pos Upper left position of the rectangle.
  *@param length,width Length and width of the rectangle.
- *@param kleur colour of rectangle.
+ *@param colour colour of rectangle.
  *@param filled Parameter that determines whether the rectangle is filled or not
  *@retval None
  *
  *@author Osman Pekcan
  */
-int drawRect(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_t kleur,uint8_t filled,uint8_t rectborder,uint8_t border_colour);
+int drawRect(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_t colour,uint8_t filled,uint8_t rectborder,uint8_t border_colour);
 
 /**
  * @brief This function draws a circle
@@ -179,13 +180,13 @@ int drawRect(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_
  *
  *@param x_pos,y_pos These are the x and y coordinates of the middle of the circle.
  *@param radius This is the radius of the circle.
- *@param kleur This is the colour of the circle
+ *@param colour This is the colour of the circle
  *<a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a>
  *@retval None
  *
  *@author Osman Pekcan
  */
-int drawCircle(uint16_t x_pos, uint16_t y_pos,uint8_t radius,uint8_t kleur,uint8_t lradius);
+int drawCircle(uint16_t x_pos, uint16_t y_pos,uint8_t radius,uint8_t colour,uint8_t lradius);
 /**
  * @brief This functions draw a figure with X amount of points
  *
@@ -195,13 +196,13 @@ int drawCircle(uint16_t x_pos, uint16_t y_pos,uint8_t radius,uint8_t kleur,uint8
  * 			with arithmetic code the argument that represent x coordinate are put into figure_ram_x.
  * 			likewise for the y coordinates.
  * 			with these to arrays the function can draw its figure with a for loop.
- * @param kleur This parameter is for colour of the lines
+ * @param colour This parameter is for colour of the lines
  * @param nr_pointgiven Locked the number of points
  *@retval None
  *
  * @author Osman Pekcan
  */
-int drawFigure(uint8_t kleur,uint8_t lijn_dikte,uint8_t nr_pointsgiven,...);
-int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_radius,uint16_t l_angle,uint16_t h_angle,uint8_t kleur);
-int drawParallelogram(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_t angle,uint8_t kleur);
+int drawFigure(uint8_t colour,uint8_t lijn_dikte,uint8_t nr_pointsgiven,...);
+int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_radius,uint16_t l_angle,uint16_t h_angle,uint8_t colour);
+int drawParallelogram(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_t angle,uint8_t colour);
 

@@ -107,7 +107,8 @@ int main(void)
   buffer_init();
 
   UB_VGA_FillScreen(VGA_COL_WHITE);
-
+  drawText(0, 20, VGA_COL_BLUE, "ABCDEFGHIJKLMNOPQRST", "arial", 1, 1, 1, 0);
+  drawText(0, 120, VGA_COL_BLUE, "ABCDEFGHIJKLMNOPQRST", "arial", 1, 1, 1, 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
