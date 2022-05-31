@@ -20,7 +20,7 @@ wait_vars wait;
  */
 uint8_t font_style(char command[])
 {
-	char styles_array[NUMBER_OF_FONT_STYLES][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"normaal","vet","cursief"};
+	char styles_array[NUMBER_OF_FONT_STYLES][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"normaal","cursief","vet"};
 	uint8_t i;
 	for(i = 0; i< NUMBER_OF_FONT_STYLES;i++)
 	{
@@ -193,7 +193,17 @@ int logic_layer(char commando[])
 		if(!k)
 			for(; commando[i] == ' '; i++);		//removing spaces add the beginnning of every script command
 
-		if(commando[i]==ASCII_OF_COMMA || commando[i]=='\0')
+		if(commando[i]==ASCII_OF_BACKSLASH)
+		{
+			if(commando[i+1]==ASCII_OF_COMMA)
+			{
+				i++;
+				commando_filled[j][k]=commando[i];
+				i++;
+				k++;
+			}
+		}
+		else if(commando[i]==ASCII_OF_COMMA || commando[i]=='\0')
 		{
 			for(; commando_filled[j][k-1] == ' '; k--);		//removing spaces add the end of every script command
 			commando_filled[j][k]='\0'; // Add end string for strcmp.
@@ -254,7 +264,9 @@ int logic_layer(char commando[])
 						(char*)commando_filled[4],
 						(char*)commando_filled[5],
 						(uint16_t)atoi((char*)commando_filled[6])-1,
-						font_style((char*)commando_filled[7]));
+						font_style((char*)commando_filled[7]),
+						(uint8_t)atoi((char*)commando_filled[8]),
+						(uint8_t)atoi((char*)commando_filled[9]));
 				break;
 			case 3:
 				drawBitmap((uint16_t)atoi((char*)commando_filled[1]),
