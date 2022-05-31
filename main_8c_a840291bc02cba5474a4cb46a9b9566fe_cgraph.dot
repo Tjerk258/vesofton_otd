@@ -1,0 +1,19 @@
+digraph "main"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="main",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The application entry point."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="drawText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_a_p_i_8c.html#a304c05f31c0a48f4bb4a7f532946ae18",tooltip="Draw text function, this function prints the text on the screen."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="FL_Parser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$front__layer_8c.html#a3453d42c4849d5305ce47584eee502ce",tooltip="Function to check if the UART buffer is filled."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="FL_UART_Init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$front__layer_8c.html#a6206b4e1a93bff0ae434d4808e3c2637",tooltip="Function for initialisatie of the UART."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SystemClock_Config",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a70af21c671abfcc773614a9a4f63d920",tooltip="System Clock Configuration."];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Error_Handler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a1730ffe1e560465665eb47d9264826f9",tooltip="This function is executed in case of error occurrence."];
+}
