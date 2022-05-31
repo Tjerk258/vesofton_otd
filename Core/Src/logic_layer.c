@@ -20,7 +20,7 @@ wait_vars wait;
  */
 uint8_t font_style(char command[])
 {
-	char styles_array[NUMBER_OF_FONT_STYLES][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"normaal","vet","cursief"};
+	char styles_array[NUMBER_OF_FONT_STYLES][MAX_NUMBER_OF_SCRIPT_CHARACTER] = {"normaal","cursief","vet"};
 	uint8_t i;
 	for(i = 0; i< NUMBER_OF_FONT_STYLES;i++)
 	{
@@ -254,7 +254,9 @@ int logic_layer(char commando[])
 						(char*)commando_filled[4],
 						(char*)commando_filled[5],
 						(uint16_t)atoi((char*)commando_filled[6])-1,
-						font_style((char*)commando_filled[7]));
+						font_style((char*)commando_filled[7]),
+						(uint8_t)atoi((char*)commando_filled[8]),
+						(uint8_t)atoi((char*)commando_filled[9]));
 				break;
 			case 3:
 				drawBitmap((uint16_t)atoi((char*)commando_filled[1]),
