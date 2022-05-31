@@ -601,7 +601,7 @@ int drawParallelogram(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t wid
 		softonErrorHandler(ERROR_PARALLELOGRAM_OUT_OF_RANGE);
 		return 23;
 	}
-	if (angle < 0 || angle > 90)
+	if (angle < 0 || angle > 360)
 	{
 		softonErrorHandler(ERROR_PARALLELOGRAM_OUT_OF_ANGLE);
 		return 24;
