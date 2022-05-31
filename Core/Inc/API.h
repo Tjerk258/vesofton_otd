@@ -111,9 +111,10 @@ void drawRect(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8
  *
  *@param x_pos,y_pos These are the x and y coordinates of the middle of the circle.
  *@param radius This is the radius of the circle.
- *@param kleur This is the color of the circle
+ *@param kleur This is the color of the circle  
+ *  
  *<a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a>  
- *[mathematic proof](https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/)
+ *
  *@retval None
  *
  *@author Osman Pekcan
