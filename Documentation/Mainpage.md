@@ -1,4 +1,5 @@
 @mainpage VGA Graphics library
+@tableofcontents
 
 With this software you can easily print different types of graphics on a vga screen over UART.   
 

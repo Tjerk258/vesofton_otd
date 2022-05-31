@@ -1,0 +1,10 @@
+name: run-doxygen
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      run: sudo apt install graphviz
+      uses: mattnotmitt/doxygen-action@v1.9.2
+      with:
+        enable-latex: true
