@@ -247,7 +247,6 @@ int drawLines(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_ei
 
 int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, uint8_t kleur, uint8_t filled,uint8_t rectborder,uint8_t border_colour)
 {
-//	drawText(20,20,VGA_COL_BLACK,"e","arial",0,0);
 	if(((x_pos+length) > VGA_DISPLAY_X) || ((y_pos+width) > VGA_DISPLAY_Y) || ((x_pos+length) < X_BEGIN) || ((y_pos+width) < Y_BEGIN))
 	{
 		softonErrorHandler(ERROR_RECT_OUT_OF_RANGE);
