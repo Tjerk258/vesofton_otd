@@ -42,7 +42,7 @@ The syntax for this scirpt is:
 With this script command a piece of text can be printed on the screen.  
 The syntax for this scirpt is:  
 
-    tekst, x, y, kleur, tekst, fontnaam, fontgrootte, fontstijl, ??
+    tekst, x, y, kleur, tekst, fontnaam, fontgrootte, fontstijl, space, linefeed
 
 - **x:** This is the x coördinate of the left upper cornor.  
 - **y:** This is the x coördinate of the left upper cornor.    
@@ -58,6 +58,10 @@ The syntax for this scirpt is:
     - "normaal" for normal.
     - "vet" for bold.
     - "cursief" for Italic.
+- **space:** This is the space between the characters in pixels.
+- **linefeed:** This is if you would like to go to the next line if the charchters go out of het screen.
+    - 0 for not next line.
+    - 0 for next line.    
 
 @section Bitmap
 With this script command a bitmap can be printed on the screen.  
