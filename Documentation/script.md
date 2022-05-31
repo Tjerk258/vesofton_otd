@@ -45,8 +45,9 @@ The syntax for this scirpt is:
     tekst, x, y, kleur, tekst, fontnaam, fontgrootte, fontstijl, ??
 
 - **x:** This is the x coördinate of the left upper cornor.  
-- **y:** This is the x coördinate of the left upper cornor.  .  
+- **y:** This is the x coördinate of the left upper cornor.    
 - **kleur:** This is the color of the line to be draw. see @ref color for the differnt colors to be used.  
+- **tekst:** This is the text that will be printed on the screen. If a comma needs te be printed a backslash can be put before it to prevent it to be seen als script delimitter. If tekst ends with a backslash be sure to put a space between the backslash and de comma delimitter to prevent it to be printed on the screen. 
 - **fontnaam:** This is the name of the font to be used. Standard available are:  
     - arial.  
     - consolas.  
