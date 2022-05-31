@@ -11,4 +11,4 @@ jobs:
       - uses: mattnotmitt/doxygen-action@v1.9.2
         with:
           working-directory: './'
-          enable-latex: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
