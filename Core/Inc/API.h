@@ -47,7 +47,7 @@
 #define X_BEGIN					0
 #define Y_BEGIN					0
 #define FIGURE_POINTS			5
-#define RADIUS_INCREMENT_CIRCLE 1800	//increment division of circle function
+#define RADIUS_INCREMENT_CIRCLE 180	//increment division of circle function
 #define HALF_CIRCLE_DEGREE 180 // angle of halve circle in degree
 
 /**
