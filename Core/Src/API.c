@@ -247,6 +247,7 @@ int drawLines(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_ei
 
 int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, uint8_t kleur, uint8_t filled,uint8_t rectborder,uint8_t border_colour)
 {
+//	drawText(20,20,VGA_COL_BLACK,"e","arial",0,0);
 	if(((x_pos+length) > VGA_DISPLAY_X) || ((y_pos+width) > VGA_DISPLAY_Y) || ((x_pos+length) < X_BEGIN) || ((y_pos+width) < Y_BEGIN))
 	{
 		softonErrorHandler(ERROR_RECT_OUT_OF_RANGE);
@@ -259,7 +260,7 @@ int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, ui
 	}
 
 	uint16_t i = 0;
-	if(filled == 0) // this code might not be elegant , comment if this zo "belgisch"
+	if(filled == 0)
 	{
 		for (i = y_pos; i < width +y_pos; i++) // Loops around the y axis
 			myLijntekenaar(x_pos, i, x_pos + length-1, i, kleur); // Draws around the x axis
@@ -476,11 +477,11 @@ int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_
 #endif
 			break;
 		}
-		else
-		{
-			softonErrorHandler(ERROR_FONT_NOT_FOUND);	//Typo, The fonts doesn't exist.
-			return 4;
-		}
+//		else
+//		{
+//			softonErrorHandler(ERROR_FONT_NOT_FOUND);	//Typo, The fonts doesn't exist.
+//			return 4;
+//		}
 	}
 	for(i = 0; i < strlen(tekst); i++)
 	{
@@ -502,8 +503,8 @@ int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_
 		}
 		x_old += k + SPACE_BETWEEN_LETTER;	//Space between the letters.
 	}
-	softonErrorHandler(ERROR_FONT_NOT_FOUND);
-	return 4;
+//	softonErrorHandler(ERROR_FONT_NOT_FOUND);
+//	return 4;
 }
 
 /**
