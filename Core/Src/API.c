@@ -263,7 +263,7 @@ int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, ui
 		return 4;
 	}
 	uint16_t i = 0;
-	if(filled == 0) // this code might not be elegant , comment if this zo "belgisch"
+	if(filled == 0)
 	{
 		for (i = y_pos; i < width +y_pos; i++) // Loops around the y axis
 			myLijntekenaar(x_pos, i, x_pos + length-1, i, colour); // Draws around the x axis

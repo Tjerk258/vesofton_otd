@@ -22,3 +22,4 @@ extern input_vars input;
 
 void FL_UART_Init();
 void FL_Parser();
+void error_on_screen(uint8_t error);

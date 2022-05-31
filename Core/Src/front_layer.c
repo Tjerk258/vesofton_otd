@@ -50,6 +50,7 @@ void FL_UART_Init()
 
 void softonErrorHandler(uint8_t error)
 {
+	error_on_screen(error);
 	switch(error)
 	{
 	case ERROR_BITMAP_NOT_FOUND:
@@ -123,4 +124,12 @@ void softonErrorHandler(uint8_t error)
 	default:
 		puts("Unknown Error!");
 	}
+}
+
+void error_on_screen(uint8_t error)
+{
+	char buffer[MAX_NUMBER_OF_SCRIPT_CHARACTER];
+	drawRect(268,226,50,12,VGA_COL_WHITE,0,1,VGA_COL_BLACK); // draws a white filled rectangle with black borders in the bottom right corner
+	drawText(275,227,VGA_COL_BLACK,"Error:","arial",0,0); // draws the text "Error:" inside the rectangle
+	drawText(307,227,VGA_COL_BLACK,itoa(error,buffer,10),"arial",0,0); // draws the number of error inside the rectangle
 }
