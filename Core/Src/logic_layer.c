@@ -193,7 +193,17 @@ int logic_layer(char commando[])
 		if(!k)
 			for(; commando[i] == ' '; i++);		//removing spaces add the beginnning of every script command
 
-		if(commando[i]==ASCII_OF_COMMA || commando[i]=='\0')
+		if(commando[i]==ASCII_OF_BACKSLASH)
+		{
+			if(commando[i+1]==ASCII_OF_COMMA)
+			{
+				i++;
+				commando_filled[j][k]=commando[i];
+				i++;
+				k++;
+			}
+		}
+		else if(commando[i]==ASCII_OF_COMMA || commando[i]=='\0')
 		{
 			for(; commando_filled[j][k-1] == ' '; k--);		//removing spaces add the end of every script command
 			commando_filled[j][k]='\0'; // Add end string for strcmp.

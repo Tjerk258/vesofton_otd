@@ -521,7 +521,7 @@ int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_
 				}
 			}
 		}
-		x_old += k + SPACE_BETWEEN_LETTER;	//Space between the letters.
+		x_old += k + spaces;	//Space between the letters.
 	}
 	return 0;
 }
