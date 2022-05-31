@@ -19,7 +19,8 @@
 //#define DEBUG_RECT_BOUNDS
 //#define DEBUG_LIJN_DIKTE
 //#define DEBUG_BITMAP_SIZE
-#define DEBUG_ANGLE_OF_CIRCLE
+//#define DEBUG_ANGLE_OF_CIRCLE
+//#define DEBUG_CORNER_PARALLELOGRAM
 
 #ifndef __weak
 	#define __weak   __attribute__((weak))
@@ -114,7 +115,7 @@ int drawText(int x, int y, uint8_t kleur, char tekst[], char fontname[], uint8_t
  *			When either offsets is equal to zero,the line becomes straight.
  *			If y offset is zero the function draws horizontal line, else a vertical line.
  *			In the situation that neither offset are zero,the function calculates the derivative of the line.
- *			The derivative of the line determines the agle that the line has.
+ *			The derivative of the line determines the angle that the line has.
  *			A derivative value lower than one has a small angle.
  *			If the angle is *small* (derivative<1) the y coordinates is calculated with the derivative.
  * 			If the angle is *big* (derivative>1) it is the inverse of the calculation of the smaller angle.

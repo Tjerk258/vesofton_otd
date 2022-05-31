@@ -26,13 +26,13 @@
 #include "fonts/Consolas_Bold_8.h"
 
 /**
- *@brief Weak decleared Draw pixel function for if the user wants to impelemnt his own desplay interface.
+ *@brief Weak decleared Draw pixel function for if the user wants to implement his own display interface.
  *
  *@details  By declaring this function in the user his own code the user can implement his own display interface code and still use this graphics library.
  *
  *
- *@param x x coördinate of the pixel
- *@param y y coördinate of the pixel
+ *@param x x coordinate of the pixel
+ *@param y y coordinate of the pixel
  *@param color color of the pixel
  *@author Tjerk ten Dam
  * */
@@ -298,7 +298,7 @@ int drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t kleur,uin
 	}
 	for (i = 0; i < (2 * M_PI); i += (M_PI/RADIUS_INCREMENT_CIRCLE))
 	{   // Needs an addition because the original formula makes a circle start at point (0,0)
-		for(j=lradius;j<radius;j++) // lower boundarie of the radius
+		for(j=lradius;j<=radius;j++) // lower boundarie of the radius
 		{
 			plaats_x = x_pos+round(j * cos(i)); // X = r*cosine(θ)
 			plaats_y = y_pos+round(j * sin(i));  // Y = r*sine(θ)
@@ -506,6 +506,21 @@ int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_
 	return 4;
 }
 
+/**
+ * @brief This function draws a circle
+ *
+ * @details By using **elementary** mathematics the function draw a circle.
+ * 			The for loop draws points of the circle until it drew the whole circle.
+ * 			The for loop goes through every angle between 0 - 2 PI radius
+ *
+ *@param x_pos,y_pos These are the x and y coordinates of the middle of the circle.
+ *@param radius This is the radius of the circle.
+ *@param kleur This is the colour of the circle
+ *<a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a>
+ *@retval None
+ *
+ *@author Osman Pekcan
+ */
 int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_radius,uint16_t l_angle,uint16_t h_angle,uint8_t kleur)
 {
 	float i=0; // Float because it hold division of PI which are decimal numbers.
@@ -517,7 +532,7 @@ int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_ra
 #endif
 	for(i=((float)l_angle/(float)HALF_CIRCLE_DEGREE)*M_PI;i<((float)h_angle/(float)HALF_CIRCLE_DEGREE)*M_PI;i += (M_PI/RADIUS_INCREMENT_CIRCLE))
 	{ // Loop from lower angle to higher angle
-		for(j=l_radius;j<h_radius;j++) // From lower boundary of the radius to the higher boundary
+		for(j=l_radius;j<=h_radius;j++) // From lower boundary of the radius to the higher boundary
 		{
 			plaats_x = x_pos+round(j * cos(i)); // X = r*cosine(θ)
 			plaats_y = y_pos+round(j * sin(-i));  // Y = r*sine(θ)
@@ -527,13 +542,27 @@ int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_ra
 	return 0;
 }
 
+/**
+ * @brief This function draws an parallelogram using length,width and an angle.
+ *
+ * @param x_pos X coordinate of top left corner
+ * @param y_pos Y coordinate of top left corner
+ * @param length The length of the parallelogram
+ * @param width The width of the parallelogram
+ * @param angle The angle of the bottom corner
+ * @param kleur Colour of the parallelogram
+ * @retval something
+ * @author Osman Pekcan
+ */
 int drawParallelogram(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_t angle,uint8_t kleur)
 {
 	uint8_t x_corner=0,y_corner =0,i=0;
 
-	y_corner = y_pos + length;
-	x_corner = x_pos - round((float)x_pos/tan(((float)angle/(float)HALF_CIRCLE_DEGREE)*M_PI));
-
+	y_corner = y_pos + length; // Y coordinate of the bottom left corner is simple calculated since the length is given.
+	x_corner = x_pos - round((float)x_pos/tan(((float)angle/(float)HALF_CIRCLE_DEGREE)*M_PI)); // X coordinate of bottom left corner is x coordinate of top left corner minus adjacent of a triangle.
+#ifdef DEBUG_CORNER_PARALLELOGRAM
+	printf("x corner is \t %d \n y corner is \t %d \n",x_corner,y_corner);
+#endif
 	for(i=0;i<width;i++)
 		myLijntekenaar(x_pos+i,y_pos,x_corner+i,y_corner,kleur);
 	return 0;
