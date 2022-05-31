@@ -1,3 +1,8 @@
-- name: Doxygen Action
-  uses: mattnotmitt/doxygen-action@1.9.1
-
+name: run-doxygen
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt install graphviz
+      - uses: mattnotmitt/doxygen-action@v1.9.2
