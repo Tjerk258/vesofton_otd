@@ -19,6 +19,8 @@
 //#define DEBUG_RECT_BOUNDS
 //#define DEBUG_LIJN_DIKTE
 //#define DEBUG_BITMAP_SIZE
+//#define DEBUG_ANGLE_OF_CIRCLE
+//#define DEBUG_CORNER_PARALLELOGRAM
 
 #ifndef __weak
 	#define __weak   __attribute__((weak))
@@ -45,8 +47,8 @@
 #define X_BEGIN					0
 #define Y_BEGIN					0
 #define FIGURE_POINTS			5
-#define RADIUS_INCREMENT_CIRCLE 360	//Radius of circle
-
+#define RADIUS_INCREMENT_CIRCLE 1800	//increment division of circle function
+#define HALF_CIRCLE_DEGREE 180 // angle of halve circle in degree
 
 /**
  * @brief this function shows a graphics image file (bitmaps) on VGA display.
@@ -113,7 +115,7 @@ int drawText(int x, int y, uint8_t kleur, char tekst[], char fontname[], uint8_t
  *			When either offsets is equal to zero,the line becomes straight.
  *			If y offset is zero the function draws horizontal line, else a vertical line.
  *			In the situation that neither offset are zero,the function calculates the derivative of the line.
- *			The derivative of the line determines the agle that the line has.
+ *			The derivative of the line determines the angle that the line has.
  *			A derivative value lower than one has a small angle.
  *			If the angle is *small* (derivative<1) the y coordinates is calculated with the derivative.
  * 			If the angle is *big* (derivative>1) it is the inverse of the calculation of the smaller angle.
@@ -200,4 +202,6 @@ int drawCircle(uint16_t x_pos, uint16_t y_pos,uint8_t radius,uint8_t kleur,uint8
  * @author Osman Pekcan
  */
 int drawFigure(uint8_t kleur,uint8_t lijn_dikte,uint8_t nr_pointsgiven,...);
+int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_radius,uint16_t l_angle,uint16_t h_angle,uint8_t kleur);
+int drawParallelogram(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_t angle,uint8_t kleur);
 
