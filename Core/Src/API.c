@@ -292,7 +292,7 @@ int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, ui
 
 int drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t colour,uint8_t lradius)
 {
-	float i=0; // Float because it hold division of PI which are decimal numbers.
+	uint16_t i=0; // Float because it hold division of PI which are decimal numbers.
 	uint8_t j=0;
 	int32_t plaats_x = 0, plaats_y = 0;
 	if((x_pos-radius < 0) || (y_pos-radius < 0) || (x_pos+radius > VGA_DISPLAY_X) ||  (y_pos+radius > VGA_DISPLAY_Y))
@@ -305,12 +305,12 @@ int drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t colour,ui
 		softonErrorHandler(ERROR_FONT_COLOUR_OUT_OF_RANGE);
 		return 4;
 	}
-	for (i = 0; i < (2 * M_PI); i += (M_PI/RADIUS_INCREMENT_CIRCLE))
+	for (i = 0; i < 2*M_PI*RADIUS_INCREMENT_CIRCLE; i += M_PI)
 	{   // Needs an addition because the original formula makes a circle start at point (0,0)
 		for(j=lradius;j<=radius;j++) // lower boundarie of the radius
 		{
-			plaats_x = x_pos+round(j * cos(i)); // X = r*cosine(θ)
-			plaats_y = y_pos+round(j * sin(i));  // Y = r*sine(θ)
+			plaats_x = x_pos+round(j * cos((float)i/RADIUS_INCREMENT_CIRCLE)); // X = r*cosine(θ)
+			plaats_y = y_pos+round(j * sin((float)i/RADIUS_INCREMENT_CIRCLE));  // Y = r*sine(θ)
 			drawPixel(plaats_x, plaats_y, colour);
 		}
 #ifdef DEBUG_CIRCLE_PLAATS
@@ -543,7 +543,7 @@ int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_
  */
 int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_radius,uint16_t l_angle,uint16_t h_angle,uint8_t colour)
 {
-	float i=0; // Float because it hold division of PI which are decimal numbers.
+	uint16_t i=0; // Float because it hold division of PI which are decimal numbers.
 	uint8_t j=0;
 	int32_t plaats_x = 0, plaats_y = 0;
 
@@ -570,12 +570,12 @@ int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_ra
 #ifdef DEBUG_ANGLE_OF_CIRCLE
 	printf("lower boundary \t %d \n higher boundary \t %d \n ", l_angle, h_angle);
 #endif
-	for(i=((float)l_angle/(float)HALF_CIRCLE_DEGREE)*M_PI;i<((float)h_angle/(float)HALF_CIRCLE_DEGREE)*M_PI;i += (M_PI/RADIUS_INCREMENT_CIRCLE))
+	for(i=l_angle*M_PI;i<h_angle*2*M_PI;i += M_PI)
 	{ // Loop from lower angle to higher angle
 		for(j=l_radius;j<=h_radius;j++) // From lower boundary of the radius to the higher boundary
 		{
-			plaats_x = x_pos+round(j * cos(i)); // X = r*cosine(θ)
-			plaats_y = y_pos+round(j * sin(-i));  // Y = r*sine(θ)
+			plaats_x = x_pos+round(j * cos((float)i/RADIUS_INCREMENT_CIRCLE)); // X = r*cosine(θ)
+			plaats_y = y_pos+round(j * sin(-(float)i/RADIUS_INCREMENT_CIRCLE));  // Y = r*sine(θ)
 			drawPixel(plaats_x, plaats_y, colour);
 		}
 	}

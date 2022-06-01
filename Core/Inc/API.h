@@ -47,7 +47,7 @@
 #define X_BEGIN					0
 #define Y_BEGIN					0
 #define FIGURE_POINTS			5
-#define RADIUS_INCREMENT_CIRCLE 180	//increment division of circle function
+#define RADIUS_INCREMENT_CIRCLE 360	//increment division of circle function
 #define HALF_CIRCLE_DEGREE 180 // angle of halve circle in degree
 
 /**
@@ -148,7 +148,8 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
  * 			If the derivative is higher than one its draw from the x axis, else its draws from the y axis
  *
  *@param lijn_dikte The variable that dictate how big the line width is.
- *@see myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t colour)
+ *@param mid_lijn If mid_lijn is equal to one,the function draws a black line with the original coordinates.
+ *@see myLijntekenaar()
  *@retval None
  *@author Osman Pekcan
  */
@@ -165,6 +166,8 @@ int drawLines( uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_e
  *@param length,width Length and width of the rectangle.
  *@param colour colour of rectangle.
  *@param filled Parameter that determines whether the rectangle is filled or not
+ *@param rectborder Parameter that determines if the function draws a border around the filled rectangle.
+ *@param border_colour The color value of the border.
  *@retval None
  *
  *@author Osman Pekcan
@@ -180,7 +183,8 @@ int drawRect(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_
  *
  *@param x_pos,y_pos These are the x and y coordinates of the middle of the circle.
  *@param radius This is the radius of the circle.
- *@param colour This is the colour of the circle
+ *@param colour This is the colour of the circle.
+ *@param lradius This is the lower boundary of radius
  *<a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a>
  *@retval None
  *
@@ -196,7 +200,8 @@ int drawCircle(uint16_t x_pos, uint16_t y_pos,uint8_t radius,uint8_t colour,uint
  * 			with arithmetic code the argument that represent x coordinate are put into figure_ram_x.
  * 			likewise for the y coordinates.
  * 			with these to arrays the function can draw its figure with a for loop.
- * @param colour This parameter is for colour of the lines
+ * @param colour This parameter is for colour of the lines.
+ * @param lijn_dikte The variable that dictate how big the line width is.
  * @param nr_pointgiven Locked the number of points
  *@retval None
  *
