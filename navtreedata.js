@@ -23,27 +23,12 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "vesofton_otd", "index.html", [
-    [ "VGA Graphics library", "index.html", [
-      [ "Flowchart", "index.html#Flowchart", null ],
-      [ "Script usages", "index.html#subscript", null ],
-      [ "Adding fonts and bitmaps", "index.html#subadding", null ],
-      [ "Debugging", "index.html#Debugging", null ]
-    ] ],
-    [ "Script turtorial", "_script.html", [
-      [ "Line", "_script.html#Line", null ],
-      [ "Rectangle", "_script.html#Rectangle", null ],
-      [ "Text", "_script.html#Text", null ],
-      [ "Bitmap", "_script.html#Bitmap", null ],
-      [ "Clearscreen", "_script.html#Clearscreen", null ],
-      [ "Wait", "_script.html#Wait", null ],
-      [ "Repeat", "_script.html#Repeat", null ],
-      [ "Circle", "_script.html#Circle", null ],
-      [ "Figure", "_script.html#Figure", null ],
-      [ "Colors", "_script.html#color", null ]
-    ] ],
-    [ "Adding fonts and bitmap to code", "_adding.html", [
-      [ "Fonts", "_adding.html#Fonts", null ]
-    ] ],
+    [ "VGA Graphics library", "index.html", null ],
+    [ "Script Turtorial", "_script.html", null ],
+    [ "add fonts/bitmaps", "_adding.html", null ],
+    [ "API", "_a_p_i_8c.html", null ],
+    [ "logic layer", "@ref logic_layer.c", null ],
+    [ "front layer", "front__layer_8c.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ]
@@ -60,7 +45,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_a_p_i_8c.html"
+"@ref logic_layer.c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

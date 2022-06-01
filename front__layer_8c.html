@@ -94,18 +94,19 @@ $(document).ready(function(){initNavTree('front__layer_8c.html',''); initResizab
 <div class="textblock"><code>#include &quot;front_layer.h&quot;</code><br />
 <code>#include &quot;usart.h&quot;</code><br />
 <code>#include &quot;error.h&quot;</code><br />
+<code>#include &quot;logic_layer.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6206b4e1a93bff0ae434d4808e3c2637"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="front__layer_8c.html#a6206b4e1a93bff0ae434d4808e3c2637">FL_UART_Init</a> ()</td></tr>
 <tr class="memdesc:a6206b4e1a93bff0ae434d4808e3c2637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for initialisatie of the UART.  <a href="front__layer_8c.html#a6206b4e1a93bff0ae434d4808e3c2637">More...</a><br /></td></tr>
 <tr class="separator:a6206b4e1a93bff0ae434d4808e3c2637"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3453d42c4849d5305ce47584eee502ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="front__layer_8c.html#a3453d42c4849d5305ce47584eee502ce">FL_Parser</a> ()</td></tr>
-<tr class="memdesc:a3453d42c4849d5305ce47584eee502ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to check if the UART buffer is filled.  <a href="front__layer_8c.html#a3453d42c4849d5305ce47584eee502ce">More...</a><br /></td></tr>
-<tr class="separator:a3453d42c4849d5305ce47584eee502ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b788d81a35005d3687d4b4b18901ad5"><td class="memItemLeft" align="right" valign="top"><a id="a4b788d81a35005d3687d4b4b18901ad5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>softonErrorHandler</b> (uint8_t error)</td></tr>
 <tr class="separator:a4b788d81a35005d3687d4b4b18901ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2599e45c33d2f9bb8d4a41ed3a9814dd"><td class="memItemLeft" align="right" valign="top"><a id="a2599e45c33d2f9bb8d4a41ed3a9814dd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>error_on_screen</b> (uint8_t error)</td></tr>
+<tr class="separator:a2599e45c33d2f9bb8d4a41ed3a9814dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -123,33 +124,6 @@ LICENSE</h1>
 DESCRIPTION</h1>
 <p>The time class represents a moment of time. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a3453d42c4849d5305ce47584eee502ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3453d42c4849d5305ce47584eee502ce">&#9670;&nbsp;</a></span>FL_Parser()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void FL_Parser </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Function to check if the UART buffer is filled. </p>
-<p>Checks if UART buffer is filled and if it's filled the logic layer is called for further processing.</p>
-<dl class="section author"><dt>Author</dt><dd>Tjerk ten Dam </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 0 -->
-</div>
-</div>
-
-</div>
-</div>
 <a id="a6206b4e1a93bff0ae434d4808e3c2637"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6206b4e1a93bff0ae434d4808e3c2637">&#9670;&nbsp;</a></span>FL_UART_Init()</h2>
 
@@ -171,7 +145,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 1 -->
+<div class="center"><!-- SVG 0 -->
 </div>
 </div>
 

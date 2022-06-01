@@ -22,7 +22,11 @@ for the JavaScript code in this file
 */
 var menudata={children:[
 {text:"Main Page",url:"index.html"},
-{text:"Related Pages",url:"pages.html"},
+{text:"Script Turtorial",url:"_script.html"},
+{text:"add fonts/bitmaps",url:"_adding.html"},
+{text:"API",url:"_a_p_i_8c.html"},
+{text:"logic layer",url:"@ref logic_layer.c"},
+{text:"front layer",url:"front__layer_8c.html"},
 {text:"Data Structures",url:"annotated.html",children:[
 {text:"Data Structures",url:"annotated.html"},
 {text:"Data Structure Index",url:"classes.html"}]},

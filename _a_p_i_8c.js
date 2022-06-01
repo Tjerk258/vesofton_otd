@@ -1,10 +1,13 @@
 var _a_p_i_8c =
 [
-    [ "drawBitmap", "_a_p_i_8c.html#a86881add4d4814c0b017aee94f92cd3c", null ],
-    [ "drawCircle", "_a_p_i_8c.html#a71cda68eb66cb04c866a666c0bbd1d03", null ],
-    [ "drawFigure", "_a_p_i_8c.html#ac4ad5c13603a59a2aab3700e6b63744c", null ],
-    [ "drawLines", "_a_p_i_8c.html#ae23921117ee7fd3cb5b9a4e3e9a1bb7b", null ],
-    [ "drawRect", "_a_p_i_8c.html#a9b8680e16a18e527bda500039f049fdb", null ],
-    [ "drawText", "_a_p_i_8c.html#a304c05f31c0a48f4bb4a7f532946ae18", null ],
-    [ "myLijntekenaar", "_a_p_i_8c.html#a1bc1193f15c9247c751bdecef4fdb2e6", null ]
+    [ "drawBitmap", "_a_p_i_8c.html#af677585fcb6baedb839d790d0f6c0b35", null ],
+    [ "drawCircle", "_a_p_i_8c.html#a24de40ac9d1761270bd4d2f4d7f83250", null ],
+    [ "drawCircleplus", "_a_p_i_8c.html#a876a6e7e41af799a6c2bb3521c3e3a2c", null ],
+    [ "drawFigure", "_a_p_i_8c.html#a3c61d216ef3786688fa8edf7487b8b76", null ],
+    [ "drawLines", "_a_p_i_8c.html#a4e7bde3fbe7108c08e94968a7ba1bff6", null ],
+    [ "drawParallelogram", "_a_p_i_8c.html#ad7a73d2beae8ac46d3f52da6bdd12af8", null ],
+    [ "drawPixel", "_a_p_i_8c.html#afb38ef1308ab37bae7720fc0d0a04357", null ],
+    [ "drawRect", "_a_p_i_8c.html#a9a0fa474fa1aa0911b24b4a5a307f734", null ],
+    [ "drawText", "_a_p_i_8c.html#afaf02c2505034b9c3800ccf56c4fe2f1", null ],
+    [ "myLijntekenaar", "_a_p_i_8c.html#a21ab1f60d9a00c021ad2ab65e19169f5", null ]
 ];

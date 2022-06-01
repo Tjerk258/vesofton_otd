@@ -7,5 +7,5 @@ digraph "drawLines"
   rankdir="LR";
   Node1 [label="drawLines",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This function draws multiple lines using mylijntekenaar function."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="myLijntekenaar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_a_p_i_8c.html#a1bc1193f15c9247c751bdecef4fdb2e6",tooltip="this function draws a single line from a to b"];
+  Node2 [label="myLijntekenaar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_a_p_i_8c.html#a21ab1f60d9a00c021ad2ab65e19169f5",tooltip="this function draws a single line from a to b"];
 }
