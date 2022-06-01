@@ -3,8 +3,7 @@
 
 With this software you can easily print different types of graphics on a vga screen over UART.   
 
-This software can generate a VGA signal of 240 x 320 pixels.  
-Doxygen now automated with github actions.  
+This software can generate a VGA signal of 240 x 320 pixels.
 
 @section Flowchart
 The beautiful flowchart.  
