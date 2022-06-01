@@ -185,7 +185,9 @@ int drawRect(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_
  *@param radius This is the radius of the circle.
  *@param colour This is the colour of the circle.
  *@param lradius This is the lower boundary of radius
- *<a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a>
+ *  
+ *<a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a>  
+ *
  *@retval None
  *
  *@author Osman Pekcan
