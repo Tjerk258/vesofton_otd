@@ -49,7 +49,7 @@ With this script command a rectangle can be printed on the screen. ~\newline
 \end{DoxyItemize}\hypertarget{md__documentation_script_Text}{}\doxysection{Text}\label{md__documentation_script_Text}
 With this script command a piece of text can be printed on the screen. ~\newline
  The syntax for this scirpt is\+: ~\newline
- \begin{DoxyVerb}tekst, x, y, kleur, tekst, fontnaam, fontgrootte, fontstijl, ??
+ \begin{DoxyVerb}tekst, x, y, kleur, tekst, fontnaam, fontgrootte, fontstijl, space, linefeed
 \end{DoxyVerb}
 
 \begin{DoxyItemize}
@@ -82,6 +82,13 @@ With this script command a piece of text can be printed on the screen. ~\newline
 \item \char`\"{}normaal\char`\"{} for normal.
 \item \char`\"{}vet\char`\"{} for bold.
 \item \char`\"{}cursief\char`\"{} for Italic.
+\end{DoxyItemize}
+\item {\bfseries{space\+:}} This is the space between the characters in pixels.
+\item {\bfseries{linefeed\+:}} This is if you would like to go to the next line if the charchters go out of het screen.
+\begin{DoxyItemize}
+\item 0 for not next line.
+\item 0 for next line. ~\newline
+
 \end{DoxyItemize}
 \end{DoxyItemize}\hypertarget{md__documentation__adding_Bitmap}{}\doxysection{Bitmap}\label{md__documentation__adding_Bitmap}
 With this script command a bitmap can be printed on the screen. ~\newline
