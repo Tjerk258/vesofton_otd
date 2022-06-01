@@ -6,6 +6,8 @@
     <tab type="user" url="@ref Script" title="Script Turtorial"/>
     <tab type="user" url="@ref Adding" title="add fonts/bitmaps"/>
     <tab type="user" url="@ref API.c" title="API"/>
+    <tab type="user" url="@ref logic_layer.c" title="logic layer"/>
+    <tab type="user" url="@ref front_layer.c" title="front layer"/>
     <tab type="pages" visible="no" title="" intro=""/>
     <tab type="modules" visible="yes" title="" intro=""/>
     <tab type="namespaces" visible="yes" title="">

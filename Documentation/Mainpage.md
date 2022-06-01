@@ -8,7 +8,7 @@ This software can generate a VGA signal of 240 x 320 pixels.
 @section Flowchart
 The beautiful flowchart.  
 
-![Flowchart](images/test.png)
+![Flowchart](images/Flowcharts_softon_Final.jpg)
 
 @section subscript Script usages
 see @ref Script
@@ -19,3 +19,5 @@ see @ref Adding
 @section Debugging
 In differnt header files some debug defines are commanded out. By adding those defines debug in the code can be enabled or disabled.
 
+@section Error Error handeling
+If a error ecours the error will be printed over the uart and the error code will be printed over VGA on the screen.
