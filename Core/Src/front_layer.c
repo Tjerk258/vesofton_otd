@@ -19,6 +19,7 @@
 #include "front_layer.h"
 #include "usart.h"
 #include "error.h"
+#include "logic_layer.h"
 
 input_vars input;
 
@@ -47,52 +48,88 @@ void FL_UART_Init()
 	HAL_UART_Receive_IT(&huart2, input.byte_buffer_rx, BYTE_BUFLEN);
 }
 
-/**
- * @brief Function to check if the UART buffer is filled.
- *
- * @details Checks if UART buffer is filled and if it's filled the logic layer is called for further processing.
- *
- *@author Tjerk ten Dam
- */
-void FL_Parser()
-{
-	if(input.command_execute_flag == TRUE)
-	{
-#if DEBUG_PARSER
-		printf("Parser result = %s", (char*)input.line_rx_buffer);
-#endif
-		//call logic layer fucntion
-		logic_layer(input.line_rx_buffer);
-		input.command_execute_flag = FALSE;
-	}
-}
-
 void softonErrorHandler(uint8_t error)
 {
+	error_on_screen(error);
 	switch(error)
 	{
 	case ERROR_BITMAP_NOT_FOUND:
 		puts("The number of bitmap you have chosen doesn't exist!");
 		break;
-	case ERROR_FIGURE_OUT_OFF_RANGE:
-		puts("Chosen fonts doesn't exist!");
+	case ERROR_BITMAP_OUT_OF_RANGE:
+		puts("Bitmap out of range!");
+		break;
+	case ERROR_BITMAP_POSITION_OUT_OF_RANGE:
+		puts("Bitmap positioning out of range!");
 		break;
 	case ERROR_FONT_NOT_FOUND:
-		puts("Font not found");
+		puts("Font not found!");
 		break;
 	case ERROR_FONT_OUT_OF_RANGE:
-		puts("blabla");
+		puts("Font out of range!");
 		break;
 	case ERROR_FONTSIZE_OUT_OF_RANGE:
-		puts("blabla");
+		puts("Font size out of range!");
 		break;
 	case ERROR_FONTSTYLE_OUT_OF_RANGE:
-		puts("blabla");
+		puts("Font style out of range!");
 		break;
-	case ERROR_BITMAP_OUT_OF_RANGE:
-		puts("blabla");
+	case ERROR_LINE_OUT_OF_RANGE:
+		puts("Line out of range!");
+		break;
+	case ERROR_LINE_LENGTH_OUT_OF_RANGE:
+		puts("Line length out of range");
+		break;
+	case ERROR_LINE_COLOUR_OUT_OF_RANGE:
+		puts("Line colour out of range!");
+		break;
+	case ERROR_LINE_WIDTH_OUT_OF_RANGE:
+		puts("Line width out of range!");
+		break;
+	case ERROR_RECT_OUT_OF_RANGE:
+		puts("Rectangle out of range!");
+		break;
+	case ERROR_RECT_COLOUR_OUT_OF_RANGE:
+		puts("Ractangle colour out of range!");
+		break;
+	case ERROR_FILLED_OUT_OF_RANGE:
+		puts("Filled out of range!");
+		break;
+	case ERROR_CIRCLE_COLOUR_OUT_OF_RANGE:
+		puts("Circle colour out of range!");
+		break;
+	case ERROR_CIRCLE_OUT_OF_RANGE:
+		puts("Circle out of range!");
+		break;
+	case ERROR_FIGURE_COLOUR_OUT_OF_RANGE:
+		puts("Figure colour out of range!");
+		break;
+	case ERROR_FIGURE_LENGTH_OUT_OF_RANGE:
+		puts("Figure length out of range!");
+	case ERROR_COLOUR_NOT_FOUND:
+		puts("The colour you have entered, doesn't exist!");
+		break;
+	case ERROR_CIRCLE_WRONG_RADIUS:
+		puts("The circle input has wrong radius!");
+		break;
+	case ERROR_CIRCLE_OUT_OF_ANGLE:
+		puts("The circle angle is out of range!");
+		break;
+	case ERROR_PARALLELOGRAM_OUT_OF_RANGE:
+		puts("The Parallelogram is out of range!");
+		break;
+	case ERROR_PARALLELOGRAM_OUT_OF_ANGLE:
+		puts("The parallelogram out of range!");
 		break;
 	default:
 		puts("Unknown Error!");
 	}
+}
+
+void error_on_screen(uint8_t error)
+{
+	char buffer[MAX_NUMBER_OF_SCRIPT_CHARACTER];
+	drawRect(268,226,50,12,VGA_COL_WHITE,0,1,VGA_COL_BLACK); // draws a white filled rectangle with black borders in the bottom right corner
+	drawText(275,227,VGA_COL_BLACK,"Error:","arial",0,0,2,0); // draws the text "Error:" inside the rectangle
+	drawText(307,227,VGA_COL_BLACK,itoa(error,buffer,10),"arial",0,0,2,0); // draws the number of error inside the rectangle
 }
