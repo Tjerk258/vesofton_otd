@@ -107,6 +107,7 @@ int main(void)
   buffer_init();
 
   UB_VGA_FillScreen(VGA_COL_WHITE);
+  puts("UART_STARTED: \n");
   /* USER CODE END 2 */
 
   /* Infinite loop */
