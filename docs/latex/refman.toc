@@ -1,0 +1,111 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}VGA Graphics library}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Flowchart}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Script usages}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Adding fonts and bitmaps}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Debugging}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Error handeling}{2}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Script turtorial}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Line}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Rectangle}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Text}{4}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Bitmap}{5}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Clearscreen}{6}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Wait}{6}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Repeat}{6}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Circle}{7}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Figure}{7}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Colors}{8}{section.2.10}%
+\contentsline {chapter}{\numberline {3}Adding fonts and bitmap to code}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Bitmap}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Fonts}{9}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Data Structure Index}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Data Structures}{11}{section.4.1}%
+\contentsline {chapter}{\numberline {5}File Index}{13}{chapter.5}%
+\contentsline {section}{\numberline {5.1}File List}{13}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Data Structure Documentation}{15}{chapter.6}%
+\contentsline {section}{\numberline {6.1}input\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}vars Struct Reference}{15}{section.6.1}%
+\contentsline {section}{\numberline {6.2}wait\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}vars Struct Reference}{15}{section.6.2}%
+\contentsline {chapter}{\numberline {7}File Documentation}{17}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}API.h File Reference}{17}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{18}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Function Documentation}{18}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}drawBitmap()}{18}{subsubsection.7.1.2.1}%
+\contentsline {subsubsection}{\numberline {7.1.2.2}drawCircle()}{19}{subsubsection.7.1.2.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.3}drawCircleplus()}{21}{subsubsection.7.1.2.3}%
+\contentsline {subsubsection}{\numberline {7.1.2.4}drawFigure()}{21}{subsubsection.7.1.2.4}%
+\contentsline {subsubsection}{\numberline {7.1.2.5}drawLines()}{22}{subsubsection.7.1.2.5}%
+\contentsline {subsubsection}{\numberline {7.1.2.6}drawParallelogram()}{23}{subsubsection.7.1.2.6}%
+\contentsline {subsubsection}{\numberline {7.1.2.7}drawPixel()}{24}{subsubsection.7.1.2.7}%
+\contentsline {subsubsection}{\numberline {7.1.2.8}drawRect()}{24}{subsubsection.7.1.2.8}%
+\contentsline {subsubsection}{\numberline {7.1.2.9}drawText()}{25}{subsubsection.7.1.2.9}%
+\contentsline {subsubsection}{\numberline {7.1.2.10}myLijntekenaar()}{26}{subsubsection.7.1.2.10}%
+\contentsline {section}{\numberline {7.2}API.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{27}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inc/bitmap.h File Reference}{28}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{29}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Variable Documentation}{29}{subsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.1}smiley\_map}{29}{subsubsection.7.3.2.1}%
+\contentsline {section}{\numberline {7.4}bitmap.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{29}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inc/error.h File Reference}{204}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{205}{subsection.7.5.1}%
+\contentsline {section}{\numberline {7.6}error.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{205}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inc/front\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}layer.h File Reference}{206}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{206}{subsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.7.2}Function Documentation}{206}{subsection.7.7.2}%
+\contentsline {subsubsection}{\numberline {7.7.2.1}FL\_UART\_Init()}{207}{subsubsection.7.7.2.1}%
+\contentsline {section}{\numberline {7.8}front\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}layer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{207}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inc/logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}layer.h File Reference}{207}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{208}{subsection.7.9.1}%
+\contentsline {subsection}{\numberline {7.9.2}Function Documentation}{208}{subsection.7.9.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.1}buffer\_init()}{209}{subsubsection.7.9.2.1}%
+\contentsline {subsubsection}{\numberline {7.9.2.2}HAL\_TIM\_PeriodElapsedCallback()}{209}{subsubsection.7.9.2.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.3}indexBuffer()}{209}{subsubsection.7.9.2.3}%
+\contentsline {subsubsection}{\numberline {7.9.2.4}logic\_layer()}{210}{subsubsection.7.9.2.4}%
+\contentsline {subsubsection}{\numberline {7.9.2.5}writeBuffer()}{210}{subsubsection.7.9.2.5}%
+\contentsline {section}{\numberline {7.10}logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}layer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{210}{section.7.10}%
+\contentsline {section}{\numberline {7.11}Core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inc/main.h File Reference}{211}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{212}{subsection.7.11.1}%
+\contentsline {subsection}{\numberline {7.11.2}Function Documentation}{212}{subsection.7.11.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.1}Error\_Handler()}{212}{subsubsection.7.11.2.1}%
+\contentsline {section}{\numberline {7.12}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{213}{section.7.12}%
+\contentsline {section}{\numberline {7.13}Core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inc/stm32f4xx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}it.h File Reference}{214}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{215}{subsection.7.13.1}%
+\contentsline {section}{\numberline {7.14}stm32f4xx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}it.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{215}{section.7.14}%
+\contentsline {section}{\numberline {7.15}Core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}API.c File Reference}{216}{section.7.15}%
+\contentsline {subsection}{\numberline {7.15.1}Detailed Description}{217}{subsection.7.15.1}%
+\contentsline {subsection}{\numberline {7.15.2}Function Documentation}{217}{subsection.7.15.2}%
+\contentsline {subsubsection}{\numberline {7.15.2.1}drawBitmap()}{217}{subsubsection.7.15.2.1}%
+\contentsline {subsubsection}{\numberline {7.15.2.2}drawCircle()}{218}{subsubsection.7.15.2.2}%
+\contentsline {subsubsection}{\numberline {7.15.2.3}drawCircleplus()}{218}{subsubsection.7.15.2.3}%
+\contentsline {subsubsection}{\numberline {7.15.2.4}drawFigure()}{219}{subsubsection.7.15.2.4}%
+\contentsline {subsubsection}{\numberline {7.15.2.5}drawLines()}{219}{subsubsection.7.15.2.5}%
+\contentsline {subsubsection}{\numberline {7.15.2.6}drawParallelogram()}{220}{subsubsection.7.15.2.6}%
+\contentsline {subsubsection}{\numberline {7.15.2.7}drawPixel()}{221}{subsubsection.7.15.2.7}%
+\contentsline {subsubsection}{\numberline {7.15.2.8}drawRect()}{221}{subsubsection.7.15.2.8}%
+\contentsline {subsubsection}{\numberline {7.15.2.9}drawText()}{222}{subsubsection.7.15.2.9}%
+\contentsline {subsubsection}{\numberline {7.15.2.10}myLijntekenaar()}{223}{subsubsection.7.15.2.10}%
+\contentsline {section}{\numberline {7.16}Core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/front\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}layer.c File Reference}{224}{section.7.16}%
+\contentsline {subsection}{\numberline {7.16.1}Detailed Description}{224}{subsection.7.16.1}%
+\contentsline {subsection}{\numberline {7.16.2}Function Documentation}{225}{subsection.7.16.2}%
+\contentsline {subsubsection}{\numberline {7.16.2.1}FL\_UART\_Init()}{225}{subsubsection.7.16.2.1}%
+\contentsline {section}{\numberline {7.17}Core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}layer.c File Reference}{225}{section.7.17}%
+\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{226}{subsection.7.17.1}%
+\contentsline {subsection}{\numberline {7.17.2}Function Documentation}{226}{subsection.7.17.2}%
+\contentsline {subsubsection}{\numberline {7.17.2.1}buffer\_init()}{226}{subsubsection.7.17.2.1}%
+\contentsline {subsubsection}{\numberline {7.17.2.2}font\_style()}{226}{subsubsection.7.17.2.2}%
+\contentsline {subsubsection}{\numberline {7.17.2.3}HAL\_TIM\_PeriodElapsedCallback()}{227}{subsubsection.7.17.2.3}%
+\contentsline {subsubsection}{\numberline {7.17.2.4}indexBuffer()}{227}{subsubsection.7.17.2.4}%
+\contentsline {subsubsection}{\numberline {7.17.2.5}logic\_layer()}{227}{subsubsection.7.17.2.5}%
+\contentsline {subsubsection}{\numberline {7.17.2.6}r3g3b2\_Colour()}{228}{subsubsection.7.17.2.6}%
+\contentsline {subsubsection}{\numberline {7.17.2.7}writeBuffer()}{228}{subsubsection.7.17.2.7}%
+\contentsline {section}{\numberline {7.18}Core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/main.c File Reference}{228}{section.7.18}%
+\contentsline {subsection}{\numberline {7.18.1}Detailed Description}{229}{subsection.7.18.1}%
+\contentsline {subsection}{\numberline {7.18.2}Function Documentation}{229}{subsection.7.18.2}%
+\contentsline {subsubsection}{\numberline {7.18.2.1}Error\_Handler()}{229}{subsubsection.7.18.2.1}%
+\contentsline {subsubsection}{\numberline {7.18.2.2}main()}{230}{subsubsection.7.18.2.2}%
+\contentsline {subsubsection}{\numberline {7.18.2.3}SystemClock\_Config()}{230}{subsubsection.7.18.2.3}%
+\contentsline {subsection}{\numberline {7.18.3}Variable Documentation}{231}{subsection.7.18.3}%
+\contentsline {subsubsection}{\numberline {7.18.3.1}USART\_PRINTF}{231}{subsubsection.7.18.3.1}%
+\contentsline {section}{\numberline {7.19}Core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/stm32f4xx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}it.c File Reference}{231}{section.7.19}%
+\contentsline {subsection}{\numberline {7.19.1}Detailed Description}{232}{subsection.7.19.1}%
+\contentsline {chapter}{Index}{233}{section*.46}%

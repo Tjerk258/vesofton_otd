@@ -1,3 +1,10 @@
+/**
+  ******************************************************************************
+  * @file           : logic_layer.c
+  * @brief          : Logic layer
+  ******************************************************************************
+  */
+
 #include "logic_layer.h"
 #include "stm32_ub_vga_screen.h"
 #include "error.h"
@@ -7,7 +14,7 @@
 wait_vars wait;
 
 /**
- *@brief	This function translates font_style tekst to variable.
+ *@brief	This function translates font_style text to variable.
  *
  *@param command This is the font_style string.
  *
@@ -45,7 +52,7 @@ uint8_t font_style(char command[])
 uint8_t r3g3b2_Colour(char command[])
 {
 	char colourList[COLOUR_LIST][COLOUR_CHAR_MAX]= { "zwart", "blauw", "lichtblauw", "groen", "lichtgroen", "rood", "lichtrood", "wit",
-													 "cyaan", "lichtcyaan", "magenta", "lichtmagenta", "bruin", "geel", "grijs", "roos", "paars" };
+													 "cyaan", "lichtcyaan", "magenta", "lichtmagenta", "bruin", "geel", "grijs", "roze", "paars" };
 		uint8_t i= 0;
 		uint8_t colourNumber = (sizeof(colourList) / sizeof(colourList[0])); //Define maken voor positie nul?
 		for (i=0; i < colourNumber; i++)
@@ -130,7 +137,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 
 /**
- *@brief	This function writes a array to the cirulair script buffer
+ *@brief	This function writes a array to the circular script buffer
  *
  *@param buf	array to be write to the script buffer
  *
@@ -148,7 +155,7 @@ void writeBuffer(char buf[])
 }
 
 /**
- *@brief	This function translates a index for the script buffer
+ *@brief	This function translates an index for the script buffer
  *
  *@param index index for the script buffer
  *

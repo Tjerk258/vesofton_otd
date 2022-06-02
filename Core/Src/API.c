@@ -41,6 +41,33 @@ __weak void drawPixel(uint16_t xp, uint16_t yp, uint8_t colour)
 	UB_VGA_SetPixel(xp, yp, colour);
 }
 
+/**
+ * @brief this function draws a single line from a to b
+ *
+ *@details 	This function starts with 5 variables, x and y coordinate for the begin and x and y coordinates for the end.
+ *			The last variable as colour of the line.
+ *			The function first calculates the offset of both x and y coordinates.
+ *			When either offsets is equal to zero,the line becomes straight.
+ *			If y offset is zero the function draws horizontal line, else a vertical line.
+ *			In the situation that neither offset are zero,the function calculates the derivative of the line.
+ *			The derivative of the line determines the angle that the line has.
+ *			A derivative value lower than one has a small angle.
+ *			If the angle is *small* (derivative<1) the y coordinates is calculated with the derivative.
+ * 			If the angle is *big* (derivative>1) it is the inverse of the calculation of the smaller angle.
+ * 			After the function looks whether the derivative is higher than one,the function looks if the derivative is positive or negative.
+ * 			This determines if some parameter is positive or negative.
+ * 			Lastly the function looks at orientation of the line with respect to the x axis, which decides which parameter is the start point and end point of the calculation.
+ *
+ *
+ * @param x_begin,y_begin Coordinates where the line starts.
+ * @param x_eind,y_eind Coordinates where the line ends.
+ * @param colour colour of the line
+ * @retval Error
+ * @author Osman Pekcan
+ * @note Possible to optimize this function, since there was a finite amount of time this project needed to handed in.
+ * @warning It is possible to relocate the derivative calculation but when the x offset is zero, the calculate would have a division by zero.
+ *
+ */
 int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t colour)
 {
 	if((x_begin < 0) || (y_begin < 0) || (x_eind > VGA_DISPLAY_X) || (y_eind > VGA_DISPLAY_Y))
@@ -207,6 +234,22 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
 	return 0;
 }
 
+/**
+ * @brief This function draws multiple lines using mylijntekenaar function.
+ *
+ * @details By repeating the function mylijntekenaar, this draws multiple lines.
+ * 			To do this it checks the parameter which concludes the width of the sum of lines.
+ * 			If it is one, the function just calls the function mylijntekenaar once.
+ * 			Else draws the lines around the middle line(original x and y positions).
+ * 			For the function to know whether to draw extra line in the x axis or y axis it looks at the derivative.
+ * 			If the derivative is higher than one its draw from the x axis, else its draws from the y axis
+ *
+ *@param lijn_dikte The variable that dictate how big the line width is.
+ *@param mid_lijn If mid_lijn is equal to one,the function draws a black line with the original coordinates.
+ *@see myLijntekenaar()
+ *@retval Error
+ *@author Osman Pekcan
+ */
 int drawLines(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind, uint8_t colour, uint8_t lijn_dikte, uint8_t mid_lijn)
 {
 	uint8_t i = 0; uint8_t lijnwaarde = 0; float derivative = 0.0;
@@ -245,6 +288,23 @@ int drawLines(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_ei
 	return 0;
 }
 
+/**
+ * @brief This function draws a rectangle either filled or not.
+ *
+ * @details This function draw either a filled or unfilled rectangle, using filled parameter to decide which one.
+ * 			If it filled, its loops from y axis, drawing lines (using mylijntekenaar) from x axis.
+ * 			If it unfilled draws four lines of the unfilled rectangle
+ *
+ *@param x_pos,y_pos Upper left position of the rectangle.
+ *@param length,width Length and width of the rectangle.
+ *@param colour colour of rectangle.
+ *@param filled Parameter that determines whether the rectangle is filled or not
+ *@param rectborder Parameter that determines if the function draws a border around the filled rectangle.
+ *@param border_colour The color value of the border.
+ *@retval Error
+ *
+ *@author Osman Pekcan
+ */
 int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, uint8_t colour, uint8_t filled,uint8_t rectborder,uint8_t border_colour)
 {
 	if(((x_pos+length) > VGA_DISPLAY_X) || ((y_pos+width) > VGA_DISPLAY_Y) || ((x_pos+length) < X_BEGIN) || ((y_pos+width) < Y_BEGIN))
@@ -290,6 +350,24 @@ int drawRect(uint16_t x_pos, uint16_t y_pos, uint16_t length, uint16_t width, ui
 	return 0;
 }
 
+/**
+ * @brief This function draws a circle
+ *
+ * @details By using **elementary** mathematics the function draw a circle.
+ * 			The for loop draws points of the circle until it drew the whole circle.
+ * 			The for loop goes through every angle between 0 - 2 PI radius
+ *
+ *@param x_pos,y_pos These are the x and y coordinates of the middle of the circle.
+ *@param radius This is the radius of the circle.
+ *@param colour This is the colour of the circle.
+ *@param lradius This is the lower boundary of radius
+ *
+ *<a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a>
+ *
+ *@retval Error
+ *
+ *@author Osman Pekcan
+ */
 int drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t colour,uint8_t lradius)
 {
 	uint16_t i=0; // Float because it hold division of PI which are decimal numbers.
@@ -319,7 +397,22 @@ int drawCircle(uint16_t x_pos, uint16_t y_pos, uint8_t radius, uint8_t colour,ui
 	}
 	return 0;
 }
-
+/**
+ * @brief This functions draw a figure with X amount of points
+ *
+ * @details With the function mylijntekenaar,this function draws multiple line that are chained to each other.
+ * 			With va_list the argument after nr_pointsgiven are saved in a list.
+ * 			Using va_arg the argument are put into two array.figure_ram_x and figure_ram_y.
+ * 			with arithmetic code the argument that represent x coordinate are put into figure_ram_x.
+ * 			likewise for the y coordinates.
+ * 			with these to arrays the function can draw its figure with a for loop.
+ * @param colour This parameter is for colour of the lines.
+ * @param lijn_dikte The variable that dictate how big the line width is.
+ * @param nr_pointgiven Locked the number of points
+ *@retval Error
+ *
+ * @author Osman Pekcan
+ */
 int drawFigure(uint8_t colour, uint8_t lijn_dikte, uint8_t nr_pointsgiven,...)
 {
 	if (colour > COLOURMAX || colour < COLOURMIN)
@@ -372,6 +465,7 @@ int drawFigure(uint8_t colour, uint8_t lijn_dikte, uint8_t nr_pointsgiven,...)
  *
  *@param nr is the bitmap number to draw.
  *@param x_1up and y_1up is the position of the bitmap
+ *@retval Error
  *@author Djalil & Tjerk
  * */
 int drawBitmap(int nr, uint8_t x_1up, uint8_t y_1up)
@@ -434,6 +528,7 @@ int drawBitmap(int nr, uint8_t x_1up, uint8_t y_1up)
  *@param fontname Can be chosen from fonts of Arial and Consolas.
  *@param fontsize is the size of the font. The size can be chosen from 8 or 32. 0 = 8 and 1 = 32.
  *@param frontstyle is the style of fonts, this can be chosen of Italic, Bold.
+ *@retval Error
  *@author Djalil & Tjerk
 */
 
@@ -535,9 +630,10 @@ int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_
  *
  *@param x_pos,y_pos These are the x and y coordinates of the middle of the circle.
  *@param radius This is the radius of the circle.
+ *@param angle the angle where to start and stop the circle
  *@param colour This is the colour of the circle
  *<a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a>
- *@retval None
+ *@retval Error
  *
  *@author Osman Pekcan
  */
@@ -591,7 +687,7 @@ int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_ra
  * @param width The width of the parallelogram
  * @param angle The angle of the bottom corner
  * @param colour Colour of the parallelogram
- * @retval something
+ * @retval Error
  * @author Osman Pekcan
  */
 int drawParallelogram(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_t angle,uint8_t colour)

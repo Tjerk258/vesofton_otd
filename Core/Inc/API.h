@@ -1,3 +1,9 @@
+/**
+  ******************************************************************************
+  * @file           : API.h
+  * @brief          : Library for Graphics.
+  ******************************************************************************
+  */
 
 #include <stdio.h>
 #include <stdint.h>
@@ -50,6 +56,7 @@
 #define RADIUS_INCREMENT_CIRCLE 360	//increment division of circle function
 #define HALF_CIRCLE_DEGREE 180 // angle of halve circle in degree
 
+__weak void drawPixel(uint16_t xp, uint16_t yp, uint8_t colour);
 /**
  * @brief this function shows a graphics image file (bitmaps) on VGA display.
  *
@@ -67,14 +74,12 @@
  *
  * @param nr is the bitmap number to display.
  * @param x_1up and y_1up is the left upper position of the bitmap
- * @retval 0
+ * @retval Error
  * @author Djalil & Tjerk
  * @note Bitmap size must be smaller or equal to VGA resolution.
  * @warning
  *
  */
-__weak void drawPixel(uint16_t xp, uint16_t yp, uint8_t colour);
-
 int drawBitmap(int nr, uint8_t x_1up, uint8_t y_1up);
 
 /**
@@ -99,7 +104,7 @@ int drawBitmap(int nr, uint8_t x_1up, uint8_t y_1up);
  * @param fontsize is the size of the font. The size can be chosen from 8 or 32. 0=8 and 1=32.
  * @param frontstyle is the style of fonts, this can be chosen of Italic, Bold.
  * @author Djalil & Tjerk
- * @retval
+ * @retval Error
  * @note
  *
  * @warning
@@ -128,7 +133,7 @@ int drawText(int x, int y, uint8_t colour, char tekst[], char fontname[], uint8_
  * @param x_begin,y_begin Coordinates where the line starts.
  * @param x_eind,y_eind Coordinates where the line ends.
  * @param colour colour of the line
- * @retval None
+ * @retval Error
  * @author Osman Pekcan
  * @note Possible to optimize this function, since there was a finite amount of time this project needed to handed in.
  * @warning It is possible to relocate the derivative calculation but when the x offset is zero, the calculate would have a division by zero.
@@ -150,7 +155,7 @@ int myLijntekenaar(uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t
  *@param lijn_dikte The variable that dictate how big the line width is.
  *@param mid_lijn If mid_lijn is equal to one,the function draws a black line with the original coordinates.
  *@see myLijntekenaar()
- *@retval None
+ *@retval Error
  *@author Osman Pekcan
  */
 int drawLines( uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_eind,uint8_t colour,uint8_t lijn_dikte,uint8_t mid_lijn);
@@ -168,7 +173,7 @@ int drawLines( uint16_t x_begin, uint16_t y_begin, uint16_t x_eind, uint16_t y_e
  *@param filled Parameter that determines whether the rectangle is filled or not
  *@param rectborder Parameter that determines if the function draws a border around the filled rectangle.
  *@param border_colour The color value of the border.
- *@retval None
+ *@retval Error
  *
  *@author Osman Pekcan
  */
@@ -188,7 +193,7 @@ int drawRect(uint16_t x_pos,uint16_t y_pos,uint16_t length,uint16_t width,uint8_
  *  
  *<a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a>  
  *
- *@retval None
+ *@retval Error
  *
  *@author Osman Pekcan
  */
@@ -205,7 +210,7 @@ int drawCircle(uint16_t x_pos, uint16_t y_pos,uint8_t radius,uint8_t colour,uint
  * @param colour This parameter is for colour of the lines.
  * @param lijn_dikte The variable that dictate how big the line width is.
  * @param nr_pointgiven Locked the number of points
- *@retval None
+ *@retval Error
  *
  * @author Osman Pekcan
  */

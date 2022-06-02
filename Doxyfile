@@ -884,7 +884,6 @@ INPUT                  = Documentation/Mainpage.md \
                          Core/Src/front_layer.c \
                          Core/Inc/API.h \
                          Core/Inc/bitmap.h \
-                         Core/Inc/dma.h \
                          Core/Inc/error.h \
                          Core/Inc/front_layer.h \
                          Core/Inc/logic_layer.h \
@@ -1893,7 +1892,7 @@ LATEX_OUTPUT           = latex
 # the output language.
 # This tag requires that the tag GENERATE_LATEX is set to YES.
 
-LATEX_CMD_NAME         =
+LATEX_CMD_NAME         = pdflatex
 
 # The MAKEINDEX_CMD_NAME tag can be used to specify the command name to generate
 # index for LaTeX.

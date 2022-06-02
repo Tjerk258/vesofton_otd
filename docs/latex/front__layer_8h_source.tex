@@ -1,30 +1,32 @@
 \hypertarget{front__layer_8h_source}{}\doxysection{front\+\_\+layer.\+h}
 \label{front__layer_8h_source}\index{Core/Inc/front\_layer.h@{Core/Inc/front\_layer.h}}
-
+\mbox{\hyperlink{front__layer_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <stdint.h>}}
-\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_8h}{main.h}}"{}}}
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}error.h"{}}}
-\DoxyCodeLine{4 }
-\DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#define BYTE\_BUFLEN      1}}
-\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LINE\_BUFLEN      1024}}
-\DoxyCodeLine{8 \textcolor{preprocessor}{\#define CARRIAGE\_RETURN  13 }\textcolor{comment}{/* carriage return char \(\backslash\)r */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{9 \textcolor{preprocessor}{\#define LINE\_FEED        10 }\textcolor{comment}{/* linefeed char \(\backslash\)n        */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_8h}{main.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{error_8h}{error.h}}"{}}}
+\DoxyCodeLine{9 }
 \DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
-\DoxyCodeLine{12 \{}
-\DoxyCodeLine{13     uint8\_t byte\_buffer\_rx[BYTE\_BUFLEN];    \textcolor{comment}{// Store the rx byte from the USART2}}
-\DoxyCodeLine{14     \textcolor{keywordtype}{char} line\_rx\_buffer[LINE\_BUFLEN];       \textcolor{comment}{// Buffer to hold all the bytes from rx USART2}}
-\DoxyCodeLine{15     \textcolor{keywordtype}{int} msglen;}
-\DoxyCodeLine{16     \textcolor{keyword}{volatile} \textcolor{keywordtype}{int} char\_counter;              \textcolor{comment}{// Counter for line\_rx\_buffer}}
-\DoxyCodeLine{17     \textcolor{keywordtype}{char} command\_execute\_flag;              \textcolor{comment}{/* Set = whole transmission is received, ready for processing \(\backslash\)}}
-\DoxyCodeLine{18 \textcolor{comment}{                                               Reset = still receiving*/}}
-\DoxyCodeLine{19 \}\mbox{\hyperlink{structinput__vars}{input\_vars}};}
-\DoxyCodeLine{20 }
-\DoxyCodeLine{21 \textcolor{keyword}{extern} \mbox{\hyperlink{structinput__vars}{input\_vars}} input;}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23 \textcolor{keywordtype}{void} \mbox{\hyperlink{front__layer_8c_a6206b4e1a93bff0ae434d4808e3c2637}{FL\_UART\_Init}}();}
-\DoxyCodeLine{24 \textcolor{keywordtype}{void} \mbox{\hyperlink{front__layer_8c_a3453d42c4849d5305ce47584eee502ce}{FL\_Parser}}();}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define BYTE\_BUFLEN      1}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define LINE\_BUFLEN      1024}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define CARRIAGE\_RETURN  13 }\textcolor{comment}{/* carriage return char \(\backslash\)r */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define LINE\_FEED        10 }\textcolor{comment}{/* linefeed char \(\backslash\)n        */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     uint8\_t byte\_buffer\_rx[BYTE\_BUFLEN];    \textcolor{comment}{// Store the rx byte from the USART2}}
+\DoxyCodeLine{19     \textcolor{keywordtype}{char} line\_rx\_buffer[LINE\_BUFLEN];       \textcolor{comment}{// Buffer to hold all the bytes from rx USART2}}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} msglen;}
+\DoxyCodeLine{21     \textcolor{keyword}{volatile} \textcolor{keywordtype}{int} char\_counter;              \textcolor{comment}{// Counter for line\_rx\_buffer}}
+\DoxyCodeLine{22     \textcolor{keywordtype}{char} command\_execute\_flag;              \textcolor{comment}{/* Set = whole transmission is received, ready for processing \(\backslash\)}}
+\DoxyCodeLine{23 \textcolor{comment}{                                               Reset = still receiving*/}}
+\DoxyCodeLine{24 \}\mbox{\hyperlink{structinput__vars}{input\_vars}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{extern} \mbox{\hyperlink{structinput__vars}{input\_vars}} input;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keywordtype}{void} \mbox{\hyperlink{front__layer_8h_a6206b4e1a93bff0ae434d4808e3c2637}{FL\_UART\_Init}}();}
+\DoxyCodeLine{29 \textcolor{keywordtype}{void} FL\_Parser();}
+\DoxyCodeLine{30 \textcolor{keywordtype}{void} error\_on\_screen(uint8\_t error);}
 
 \end{DoxyCode}

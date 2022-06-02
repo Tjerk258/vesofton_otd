@@ -1,0 +1,104 @@
+\hypertarget{error_8h}{}\doxysection{Core/\+Inc/error.h File Reference}
+\label{error_8h}\index{Core/Inc/error.h@{Core/Inc/error.h}}
+
+
+\+: Defines for all error codes  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{error_8h_a453476f242b949b9e8fc323fc6cd9095}\label{error_8h_a453476f242b949b9e8fc323fc6cd9095}} 
+\#define {\bfseries ERROR\+\_\+\+BITMAP\+\_\+\+NOT\+\_\+\+FOUND}~1
+\item 
+\mbox{\Hypertarget{error_8h_a0965b4b76752e37da148d6ca972b0e3c}\label{error_8h_a0965b4b76752e37da148d6ca972b0e3c}} 
+\#define {\bfseries ERROR\+\_\+\+BITMAP\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~2
+\item 
+\mbox{\Hypertarget{error_8h_aff5f8423235bdfd4f265b479f4c7a57d}\label{error_8h_aff5f8423235bdfd4f265b479f4c7a57d}} 
+\#define {\bfseries ERROR\+\_\+\+BITMAP\+\_\+\+POSITION\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~3
+\item 
+\mbox{\Hypertarget{error_8h_aded7501590622614ae4c02de8ee5e64e}\label{error_8h_aded7501590622614ae4c02de8ee5e64e}} 
+\#define {\bfseries ERROR\+\_\+\+FONT\+\_\+\+COLOUR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~4
+\item 
+\mbox{\Hypertarget{error_8h_a2c65613e006d754684f931b114c7a4f8}\label{error_8h_a2c65613e006d754684f931b114c7a4f8}} 
+\#define {\bfseries ERROR\+\_\+\+FONT\+\_\+\+NOT\+\_\+\+FOUND}~5
+\item 
+\mbox{\Hypertarget{error_8h_a0bed7eec252befcf493da6efebe794bc}\label{error_8h_a0bed7eec252befcf493da6efebe794bc}} 
+\#define {\bfseries ERROR\+\_\+\+FONT\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~6
+\item 
+\mbox{\Hypertarget{error_8h_a7e6a2c478327ced66adf87eb184f917b}\label{error_8h_a7e6a2c478327ced66adf87eb184f917b}} 
+\#define {\bfseries ERROR\+\_\+\+FONTSIZE\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~7
+\item 
+\mbox{\Hypertarget{error_8h_a6d1c62361c8c7f0646b3f4cec5328f40}\label{error_8h_a6d1c62361c8c7f0646b3f4cec5328f40}} 
+\#define {\bfseries ERROR\+\_\+\+FONTSTYLE\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~8
+\item 
+\mbox{\Hypertarget{error_8h_a0cfeed85281691f110cc97ee7c842a40}\label{error_8h_a0cfeed85281691f110cc97ee7c842a40}} 
+\#define {\bfseries ERROR\+\_\+\+LINE\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~9
+\item 
+\mbox{\Hypertarget{error_8h_a15981b21386c7073838bc0f992e206b7}\label{error_8h_a15981b21386c7073838bc0f992e206b7}} 
+\#define {\bfseries ERROR\+\_\+\+LINE\+\_\+\+LENGTH\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~10
+\item 
+\mbox{\Hypertarget{error_8h_abbcc0db768ce3cfe597cf231a0d33547}\label{error_8h_abbcc0db768ce3cfe597cf231a0d33547}} 
+\#define {\bfseries ERROR\+\_\+\+LINE\+\_\+\+COLOUR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~11
+\item 
+\mbox{\Hypertarget{error_8h_a783fb82dc628ddc13c704c6229cfbfe1}\label{error_8h_a783fb82dc628ddc13c704c6229cfbfe1}} 
+\#define {\bfseries ERROR\+\_\+\+LINE\+\_\+\+WIDTH\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~12
+\item 
+\mbox{\Hypertarget{error_8h_a6bd9d07baf444219b96e3a4158b96f02}\label{error_8h_a6bd9d07baf444219b96e3a4158b96f02}} 
+\#define {\bfseries ERROR\+\_\+\+RECT\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~13
+\item 
+\mbox{\Hypertarget{error_8h_a4906e216d518c61cacd58deb389b13a2}\label{error_8h_a4906e216d518c61cacd58deb389b13a2}} 
+\#define {\bfseries ERROR\+\_\+\+RECT\+\_\+\+COLOUR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~14
+\item 
+\mbox{\Hypertarget{error_8h_a2e168c6d1002dabd15a4c144482d7261}\label{error_8h_a2e168c6d1002dabd15a4c144482d7261}} 
+\#define {\bfseries ERROR\+\_\+\+FILLED\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~15
+\item 
+\mbox{\Hypertarget{error_8h_a66d372d7a4b75d61e940c9da614c01a6}\label{error_8h_a66d372d7a4b75d61e940c9da614c01a6}} 
+\#define {\bfseries ERROR\+\_\+\+CIRCLE\+\_\+\+COLOUR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~16
+\item 
+\mbox{\Hypertarget{error_8h_a4f8b0ebe86dbcb7157867fe8cc78cf5b}\label{error_8h_a4f8b0ebe86dbcb7157867fe8cc78cf5b}} 
+\#define {\bfseries ERROR\+\_\+\+CIRCLE\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~17
+\item 
+\mbox{\Hypertarget{error_8h_a65a4a832885479ff4dd16544e73f414e}\label{error_8h_a65a4a832885479ff4dd16544e73f414e}} 
+\#define {\bfseries ERROR\+\_\+\+FIGURE\+\_\+\+COLOUR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~18
+\item 
+\mbox{\Hypertarget{error_8h_afeb9d8c511b965492cff4ef150bc4c9c}\label{error_8h_afeb9d8c511b965492cff4ef150bc4c9c}} 
+\#define {\bfseries ERROR\+\_\+\+FIGURE\+\_\+\+LENGTH\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~19
+\item 
+\mbox{\Hypertarget{error_8h_a47f3d8bafff21dd5ed2724816e9d8ba7}\label{error_8h_a47f3d8bafff21dd5ed2724816e9d8ba7}} 
+\#define {\bfseries ERROR\+\_\+\+COLOUR\+\_\+\+NOT\+\_\+\+FOUND}~20
+\item 
+\mbox{\Hypertarget{error_8h_a3a40e56111bbae6e28ab6077289eb265}\label{error_8h_a3a40e56111bbae6e28ab6077289eb265}} 
+\#define {\bfseries ERROR\+\_\+\+CIRCLE\+\_\+\+WRONG\+\_\+\+RADIUS}~21
+\item 
+\mbox{\Hypertarget{error_8h_aba7edae667abf91c91d8d597bd9eb72c}\label{error_8h_aba7edae667abf91c91d8d597bd9eb72c}} 
+\#define {\bfseries ERROR\+\_\+\+CIRCLE\+\_\+\+OUT\+\_\+\+OF\+\_\+\+ANGLE}~22
+\item 
+\mbox{\Hypertarget{error_8h_a54c5d29132d0511ccf6381b38638717b}\label{error_8h_a54c5d29132d0511ccf6381b38638717b}} 
+\#define {\bfseries ERROR\+\_\+\+PARALLELOGRAM\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~23
+\item 
+\mbox{\Hypertarget{error_8h_adf1bddb62e2840a15d1b11e3da4859dc}\label{error_8h_adf1bddb62e2840a15d1b11e3da4859dc}} 
+\#define {\bfseries ERROR\+\_\+\+PARALLELOGRAM\+\_\+\+OUT\+\_\+\+OF\+\_\+\+ANGLE}~24
+\item 
+\mbox{\Hypertarget{error_8h_ae5eae31c50c89bec95297d1781d07329}\label{error_8h_ae5eae31c50c89bec95297d1781d07329}} 
+\#define {\bfseries ERROR\+\_\+\+FONTSTYLE\+\_\+\+NOT\+\_\+\+FOUND}~255
+\item 
+\mbox{\Hypertarget{error_8h_a334d2865e6cda4d7b3becfc3c29bef51}\label{error_8h_a334d2865e6cda4d7b3becfc3c29bef51}} 
+\#define {\bfseries ERROR\+\_\+\+COLOR\+\_\+\+NOT\+\_\+\+FOUND}~254
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{error_8h_a4b788d81a35005d3687d4b4b18901ad5}\label{error_8h_a4b788d81a35005d3687d4b4b18901ad5}} 
+void {\bfseries softon\+Error\+Handler} (uint8\+\_\+t error)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Defines for all error codes 
+
+\begin{DoxyAuthor}{Author}
+\+: Djalil 
+\end{DoxyAuthor}

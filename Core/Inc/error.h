@@ -1,9 +1,10 @@
-/*
- * error.h
- *
- *  Created on: 12 mei 2022
- *      Author: Djalil
- */
+/**
+  ******************************************************************************
+  * @file           : error.h
+  * @brief          : Defines for all error codes
+  * @author			: Djalil
+  ******************************************************************************
+  */
 #include <stdint.h>
 #include <stdio.h>
 

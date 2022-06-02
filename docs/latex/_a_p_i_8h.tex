@@ -1,48 +1,111 @@
-\hypertarget{_a_p_i_8c}{}\doxysection{Core/\+Src/\+API.c File Reference}
-\label{_a_p_i_8c}\index{Core/Src/API.c@{Core/Src/API.c}}
+\hypertarget{_a_p_i_8h}{}\doxysection{Core/\+Inc/\+API.h File Reference}
+\label{_a_p_i_8h}\index{Core/Inc/API.h@{Core/Inc/API.h}}
 
 
 \+: Library for Graphics.  
 
 
-{\ttfamily \#include \char`\"{}API.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}front\+\_\+layer.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}bitmap.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fonts/\+Arial\+\_\+32.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fonts/\+Arial\+\_\+8.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fonts/\+Arial\+\_\+\+Italic\+\_\+32.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fonts/\+Arial\+\_\+\+Italic\+\_\+8.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fonts/\+Arial\+\_\+\+Bold\+\_\+32.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fonts/\+Arial\+\_\+\+Bold\+\_\+8.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fonts/\+Consolas\+\_\+32.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fonts/\+Consolas\+\_\+8.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fonts/\+Consolas\+\_\+\+Italic\+\_\+32.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fonts/\+Consolas\+\_\+\+Italic\+\_\+8.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fonts/\+Consolas\+\_\+\+Bold\+\_\+32.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fonts/\+Consolas\+\_\+\+Bold\+\_\+8.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stm32\+\_\+ub\+\_\+vga\+\_\+screen.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a5181eb756a197a06d1c4ed1f40a065bc}\label{_a_p_i_8h_a5181eb756a197a06d1c4ed1f40a065bc}} 
+\#define {\bfseries \+\_\+\+\_\+weak}~\+\_\+\+\_\+attribute\+\_\+\+\_\+((weak))
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a654c522f8e27c8513785c9ba0fcf24d3}\label{_a_p_i_8h_a654c522f8e27c8513785c9ba0fcf24d3}} 
+\#define {\bfseries BEGGINING\+\_\+\+OF\+\_\+\+BITMAP}~3
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_ad6a013b2b4aff2e7b24d3911e6e75714}\label{_a_p_i_8h_ad6a013b2b4aff2e7b24d3911e6e75714}} 
+\#define {\bfseries BITMAP\+\_\+\+WIDTH\+\_\+\+HIGH}~2
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_ad6f97c62a49f278abb552de73e60cfac}\label{_a_p_i_8h_ad6f97c62a49f278abb552de73e60cfac}} 
+\#define {\bfseries BITMAP\+\_\+\+WIDTH\+\_\+\+LOW}~1
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a9acc4e3578a56d0a28557ed0698e7082}\label{_a_p_i_8h_a9acc4e3578a56d0a28557ed0698e7082}} 
+\#define {\bfseries BITMAP\+\_\+\+LENGTH}~0
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_ae616c4c4b83d4fcf8dcdf673798ae035}\label{_a_p_i_8h_ae616c4c4b83d4fcf8dcdf673798ae035}} 
+\#define {\bfseries FONT\+\_\+\+TYPES}~6
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a86fd4404b140711fdb77326609c0f393}\label{_a_p_i_8h_a86fd4404b140711fdb77326609c0f393}} 
+\#define {\bfseries BYTE\+\_\+\+SIZE}~8
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a74e030b71f5e608125a999ac2d160475}\label{_a_p_i_8h_a74e030b71f5e608125a999ac2d160475}} 
+\#define {\bfseries FONT\+\_\+\+NUMBER}~2
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_ad0ac25d7cb5b4d4257874ee400351c1b}\label{_a_p_i_8h_ad0ac25d7cb5b4d4257874ee400351c1b}} 
+\#define {\bfseries FONT\+\_\+\+NAME\+\_\+\+SIZE}~20
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_aa968a61524f9ed159c4c5464cb26dd41}\label{_a_p_i_8h_aa968a61524f9ed159c4c5464cb26dd41}} 
+\#define {\bfseries FONT\+\_\+\+SIZE}~2
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a72585f8ec0f12378ff80c87e53451cda}\label{_a_p_i_8h_a72585f8ec0f12378ff80c87e53451cda}} 
+\#define {\bfseries FONT\+\_\+\+STYLE}~2
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a7126ee49316691df008d9bf3c5dbb6fe}\label{_a_p_i_8h_a7126ee49316691df008d9bf3c5dbb6fe}} 
+\#define {\bfseries SPACE\+\_\+\+BETWEEN\+\_\+\+LETTER}~2
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_aa9f674603b9b7ffb8a94ecbfc774359f}\label{_a_p_i_8h_aa9f674603b9b7ffb8a94ecbfc774359f}} 
+\#define {\bfseries LETTER\+\_\+\+BITS}~31
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_abc232e3adf95f8e4b78538767347e07f}\label{_a_p_i_8h_abc232e3adf95f8e4b78538767347e07f}} 
+\#define {\bfseries LETTER\+\_\+\+WIDTH\+\_\+\+BITS}~32
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a3a554511321b536e4146909645f7fdee}\label{_a_p_i_8h_a3a554511321b536e4146909645f7fdee}} 
+\#define {\bfseries FONT\+\_\+\+SIZE\+\_\+\+POSITION}~3
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a22b52748ab25283d7ad7eead8a8f0451}\label{_a_p_i_8h_a22b52748ab25283d7ad7eead8a8f0451}} 
+\#define {\bfseries COLOURMAX}~255
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a8d19c72114f35283c3f8c04f59a2eafb}\label{_a_p_i_8h_a8d19c72114f35283c3f8c04f59a2eafb}} 
+\#define {\bfseries COLOURMIN}~0
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a666201b429d62c0cc1bd9f464c0fafb3}\label{_a_p_i_8h_a666201b429d62c0cc1bd9f464c0fafb3}} 
+\#define {\bfseries LINE\+\_\+\+WIDTH}~10
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a2c8a990431e992717009dd0f30423af2}\label{_a_p_i_8h_a2c8a990431e992717009dd0f30423af2}} 
+\#define {\bfseries X\+\_\+\+BEGIN}~0
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_aaab748c2cef2a730833d64e9fb6b46b4}\label{_a_p_i_8h_aaab748c2cef2a730833d64e9fb6b46b4}} 
+\#define {\bfseries Y\+\_\+\+BEGIN}~0
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_aea1404189b80bf5bf55bcd01d167c185}\label{_a_p_i_8h_aea1404189b80bf5bf55bcd01d167c185}} 
+\#define {\bfseries FIGURE\+\_\+\+POINTS}~5
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_a0c914e517a722365aee151951f0f7cdc}\label{_a_p_i_8h_a0c914e517a722365aee151951f0f7cdc}} 
+\#define {\bfseries RADIUS\+\_\+\+INCREMENT\+\_\+\+CIRCLE}~360
+\item 
+\mbox{\Hypertarget{_a_p_i_8h_af4151c7add339e66619cefa33c1d5dce}\label{_a_p_i_8h_af4151c7add339e66619cefa33c1d5dce}} 
+\#define {\bfseries HALF\+\_\+\+CIRCLE\+\_\+\+DEGREE}~180
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\+\_\+\+\_\+weak void \mbox{\hyperlink{_a_p_i_8c_afb38ef1308ab37bae7720fc0d0a04357}{draw\+Pixel}} (uint16\+\_\+t xp, uint16\+\_\+t yp, uint8\+\_\+t colour)
+\+\_\+\+\_\+weak void \mbox{\hyperlink{_a_p_i_8h_afb38ef1308ab37bae7720fc0d0a04357}{draw\+Pixel}} (uint16\+\_\+t xp, uint16\+\_\+t yp, uint8\+\_\+t colour)
 \begin{DoxyCompactList}\small\item\em Weak decleared Draw pixel function for if the user wants to implement his own display interface. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{_a_p_i_8c_a21ab1f60d9a00c021ad2ab65e19169f5}{my\+Lijntekenaar}} (uint16\+\_\+t x\+\_\+begin, uint16\+\_\+t y\+\_\+begin, uint16\+\_\+t x\+\_\+eind, uint16\+\_\+t y\+\_\+eind, uint8\+\_\+t colour)
+int \mbox{\hyperlink{_a_p_i_8h_af677585fcb6baedb839d790d0f6c0b35}{draw\+Bitmap}} (int nr, uint8\+\_\+t x\+\_\+1up, uint8\+\_\+t y\+\_\+1up)
+\begin{DoxyCompactList}\small\item\em this function shows a graphics image file (bitmaps) on VGA display. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_a_p_i_8h_a61482e58d59c37f7e9768a91dd6ce1d7}{draw\+Text}} (int x, int y, uint8\+\_\+t colour, char tekst\mbox{[}$\,$\mbox{]}, char fontname\mbox{[}$\,$\mbox{]}, uint8\+\_\+t fontgrootte, uint8\+\_\+t fontstyle, uint8\+\_\+t spaces, uint8\+\_\+t linefeed)
+\begin{DoxyCompactList}\small\item\em This function prints the text on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_a_p_i_8h_a21ab1f60d9a00c021ad2ab65e19169f5}{my\+Lijntekenaar}} (uint16\+\_\+t x\+\_\+begin, uint16\+\_\+t y\+\_\+begin, uint16\+\_\+t x\+\_\+eind, uint16\+\_\+t y\+\_\+eind, uint8\+\_\+t colour)
 \begin{DoxyCompactList}\small\item\em this function draws a single line from a to b \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{_a_p_i_8c_a4e7bde3fbe7108c08e94968a7ba1bff6}{draw\+Lines}} (uint16\+\_\+t x\+\_\+begin, uint16\+\_\+t y\+\_\+begin, uint16\+\_\+t x\+\_\+eind, uint16\+\_\+t y\+\_\+eind, uint8\+\_\+t colour, uint8\+\_\+t lijn\+\_\+dikte, uint8\+\_\+t mid\+\_\+lijn)
+int \mbox{\hyperlink{_a_p_i_8h_a4e7bde3fbe7108c08e94968a7ba1bff6}{draw\+Lines}} (uint16\+\_\+t x\+\_\+begin, uint16\+\_\+t y\+\_\+begin, uint16\+\_\+t x\+\_\+eind, uint16\+\_\+t y\+\_\+eind, uint8\+\_\+t colour, uint8\+\_\+t lijn\+\_\+dikte, uint8\+\_\+t mid\+\_\+lijn)
 \begin{DoxyCompactList}\small\item\em This function draws multiple lines using mylijntekenaar function. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{_a_p_i_8c_a9a0fa474fa1aa0911b24b4a5a307f734}{draw\+Rect}} (uint16\+\_\+t x\+\_\+pos, uint16\+\_\+t y\+\_\+pos, uint16\+\_\+t length, uint16\+\_\+t width, uint8\+\_\+t colour, uint8\+\_\+t filled, uint8\+\_\+t rectborder, uint8\+\_\+t border\+\_\+colour)
+int \mbox{\hyperlink{_a_p_i_8h_a9a0fa474fa1aa0911b24b4a5a307f734}{draw\+Rect}} (uint16\+\_\+t x\+\_\+pos, uint16\+\_\+t y\+\_\+pos, uint16\+\_\+t length, uint16\+\_\+t width, uint8\+\_\+t colour, uint8\+\_\+t filled, uint8\+\_\+t rectborder, uint8\+\_\+t border\+\_\+colour)
 \begin{DoxyCompactList}\small\item\em This function draws a rectangle either filled or not. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{_a_p_i_8c_a24de40ac9d1761270bd4d2f4d7f83250}{draw\+Circle}} (uint16\+\_\+t x\+\_\+pos, uint16\+\_\+t y\+\_\+pos, uint8\+\_\+t radius, uint8\+\_\+t colour, uint8\+\_\+t lradius)
+int \mbox{\hyperlink{_a_p_i_8h_a24de40ac9d1761270bd4d2f4d7f83250}{draw\+Circle}} (uint16\+\_\+t x\+\_\+pos, uint16\+\_\+t y\+\_\+pos, uint8\+\_\+t radius, uint8\+\_\+t colour, uint8\+\_\+t lradius)
 \begin{DoxyCompactList}\small\item\em This function draws a circle. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{_a_p_i_8c_a3c61d216ef3786688fa8edf7487b8b76}{draw\+Figure}} (uint8\+\_\+t colour, uint8\+\_\+t lijn\+\_\+dikte, uint8\+\_\+t nr\+\_\+pointsgiven,...)
+int \mbox{\hyperlink{_a_p_i_8h_a3c61d216ef3786688fa8edf7487b8b76}{draw\+Figure}} (uint8\+\_\+t colour, uint8\+\_\+t lijn\+\_\+dikte, uint8\+\_\+t nr\+\_\+pointsgiven,...)
 \begin{DoxyCompactList}\small\item\em This functions draw a figure with X amount of points. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{_a_p_i_8c_af677585fcb6baedb839d790d0f6c0b35}{draw\+Bitmap}} (int nr, uint8\+\_\+t x\+\_\+1up, uint8\+\_\+t y\+\_\+1up)
-\begin{DoxyCompactList}\small\item\em Draw bitmap function, this function draws the bitmap; smiley, angry and the four arrows on the screen. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{_a_p_i_8c_afaf02c2505034b9c3800ccf56c4fe2f1}{draw\+Text}} (int x, int y, uint8\+\_\+t colour, char tekst\mbox{[}$\,$\mbox{]}, char fontname\mbox{[}$\,$\mbox{]}, uint8\+\_\+t fontsize, uint8\+\_\+t fontstyle, uint8\+\_\+t spaces, uint8\+\_\+t linefeed)
-\begin{DoxyCompactList}\small\item\em Draw text function, this function prints the text on the screen. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{_a_p_i_8c_a876a6e7e41af799a6c2bb3521c3e3a2c}{draw\+Circleplus}} (uint16\+\_\+t x\+\_\+pos, uint16\+\_\+t y\+\_\+pos, uint8\+\_\+t l\+\_\+radius, uint8\+\_\+t h\+\_\+radius, uint16\+\_\+t l\+\_\+angle, uint16\+\_\+t h\+\_\+angle, uint8\+\_\+t colour)
+int \mbox{\hyperlink{_a_p_i_8h_a876a6e7e41af799a6c2bb3521c3e3a2c}{draw\+Circleplus}} (uint16\+\_\+t x\+\_\+pos, uint16\+\_\+t y\+\_\+pos, uint8\+\_\+t l\+\_\+radius, uint8\+\_\+t h\+\_\+radius, uint16\+\_\+t l\+\_\+angle, uint16\+\_\+t h\+\_\+angle, uint8\+\_\+t colour)
 \begin{DoxyCompactList}\small\item\em This function draws a circle. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{_a_p_i_8c_ad7a73d2beae8ac46d3f52da6bdd12af8}{draw\+Parallelogram}} (uint16\+\_\+t x\+\_\+pos, uint16\+\_\+t y\+\_\+pos, uint16\+\_\+t length, uint16\+\_\+t width, uint8\+\_\+t angle, uint8\+\_\+t colour)
+int \mbox{\hyperlink{_a_p_i_8h_ad7a73d2beae8ac46d3f52da6bdd12af8}{draw\+Parallelogram}} (uint16\+\_\+t x\+\_\+pos, uint16\+\_\+t y\+\_\+pos, uint16\+\_\+t length, uint16\+\_\+t width, uint8\+\_\+t angle, uint8\+\_\+t colour)
 \begin{DoxyCompactList}\small\item\em This function draws an parallelogram using length,width and an angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -52,16 +115,39 @@ int \mbox{\hyperlink{_a_p_i_8c_ad7a73d2beae8ac46d3f52da6bdd12af8}{draw\+Parallel
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{_a_p_i_8c_af677585fcb6baedb839d790d0f6c0b35}\label{_a_p_i_8c_af677585fcb6baedb839d790d0f6c0b35}} 
-\index{API.c@{API.c}!drawBitmap@{drawBitmap}}
-\index{drawBitmap@{drawBitmap}!API.c@{API.c}}
+\mbox{\Hypertarget{_a_p_i_8h_af677585fcb6baedb839d790d0f6c0b35}\label{_a_p_i_8h_af677585fcb6baedb839d790d0f6c0b35}} 
+\index{API.h@{API.h}!drawBitmap@{drawBitmap}}
+\index{drawBitmap@{drawBitmap}!API.h@{API.h}}
 \doxysubsubsection{\texorpdfstring{drawBitmap()}{drawBitmap()}}
 {\footnotesize\ttfamily int draw\+Bitmap (\begin{DoxyParamCaption}\item[{int}]{nr,  }\item[{uint8\+\_\+t}]{x\+\_\+1up,  }\item[{uint8\+\_\+t}]{y\+\_\+1up }\end{DoxyParamCaption})}
 
 
 
-Draw bitmap function, this function draws the bitmap; smiley, angry and the four arrows on the screen. 
+this function shows a graphics image file (bitmaps) on VGA display. 
 
+Bitmap, method by which a display space (such as a graphics image file) is defined, including the colour of each of its pixels (or bits). Is an array of binary data representing the values of pixels in an image or display. This function has 3 variables, the number of the bitmap and the position of bitmap. Bitmap has 6 icons; smile, angry and the four arrows. The user can choose between smile=0, angry=1, left=2, up=3, right=4, right=5. Add more bitmap guide\+: Step 1\+: Add bitmap array into \mbox{\hyperlink{bitmap_8h}{bitmap.\+h}} Step 2\+: Add 3 bytes at the position 0, 1 and 2 of array\+: 2a\+: Position 0 is the Y boundary in HEX. 2b\+: Position 1\&2 are the X boundary in HEX. Step 3\+: At the bottom of \mbox{\hyperlink{bitmap_8h}{bitmap.\+h}} add the names of bitmaps into the array list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr} & is the bitmap number to display. \\
+\hline
+{\em x\+\_\+1up} & and y\+\_\+1up is the left upper position of the bitmap \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Error} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyAuthor}{Author}
+Djalil \& Tjerk 
+\end{DoxyAuthor}
+\begin{DoxyNote}{Note}
+Bitmap size must be smaller or equal to VGA resolution. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+
+\end{DoxyWarning}
 this function shows a graphics image file (bitmaps) on VGA display.
 
 Bitmap has 6 icons; smiley, angry and the four arrows. smiley\+\_\+map=0, angry\+\_\+map=1, Arrow left=2, Arrow up= The user can choose between smiley=0, angry=1, left=2, up=3, right=4, right=5. Add more bitmapguide\+: Step 1\+: Add bitmap array into \mbox{\hyperlink{bitmap_8h}{bitmap.\+h}} Step 2\+: At the buttom of \mbox{\hyperlink{bitmap_8h}{bitmap.\+h}} change the array and add the name of bitmap.
@@ -81,9 +167,9 @@ Bitmap has 6 icons; smiley, angry and the four arrows. smiley\+\_\+map=0, angry\
 \begin{DoxyAuthor}{Author}
 Djalil \& Tjerk 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{_a_p_i_8c_a24de40ac9d1761270bd4d2f4d7f83250}\label{_a_p_i_8c_a24de40ac9d1761270bd4d2f4d7f83250}} 
-\index{API.c@{API.c}!drawCircle@{drawCircle}}
-\index{drawCircle@{drawCircle}!API.c@{API.c}}
+\mbox{\Hypertarget{_a_p_i_8h_a24de40ac9d1761270bd4d2f4d7f83250}\label{_a_p_i_8h_a24de40ac9d1761270bd4d2f4d7f83250}} 
+\index{API.h@{API.h}!drawCircle@{drawCircle}}
+\index{drawCircle@{drawCircle}!API.h@{API.h}}
 \doxysubsubsection{\texorpdfstring{drawCircle()}{drawCircle()}}
 {\footnotesize\ttfamily int draw\+Circle (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x\+\_\+pos,  }\item[{uint16\+\_\+t}]{y\+\_\+pos,  }\item[{uint8\+\_\+t}]{radius,  }\item[{uint8\+\_\+t}]{colour,  }\item[{uint8\+\_\+t}]{lradius }\end{DoxyParamCaption})}
 
@@ -91,6 +177,30 @@ Djalil \& Tjerk
 
 This function draws a circle. 
 
+By using {\bfseries{elementary}} mathematics the function draw a circle. The for loop draws points of the circle until it drew the whole circle. The for loop goes through every angle between 0 -\/ 2 PI radius
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+pos,y\+\_\+pos} & These are the x and y coordinates of the middle of the circle. \\
+\hline
+{\em radius} & This is the radius of the circle. \\
+\hline
+{\em colour} & This is the colour of the circle. \\
+\hline
+{\em lradius} & This is the lower boundary of radius\\
+\hline
+\end{DoxyParams}
+\href{https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/}{\texttt{ mathematic proof}} ~\newline
+
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Error} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyAuthor}{Author}
+Osman Pekcan
+\end{DoxyAuthor}
 By using {\bfseries{elementary}} mathematics the function draw a circle. The for loop draws points of the circle until it drew the whole circle. The for loop goes through every angle between 0 -\/ 2 PI radius
 
 
@@ -114,9 +224,9 @@ By using {\bfseries{elementary}} mathematics the function draw a circle. The for
 \begin{DoxyAuthor}{Author}
 Osman Pekcan 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{_a_p_i_8c_a876a6e7e41af799a6c2bb3521c3e3a2c}\label{_a_p_i_8c_a876a6e7e41af799a6c2bb3521c3e3a2c}} 
-\index{API.c@{API.c}!drawCircleplus@{drawCircleplus}}
-\index{drawCircleplus@{drawCircleplus}!API.c@{API.c}}
+\mbox{\Hypertarget{_a_p_i_8h_a876a6e7e41af799a6c2bb3521c3e3a2c}\label{_a_p_i_8h_a876a6e7e41af799a6c2bb3521c3e3a2c}} 
+\index{API.h@{API.h}!drawCircleplus@{drawCircleplus}}
+\index{drawCircleplus@{drawCircleplus}!API.h@{API.h}}
 \doxysubsubsection{\texorpdfstring{drawCircleplus()}{drawCircleplus()}}
 {\footnotesize\ttfamily int draw\+Circleplus (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x\+\_\+pos,  }\item[{uint16\+\_\+t}]{y\+\_\+pos,  }\item[{uint8\+\_\+t}]{l\+\_\+radius,  }\item[{uint8\+\_\+t}]{h\+\_\+radius,  }\item[{uint16\+\_\+t}]{l\+\_\+angle,  }\item[{uint16\+\_\+t}]{h\+\_\+angle,  }\item[{uint8\+\_\+t}]{colour }\end{DoxyParamCaption})}
 
@@ -145,9 +255,9 @@ By using {\bfseries{elementary}} mathematics the function draw a circle. The for
 \begin{DoxyAuthor}{Author}
 Osman Pekcan 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{_a_p_i_8c_a3c61d216ef3786688fa8edf7487b8b76}\label{_a_p_i_8c_a3c61d216ef3786688fa8edf7487b8b76}} 
-\index{API.c@{API.c}!drawFigure@{drawFigure}}
-\index{drawFigure@{drawFigure}!API.c@{API.c}}
+\mbox{\Hypertarget{_a_p_i_8h_a3c61d216ef3786688fa8edf7487b8b76}\label{_a_p_i_8h_a3c61d216ef3786688fa8edf7487b8b76}} 
+\index{API.h@{API.h}!drawFigure@{drawFigure}}
+\index{drawFigure@{drawFigure}!API.h@{API.h}}
 \doxysubsubsection{\texorpdfstring{drawFigure()}{drawFigure()}}
 {\footnotesize\ttfamily int draw\+Figure (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{colour,  }\item[{uint8\+\_\+t}]{lijn\+\_\+dikte,  }\item[{uint8\+\_\+t}]{nr\+\_\+pointsgiven,  }\item[{}]{... }\end{DoxyParamCaption})}
 
@@ -172,9 +282,9 @@ With the function mylijntekenaar,this function draws multiple line that are chai
 \begin{DoxyAuthor}{Author}
 Osman Pekcan 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{_a_p_i_8c_a4e7bde3fbe7108c08e94968a7ba1bff6}\label{_a_p_i_8c_a4e7bde3fbe7108c08e94968a7ba1bff6}} 
-\index{API.c@{API.c}!drawLines@{drawLines}}
-\index{drawLines@{drawLines}!API.c@{API.c}}
+\mbox{\Hypertarget{_a_p_i_8h_a4e7bde3fbe7108c08e94968a7ba1bff6}\label{_a_p_i_8h_a4e7bde3fbe7108c08e94968a7ba1bff6}} 
+\index{API.h@{API.h}!drawLines@{drawLines}}
+\index{drawLines@{drawLines}!API.h@{API.h}}
 \doxysubsubsection{\texorpdfstring{drawLines()}{drawLines()}}
 {\footnotesize\ttfamily int draw\+Lines (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x\+\_\+begin,  }\item[{uint16\+\_\+t}]{y\+\_\+begin,  }\item[{uint16\+\_\+t}]{x\+\_\+eind,  }\item[{uint16\+\_\+t}]{y\+\_\+eind,  }\item[{uint8\+\_\+t}]{colour,  }\item[{uint8\+\_\+t}]{lijn\+\_\+dikte,  }\item[{uint8\+\_\+t}]{mid\+\_\+lijn }\end{DoxyParamCaption})}
 
@@ -192,7 +302,7 @@ By repeating the function mylijntekenaar, this draws multiple lines. To do this 
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{_a_p_i_8c_a21ab1f60d9a00c021ad2ab65e19169f5}{my\+Lijntekenaar()}} 
+\mbox{\hyperlink{_a_p_i_8h_a21ab1f60d9a00c021ad2ab65e19169f5}{my\+Lijntekenaar()}} 
 \end{DoxySeeAlso}
 
 \begin{DoxyRetVals}{Return values}
@@ -206,12 +316,12 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=259pt]{_a_p_i_8c_a4e7bde3fbe7108c08e94968a7ba1bff6_cgraph}
+\includegraphics[width=259pt]{_a_p_i_8h_a4e7bde3fbe7108c08e94968a7ba1bff6_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{_a_p_i_8c_ad7a73d2beae8ac46d3f52da6bdd12af8}\label{_a_p_i_8c_ad7a73d2beae8ac46d3f52da6bdd12af8}} 
-\index{API.c@{API.c}!drawParallelogram@{drawParallelogram}}
-\index{drawParallelogram@{drawParallelogram}!API.c@{API.c}}
+\mbox{\Hypertarget{_a_p_i_8h_ad7a73d2beae8ac46d3f52da6bdd12af8}\label{_a_p_i_8h_ad7a73d2beae8ac46d3f52da6bdd12af8}} 
+\index{API.h@{API.h}!drawParallelogram@{drawParallelogram}}
+\index{drawParallelogram@{drawParallelogram}!API.h@{API.h}}
 \doxysubsubsection{\texorpdfstring{drawParallelogram()}{drawParallelogram()}}
 {\footnotesize\ttfamily int draw\+Parallelogram (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x\+\_\+pos,  }\item[{uint16\+\_\+t}]{y\+\_\+pos,  }\item[{uint16\+\_\+t}]{length,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint8\+\_\+t}]{angle,  }\item[{uint8\+\_\+t}]{colour }\end{DoxyParamCaption})}
 
@@ -242,9 +352,9 @@ This function draws an parallelogram using length,width and an angle.
 \begin{DoxyAuthor}{Author}
 Osman Pekcan 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{_a_p_i_8c_afb38ef1308ab37bae7720fc0d0a04357}\label{_a_p_i_8c_afb38ef1308ab37bae7720fc0d0a04357}} 
-\index{API.c@{API.c}!drawPixel@{drawPixel}}
-\index{drawPixel@{drawPixel}!API.c@{API.c}}
+\mbox{\Hypertarget{_a_p_i_8h_afb38ef1308ab37bae7720fc0d0a04357}\label{_a_p_i_8h_afb38ef1308ab37bae7720fc0d0a04357}} 
+\index{API.h@{API.h}!drawPixel@{drawPixel}}
+\index{drawPixel@{drawPixel}!API.h@{API.h}}
 \doxysubsubsection{\texorpdfstring{drawPixel()}{drawPixel()}}
 {\footnotesize\ttfamily \+\_\+\+\_\+weak void draw\+Pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{xp,  }\item[{uint16\+\_\+t}]{yp,  }\item[{uint8\+\_\+t}]{colour }\end{DoxyParamCaption})}
 
@@ -266,9 +376,9 @@ By declaring this function in the user his own code the user can implement his o
 \begin{DoxyAuthor}{Author}
 Tjerk ten Dam 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{_a_p_i_8c_a9a0fa474fa1aa0911b24b4a5a307f734}\label{_a_p_i_8c_a9a0fa474fa1aa0911b24b4a5a307f734}} 
-\index{API.c@{API.c}!drawRect@{drawRect}}
-\index{drawRect@{drawRect}!API.c@{API.c}}
+\mbox{\Hypertarget{_a_p_i_8h_a9a0fa474fa1aa0911b24b4a5a307f734}\label{_a_p_i_8h_a9a0fa474fa1aa0911b24b4a5a307f734}} 
+\index{API.h@{API.h}!drawRect@{drawRect}}
+\index{drawRect@{drawRect}!API.h@{API.h}}
 \doxysubsubsection{\texorpdfstring{drawRect()}{drawRect()}}
 {\footnotesize\ttfamily int draw\+Rect (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x\+\_\+pos,  }\item[{uint16\+\_\+t}]{y\+\_\+pos,  }\item[{uint16\+\_\+t}]{length,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint8\+\_\+t}]{colour,  }\item[{uint8\+\_\+t}]{filled,  }\item[{uint8\+\_\+t}]{rectborder,  }\item[{uint8\+\_\+t}]{border\+\_\+colour }\end{DoxyParamCaption})}
 
@@ -301,16 +411,47 @@ This function draw either a filled or unfilled rectangle, using filled parameter
 \begin{DoxyAuthor}{Author}
 Osman Pekcan 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{_a_p_i_8c_afaf02c2505034b9c3800ccf56c4fe2f1}\label{_a_p_i_8c_afaf02c2505034b9c3800ccf56c4fe2f1}} 
-\index{API.c@{API.c}!drawText@{drawText}}
-\index{drawText@{drawText}!API.c@{API.c}}
+\mbox{\Hypertarget{_a_p_i_8h_a61482e58d59c37f7e9768a91dd6ce1d7}\label{_a_p_i_8h_a61482e58d59c37f7e9768a91dd6ce1d7}} 
+\index{API.h@{API.h}!drawText@{drawText}}
+\index{drawText@{drawText}!API.h@{API.h}}
 \doxysubsubsection{\texorpdfstring{drawText()}{drawText()}}
 {\footnotesize\ttfamily int draw\+Text (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{uint8\+\_\+t}]{colour,  }\item[{char}]{tekst\mbox{[}$\,$\mbox{]},  }\item[{char}]{fontname\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{fontsize,  }\item[{uint8\+\_\+t}]{fontstyle,  }\item[{uint8\+\_\+t}]{spaces,  }\item[{uint8\+\_\+t}]{linefeed }\end{DoxyParamCaption})}
 
 
 
-Draw text function, this function prints the text on the screen. 
+This function prints the text on the screen. 
 
+This function prints the text on the screen. The user can choose between Arial= 0 en Consolas=1. Each fonts have 3 styles\+: Standard, Italic and Bold Each fonts have 2 sizes\+: 8, 32 Fontstyle Standard=0, Italic=1 and Bold=2. Fontsize 8=0, 32=1. Add more fonts\+: Step 1\+: Import the header file into fonts folder. Step 2\+: Add all the fonts into $\ast$$\ast$fonts\mbox{[}\mbox{]}. Step 3\+: Add fontnames into font\+\_\+name\mbox{[}\mbox{]}\mbox{[}\mbox{]}. Step 4\+: Change the Define FONT\+\_\+\+NUMBER
+
+
+\begin{DoxyParams}{Parameters}
+{\em x,y} & Is the position of the starting point of the first letter. \\
+\hline
+{\em colour} & Is the fonts colour. \\
+\hline
+{\em tekst\mbox{[}$\,$\mbox{]}} & Is an array with text. \\
+\hline
+{\em fontname} & is the fonts\+: Arial and Consolas. \\
+\hline
+{\em fontsize} & is the size of the font. The size can be chosen from 8 or 32. 0=8 and 1=32. \\
+\hline
+{\em frontstyle} & is the style of fonts, this can be chosen of Italic, Bold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Djalil \& Tjerk 
+\end{DoxyAuthor}
+
+\begin{DoxyRetVals}{Return values}
+{\em Error} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+
+\end{DoxyWarning}
 This function prints the text on the screen.
 
 This function prints/draws the text on the screen. The user can choose between Arial= 0 en Consolas=1. Each fonts have 3 styles\+: Standard, Italic and Bold Each fonts have 2 sizes\+: 8, 32 Fontstyle Standard=0, Italic=1 and Bold=2. Fontsize 8=0, 32=1. Add more fonts\+: Step 1\+: Import the header file into fonts folder. Step 2\+: Add all the fonts into $\ast$$\ast$fonts\mbox{[}\mbox{]}. Step 3\+: Add fontnames into font\+\_\+name\mbox{[}\mbox{]}\mbox{[}\mbox{]}. Step 4\+: Change the Define FONT\+\_\+\+NUMBER
@@ -338,9 +479,9 @@ This function prints/draws the text on the screen. The user can choose between A
 \begin{DoxyAuthor}{Author}
 Djalil \& Tjerk 
 \end{DoxyAuthor}
-\mbox{\Hypertarget{_a_p_i_8c_a21ab1f60d9a00c021ad2ab65e19169f5}\label{_a_p_i_8c_a21ab1f60d9a00c021ad2ab65e19169f5}} 
-\index{API.c@{API.c}!myLijntekenaar@{myLijntekenaar}}
-\index{myLijntekenaar@{myLijntekenaar}!API.c@{API.c}}
+\mbox{\Hypertarget{_a_p_i_8h_a21ab1f60d9a00c021ad2ab65e19169f5}\label{_a_p_i_8h_a21ab1f60d9a00c021ad2ab65e19169f5}} 
+\index{API.h@{API.h}!myLijntekenaar@{myLijntekenaar}}
+\index{myLijntekenaar@{myLijntekenaar}!API.h@{API.h}}
 \doxysubsubsection{\texorpdfstring{myLijntekenaar()}{myLijntekenaar()}}
 {\footnotesize\ttfamily int my\+Lijntekenaar (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x\+\_\+begin,  }\item[{uint16\+\_\+t}]{y\+\_\+begin,  }\item[{uint16\+\_\+t}]{x\+\_\+eind,  }\item[{uint16\+\_\+t}]{y\+\_\+eind,  }\item[{uint8\+\_\+t}]{colour }\end{DoxyParamCaption})}
 
@@ -377,6 +518,6 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=259pt]{_a_p_i_8c_a21ab1f60d9a00c021ad2ab65e19169f5_icgraph}
+\includegraphics[width=259pt]{_a_p_i_8h_a21ab1f60d9a00c021ad2ab65e19169f5_icgraph}
 \end{center}
 \end{figure}

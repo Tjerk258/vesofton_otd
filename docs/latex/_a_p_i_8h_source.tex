@@ -1,55 +1,74 @@
 \hypertarget{_a_p_i_8h_source}{}\doxysection{API.\+h}
 \label{_a_p_i_8h_source}\index{Core/Inc/API.h@{Core/Inc/API.h}}
-
+\mbox{\hyperlink{_a_p_i_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
-\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <stdio.h>}}
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <stdint.h>}}
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <math.h>}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string.h>}}
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdarg.h>}}
-\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdlib.h>}}
-\DoxyCodeLine{8   }
-\DoxyCodeLine{9 \textcolor{comment}{//VGA}}
-\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}stm32\_ub\_vga\_screen.h"{}}}
-\DoxyCodeLine{11 }
-\DoxyCodeLine{12 \textcolor{comment}{//DEBUGS}}
-\DoxyCodeLine{13 \textcolor{comment}{//\#define DEBUG\_FONT\_NAME}}
-\DoxyCodeLine{14 \textcolor{comment}{//\#define DEBUG\_LINE\_OFFSET}}
-\DoxyCodeLine{15 \textcolor{comment}{//\#define DEBUG\_LINE\_DERIVATIVE}}
-\DoxyCodeLine{16 \textcolor{comment}{//\#define DEBUG\_LINE\_VAR}}
-\DoxyCodeLine{17 \textcolor{comment}{//\#define DEBUG\_FIGURE\_COR}}
-\DoxyCodeLine{18 \textcolor{comment}{//\#define DEBUG\_CIRCLE\_PLAATS}}
-\DoxyCodeLine{19 \textcolor{comment}{//\#define DEBUG\_RECT\_BOUNDS}}
-\DoxyCodeLine{20 \textcolor{comment}{//\#define DEBUG\_LIJN\_DIKTE}}
-\DoxyCodeLine{21 }
-\DoxyCodeLine{22 \textcolor{comment}{//Defines}}
-\DoxyCodeLine{23 \textcolor{preprocessor}{\#define BEGGINING\_OF\_BITMAP     3   }\textcolor{comment}{//The first 3 bytes are reserved for Y and X of screen}}
-\DoxyCodeLine{24 \textcolor{preprocessor}{\#define BITMAP\_WIDTH\_HIGH       2   }\textcolor{comment}{//The 3rd byte is the Width high}}
-\DoxyCodeLine{25 \textcolor{preprocessor}{\#define BITMAP\_WIDTH\_LOW        1   }\textcolor{comment}{//The 2nd byte is the Width Low}}
-\DoxyCodeLine{26 \textcolor{preprocessor}{\#define FONT\_TYPES              6   }\textcolor{comment}{//The font type, from byte 6 is Consolas, else font type is Arial}}
-\DoxyCodeLine{27 \textcolor{preprocessor}{\#define FONT\_SIZE               2   }\textcolor{comment}{//The font size is 2 different sizes}}
-\DoxyCodeLine{28 \textcolor{preprocessor}{\#define BYTE\_SIZE               8   }\textcolor{comment}{//The size of a byte}}
-\DoxyCodeLine{29 \textcolor{preprocessor}{\#define FONT\_NUMBER             2   }\textcolor{comment}{//The amount of fonts, this can be expended.}}
-\DoxyCodeLine{30 \textcolor{preprocessor}{\#define FONT\_NAME\_SIZE          20  }\textcolor{comment}{//The Size of fontname.}}
-\DoxyCodeLine{31 \textcolor{preprocessor}{\#define SPACE\_BETWEEN\_LETTER    2   }\textcolor{comment}{//The space between the letter.}}
-\DoxyCodeLine{32 \textcolor{preprocessor}{\#define LETTER\_BITS             31  }\textcolor{comment}{//Letter bits}}
-\DoxyCodeLine{33 \textcolor{preprocessor}{\#define LETTER\_WIDTH\_BITS       32  }\textcolor{comment}{//Character bits}}
-\DoxyCodeLine{34 \textcolor{preprocessor}{\#define FONT\_SIZE\_POSITION      3   }\textcolor{comment}{//Position of font size in the array for each fonts.}}
-\DoxyCodeLine{35 \textcolor{preprocessor}{\#define RADIUS\_INCREMENT\_CIRCLE 3600}}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{37  \textcolor{comment}{//Prototypes function}}
-\DoxyCodeLine{38 \textcolor{keywordtype}{void} \mbox{\hyperlink{_a_p_i_8c_a86881add4d4814c0b017aee94f92cd3c}{drawBitmap}}(\textcolor{keywordtype}{int} nr, \textcolor{keywordtype}{int} x\_1up, \textcolor{keywordtype}{int} y\_1up);}
-\DoxyCodeLine{39 \textcolor{keywordtype}{void} \mbox{\hyperlink{_a_p_i_8c_a304c05f31c0a48f4bb4a7f532946ae18}{drawText}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} kleur, \textcolor{keywordtype}{char} tekst[], \textcolor{keywordtype}{char} fontname[], \textcolor{keywordtype}{char} fontgrootte, \textcolor{keywordtype}{char} fontstyle);}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{69 \textcolor{keywordtype}{void} \mbox{\hyperlink{_a_p_i_8c_a1bc1193f15c9247c751bdecef4fdb2e6}{myLijntekenaar}}(uint16\_t x\_begin, uint16\_t y\_begin, uint16\_t x\_eind, uint16\_t y\_eind,uint8\_t kleur);}
-\DoxyCodeLine{70 }
-\DoxyCodeLine{86 \textcolor{keywordtype}{void} \mbox{\hyperlink{_a_p_i_8c_ae23921117ee7fd3cb5b9a4e3e9a1bb7b}{drawLines}}( uint16\_t x\_begin, uint16\_t y\_begin, uint16\_t x\_eind, uint16\_t y\_eind,uint8\_t kleur,uint8\_t lijn\_dikte);}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{103 \textcolor{keywordtype}{void} \mbox{\hyperlink{_a_p_i_8c_a9b8680e16a18e527bda500039f049fdb}{drawRect}}(uint16\_t x\_pos,uint16\_t y\_pos,uint16\_t length,uint16\_t width,uint8\_t kleur,uint8\_t filled);}
-\DoxyCodeLine{104 }
-\DoxyCodeLine{122 \textcolor{keywordtype}{void} \mbox{\hyperlink{_a_p_i_8c_a71cda68eb66cb04c866a666c0bbd1d03}{drawCircle}}(uint16\_t x\_pos, uint16\_t y\_pos,uint8\_t radius,uint8\_t kleur);}
-\DoxyCodeLine{138 \textcolor{keywordtype}{void} \mbox{\hyperlink{_a_p_i_8c_ac4ad5c13603a59a2aab3700e6b63744c}{drawFigure}}(uint8\_t kleur,uint8\_t nr\_pointsgiven,...);}
-\DoxyCodeLine{139 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdarg.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{14   }
+\DoxyCodeLine{15 \textcolor{comment}{//VGA}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}stm32\_ub\_vga\_screen.h"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{//DEBUGS}}
+\DoxyCodeLine{19 \textcolor{comment}{//\#define DEBUG\_FONT\_NAME}}
+\DoxyCodeLine{20 \textcolor{comment}{//\#define DEBUG\_LINE\_OFFSET}}
+\DoxyCodeLine{21 \textcolor{comment}{//\#define DEBUG\_LINE\_DERIVATIVE}}
+\DoxyCodeLine{22 \textcolor{comment}{//\#define DEBUG\_LINE\_VAR}}
+\DoxyCodeLine{23 \textcolor{comment}{//\#define DEBUG\_FIGURE\_COR}}
+\DoxyCodeLine{24 \textcolor{comment}{//\#define DEBUG\_CIRCLE\_PLAATS}}
+\DoxyCodeLine{25 \textcolor{comment}{//\#define DEBUG\_RECT\_BOUNDS}}
+\DoxyCodeLine{26 \textcolor{comment}{//\#define DEBUG\_LIJN\_DIKTE}}
+\DoxyCodeLine{27 \textcolor{comment}{//\#define DEBUG\_BITMAP\_SIZE}}
+\DoxyCodeLine{28 \textcolor{comment}{//\#define DEBUG\_ANGLE\_OF\_CIRCLE}}
+\DoxyCodeLine{29 \textcolor{comment}{//\#define DEBUG\_CORNER\_PARALLELOGRAM}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifndef \_\_weak}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{    \#define \_\_weak   \_\_attribute\_\_((weak))}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_weak */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{//Defines}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define BEGGINING\_OF\_BITMAP     3   }\textcolor{comment}{//The first 3 bytes are reserved for Y and X of screen}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define BITMAP\_WIDTH\_HIGH       2   }\textcolor{comment}{//The 3rd byte is the Width high}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define BITMAP\_WIDTH\_LOW        1   }\textcolor{comment}{//The 2nd byte is the Width Low}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define BITMAP\_LENGTH           0   }\textcolor{comment}{//The first byte is the length of the bitmap.}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define FONT\_TYPES              6   }\textcolor{comment}{//The font type, from byte 6 is Consolas, else font type is Arial}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define BYTE\_SIZE               8   }\textcolor{comment}{//The size of a byte}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define FONT\_NUMBER             2   }\textcolor{comment}{//The amount of fonts, this can be expended.}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define FONT\_NAME\_SIZE          20  }\textcolor{comment}{//The Size of fontname.}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define FONT\_SIZE               2   }\textcolor{comment}{//Size of font, 1=8 and 2=32}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define FONT\_STYLE              2   }\textcolor{comment}{//Style of font, 0=standard, 1=Italic and 2=Bold}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define SPACE\_BETWEEN\_LETTER    2   }\textcolor{comment}{//The space between the letter.}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define LETTER\_BITS             31  }\textcolor{comment}{//Letter bits}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define LETTER\_WIDTH\_BITS       32  }\textcolor{comment}{//Character bits}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define FONT\_SIZE\_POSITION      3   }\textcolor{comment}{//Position of font size in the array for each fonts.}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define COLOURMAX               255 }\textcolor{comment}{//colour between 0 and 255}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define COLOURMIN               0   }\textcolor{comment}{//Min colour digit.}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define LINE\_WIDTH              10  }\textcolor{comment}{//                              <-\/-\/-\/-\/*}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define X\_BEGIN                 0}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define Y\_BEGIN                 0}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define FIGURE\_POINTS           5}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define RADIUS\_INCREMENT\_CIRCLE 360 }\textcolor{comment}{//increment division of circle function}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define HALF\_CIRCLE\_DEGREE 180 }\textcolor{comment}{// angle of halve circle in degree}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \_\_weak \textcolor{keywordtype}{void} \mbox{\hyperlink{_a_p_i_8h_afb38ef1308ab37bae7720fc0d0a04357}{drawPixel}}(uint16\_t xp, uint16\_t yp, uint8\_t colour);}
+\DoxyCodeLine{83 \textcolor{keywordtype}{int} \mbox{\hyperlink{_a_p_i_8h_af677585fcb6baedb839d790d0f6c0b35}{drawBitmap}}(\textcolor{keywordtype}{int} nr, uint8\_t x\_1up, uint8\_t y\_1up);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{113 \textcolor{keywordtype}{int} \mbox{\hyperlink{_a_p_i_8h_a61482e58d59c37f7e9768a91dd6ce1d7}{drawText}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, uint8\_t colour, \textcolor{keywordtype}{char} tekst[], \textcolor{keywordtype}{char} fontname[], uint8\_t fontgrootte, uint8\_t fontstyle, uint8\_t spaces, uint8\_t linefeed);}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{143 \textcolor{keywordtype}{int} \mbox{\hyperlink{_a_p_i_8h_a21ab1f60d9a00c021ad2ab65e19169f5}{myLijntekenaar}}(uint16\_t x\_begin, uint16\_t y\_begin, uint16\_t x\_eind, uint16\_t y\_eind,uint8\_t colour);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{161 \textcolor{keywordtype}{int} \mbox{\hyperlink{_a_p_i_8h_a4e7bde3fbe7108c08e94968a7ba1bff6}{drawLines}}( uint16\_t x\_begin, uint16\_t y\_begin, uint16\_t x\_eind, uint16\_t y\_eind,uint8\_t colour,uint8\_t lijn\_dikte,uint8\_t mid\_lijn);}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{180 \textcolor{keywordtype}{int} \mbox{\hyperlink{_a_p_i_8h_a9a0fa474fa1aa0911b24b4a5a307f734}{drawRect}}(uint16\_t x\_pos,uint16\_t y\_pos,uint16\_t length,uint16\_t width,uint8\_t colour,uint8\_t filled,uint8\_t rectborder,uint8\_t border\_colour);}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{200 \textcolor{keywordtype}{int} \mbox{\hyperlink{_a_p_i_8h_a24de40ac9d1761270bd4d2f4d7f83250}{drawCircle}}(uint16\_t x\_pos, uint16\_t y\_pos,uint8\_t radius,uint8\_t colour,uint8\_t lradius);}
+\DoxyCodeLine{217 \textcolor{keywordtype}{int} \mbox{\hyperlink{_a_p_i_8h_a3c61d216ef3786688fa8edf7487b8b76}{drawFigure}}(uint8\_t colour,uint8\_t lijn\_dikte,uint8\_t nr\_pointsgiven,...);}
+\DoxyCodeLine{218 \textcolor{keywordtype}{int} \mbox{\hyperlink{_a_p_i_8h_a876a6e7e41af799a6c2bb3521c3e3a2c}{drawCircleplus}}(uint16\_t x\_pos, uint16\_t y\_pos, uint8\_t l\_radius,uint8\_t h\_radius,uint16\_t l\_angle,uint16\_t h\_angle,uint8\_t colour);}
+\DoxyCodeLine{219 \textcolor{keywordtype}{int} \mbox{\hyperlink{_a_p_i_8h_ad7a73d2beae8ac46d3f52da6bdd12af8}{drawParallelogram}}(uint16\_t x\_pos,uint16\_t y\_pos,uint16\_t length,uint16\_t width,uint8\_t angle,uint8\_t colour);}
+\DoxyCodeLine{220 }
 
 \end{DoxyCode}

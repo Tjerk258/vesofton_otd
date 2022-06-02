@@ -1,0 +1,184 @@
+\hypertarget{logic__layer_8c}{}\doxysection{Core/\+Src/logic\+\_\+layer.c File Reference}
+\label{logic__layer_8c}\index{Core/Src/logic\_layer.c@{Core/Src/logic\_layer.c}}
+
+
+\+: Logic layer  
+
+
+{\ttfamily \#include \char`\"{}logic\+\_\+layer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32\+\_\+ub\+\_\+vga\+\_\+screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tim.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{logic__layer_8c_a9a40859cc999074a3b38bb2611c32e6f}{font\+\_\+style}} (char command\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This function translates font\+\_\+style text to variable. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{logic__layer_8c_af1d804a48b4991dd0fc1252f2724007a}{r3g3b2\+\_\+\+Colour}} (char command\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This function is the 8 bit color designation 8bit color (R3\+G3\+B2) Red (3bit) -\/\texorpdfstring{$>$}{>} Bit7-\/\+Bit5 Green (3bit) -\/\texorpdfstring{$>$}{>} Bit4-\/\+Bit2 Blue (2bit) -\/\texorpdfstring{$>$}{>} Bit1-\/\+Bit0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logic__layer_8c_a3a2f3d15e5c1132037953ffa3397c332}{buffer\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em This function is for initilising buffer of scripts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logic__layer_8c_a8a3b0ad512a6e6c6157440b68d395eac}{HAL\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback}} (TIM\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em Tim callback when period is elapsed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logic__layer_8c_a9433849ebc7031495f57a2186b8bbc0b}{write\+Buffer}} (char buf\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This function writes a array to the circular script buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{logic__layer_8c_a3a708e761494884b788959d025365afe}{index\+Buffer}} (int index)
+\begin{DoxyCompactList}\small\item\em This function translates an index for the script buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{logic__layer_8c_a25ea6b6ceef49c8e03b627cc38e9d713}{logic\+\_\+layer}} (char commando\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This function looks at input array and calls function the input array calls for. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logic__layer_8c_a8605754d70c876888307ceb86af8e8b2}\label{logic__layer_8c_a8605754d70c876888307ceb86af8e8b2}} 
+\mbox{\hyperlink{structwait__vars}{wait\+\_\+vars}} {\bfseries wait}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Logic layer 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{logic__layer_8c_a3a2f3d15e5c1132037953ffa3397c332}\label{logic__layer_8c_a3a2f3d15e5c1132037953ffa3397c332}} 
+\index{logic\_layer.c@{logic\_layer.c}!buffer\_init@{buffer\_init}}
+\index{buffer\_init@{buffer\_init}!logic\_layer.c@{logic\_layer.c}}
+\doxysubsubsection{\texorpdfstring{buffer\_init()}{buffer\_init()}}
+{\footnotesize\ttfamily void buffer\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function is for initilising buffer of scripts. 
+
+\begin{DoxyAuthor}{Authors}
+Tjerk ten Dam 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{logic__layer_8c_a9a40859cc999074a3b38bb2611c32e6f}\label{logic__layer_8c_a9a40859cc999074a3b38bb2611c32e6f}} 
+\index{logic\_layer.c@{logic\_layer.c}!font\_style@{font\_style}}
+\index{font\_style@{font\_style}!logic\_layer.c@{logic\_layer.c}}
+\doxysubsubsection{\texorpdfstring{font\_style()}{font\_style()}}
+{\footnotesize\ttfamily uint8\+\_\+t font\+\_\+style (\begin{DoxyParamCaption}\item[{char}]{command\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This function translates font\+\_\+style text to variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & This is the font\+\_\+style string.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Variable} & for tekst function \\
+\hline
+{\em 0} & = normal tekst \\
+\hline
+{\em 1} & = bold tekst \\
+\hline
+{\em 2} & = Italic tekst\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyAuthor}{Authors}
+Osman Pekcan,Tjerk ten Dam 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{logic__layer_8c_a8a3b0ad512a6e6c6157440b68d395eac}\label{logic__layer_8c_a8a3b0ad512a6e6c6157440b68d395eac}} 
+\index{logic\_layer.c@{logic\_layer.c}!HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}}
+\index{HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}!logic\_layer.c@{logic\_layer.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_PeriodElapsedCallback()}{HAL\_TIM\_PeriodElapsedCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Tim callback when period is elapsed. 
+
+This callback functions gets called when the timer period is elapsed for the wait function and when elapsed the wait flag gets reset.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$htim} & handle of the timer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Authors}
+Tjerk ten Dam 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{logic__layer_8c_a3a708e761494884b788959d025365afe}\label{logic__layer_8c_a3a708e761494884b788959d025365afe}} 
+\index{logic\_layer.c@{logic\_layer.c}!indexBuffer@{indexBuffer}}
+\index{indexBuffer@{indexBuffer}!logic\_layer.c@{logic\_layer.c}}
+\doxysubsubsection{\texorpdfstring{indexBuffer()}{indexBuffer()}}
+{\footnotesize\ttfamily int index\+Buffer (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+This function translates an index for the script buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index for the script buffer\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em correct} & index for the circulair buffer\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyAuthor}{Authors}
+Tjerk ten Dam 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{logic__layer_8c_a25ea6b6ceef49c8e03b627cc38e9d713}\label{logic__layer_8c_a25ea6b6ceef49c8e03b627cc38e9d713}} 
+\index{logic\_layer.c@{logic\_layer.c}!logic\_layer@{logic\_layer}}
+\index{logic\_layer@{logic\_layer}!logic\_layer.c@{logic\_layer.c}}
+\doxysubsubsection{\texorpdfstring{logic\_layer()}{logic\_layer()}}
+{\footnotesize\ttfamily int logic\+\_\+layer (\begin{DoxyParamCaption}\item[{char}]{commando\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This function looks at input array and calls function the input array calls for. 
+
+First script commando\textquotesingle{}s are split up and put into array\+: commando\+\_\+filled. Then the function looks which script is called. If the function found the script that is called, the corresponding function is called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em commando} & This is the script commando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Authors}
+Osman Pekcan,Tjerk ten Dam 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{logic__layer_8c_af1d804a48b4991dd0fc1252f2724007a}\label{logic__layer_8c_af1d804a48b4991dd0fc1252f2724007a}} 
+\index{logic\_layer.c@{logic\_layer.c}!r3g3b2\_Colour@{r3g3b2\_Colour}}
+\index{r3g3b2\_Colour@{r3g3b2\_Colour}!logic\_layer.c@{logic\_layer.c}}
+\doxysubsubsection{\texorpdfstring{r3g3b2\_Colour()}{r3g3b2\_Colour()}}
+{\footnotesize\ttfamily uint8\+\_\+t r3g3b2\+\_\+\+Colour (\begin{DoxyParamCaption}\item[{char}]{command\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This function is the 8 bit color designation 8bit color (R3\+G3\+B2) Red (3bit) -\/\texorpdfstring{$>$}{>} Bit7-\/\+Bit5 Green (3bit) -\/\texorpdfstring{$>$}{>} Bit4-\/\+Bit2 Blue (2bit) -\/\texorpdfstring{$>$}{>} Bit1-\/\+Bit0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em commando\mbox{[}$\,$\mbox{]}} & this is the \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Authors}
+Djalil 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{logic__layer_8c_a9433849ebc7031495f57a2186b8bbc0b}\label{logic__layer_8c_a9433849ebc7031495f57a2186b8bbc0b}} 
+\index{logic\_layer.c@{logic\_layer.c}!writeBuffer@{writeBuffer}}
+\index{writeBuffer@{writeBuffer}!logic\_layer.c@{logic\_layer.c}}
+\doxysubsubsection{\texorpdfstring{writeBuffer()}{writeBuffer()}}
+{\footnotesize\ttfamily void write\+Buffer (\begin{DoxyParamCaption}\item[{char}]{buf\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This function writes a array to the circular script buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & array to be write to the script buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Authors}
+Tjerk ten Dam 
+\end{DoxyAuthor}
