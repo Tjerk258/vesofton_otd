@@ -29,8 +29,7 @@ uint8_t font_style(char command[])
 			return i;
 		}
 	}
-	softonErrorHandler(ERROR_FONTSTYLE_NOT_FOUND);
-	return 0;
+	return 8;
 }
 
 /**

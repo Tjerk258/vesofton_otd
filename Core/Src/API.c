@@ -570,7 +570,7 @@ int drawCircleplus(uint16_t x_pos, uint16_t y_pos, uint8_t l_radius,uint8_t h_ra
 #ifdef DEBUG_ANGLE_OF_CIRCLE
 	printf("lower boundary \t %d \n higher boundary \t %d \n ", l_angle, h_angle);
 #endif
-	for(i=l_angle*M_PI;i<h_angle*2*M_PI;i += M_PI)
+	for(i=l_angle*2*M_PI;i<h_angle*2*M_PI;i += M_PI)
 	{ // Loop from lower angle to higher angle
 		for(j=l_radius;j<=h_radius;j++) // From lower boundary of the radius to the higher boundary
 		{

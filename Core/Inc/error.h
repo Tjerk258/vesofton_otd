@@ -32,7 +32,5 @@
 #define ERROR_PARALLELOGRAM_OUT_OF_RANGE	23
 #define ERROR_PARALLELOGRAM_OUT_OF_ANGLE	24
 
-#define ERROR_FONTSTYLE_NOT_FOUND		255
-#define ERROR_COLOR_NOT_FOUND 			254
 //prototypes
 void softonErrorHandler(uint8_t error);
