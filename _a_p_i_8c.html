@@ -93,10 +93,10 @@ $(document).ready(function(){initNavTree('_a_p_i_8c.html',''); initResizable(); 
 
 <p>: Library for Graphics.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;API.h&quot;</code><br />
-<code>#include &quot;front_layer.h&quot;</code><br />
-<code>#include &quot;error.h&quot;</code><br />
-<code>#include &quot;bitmap.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_a_p_i_8h_source.html">API.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="front__layer_8h_source.html">front_layer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="error_8h_source.html">error.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bitmap_8h_source.html">bitmap.h</a>&quot;</code><br />
 <code>#include &quot;fonts/Arial_32.h&quot;</code><br />
 <code>#include &quot;fonts/Arial_8.h&quot;</code><br />
 <code>#include &quot;fonts/Arial_Italic_32.h&quot;</code><br />
@@ -179,11 +179,18 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Draw bitmap function, this function draws the bitmap; smiley, angry and the four arrows on the screen. </p>
-<p>Bitmap has 6 icons; smiley, angry and the four arrows. smiley_map=0, angry_map=1, Arrow left=2, Arrow up= The user can choose between smiley=0, angry=1, left=2, up=3, right=4, right=5. Add more bitmapguide: Step 1: Add bitmap array into <a class="el" href="bitmap_8h_source.html">bitmap.h</a> Step 2: At the buttom of <a class="el" href="bitmap_8h_source.html">bitmap.h</a> change the array and add the name of bitmap.</p>
+<p>this function shows a graphics image file (bitmaps) on VGA display.</p>
+<p>Bitmap has 6 icons; smiley, angry and the four arrows. smiley_map=0, angry_map=1, Arrow left=2, Arrow up= The user can choose between smiley=0, angry=1, left=2, up=3, right=4, right=5. Add more bitmapguide: Step 1: Add bitmap array into <a class="el" href="bitmap_8h.html" title=": bitmap arrays to be printed on the screen">bitmap.h</a> Step 2: At the buttom of <a class="el" href="bitmap_8h.html" title=": bitmap arrays to be printed on the screen">bitmap.h</a> change the array and add the name of bitmap.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nr</td><td>is the bitmap number to draw. </td></tr>
     <tr><td class="paramname">x_1up</td><td>and y_1up is the position of the bitmap </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Error</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -246,11 +253,10 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p><a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a> <br  />
-</p>
+<p><a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a></p>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
+    <tr><td class="paramname">Error</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -320,13 +326,14 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">x_pos,y_pos</td><td>These are the x and y coordinates of the middle of the circle. </td></tr>
     <tr><td class="paramname">radius</td><td>This is the radius of the circle. </td></tr>
+    <tr><td class="paramname">angle</td><td>the angle where to start and stop the circle </td></tr>
     <tr><td class="paramname">colour</td><td>This is the colour of the circle <a href="https://opentextbc.ca/precalculusopenstax/chapter/unit-circle-sine-and-cosine-functions/">mathematic proof</a> </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
+    <tr><td class="paramname">Error</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -383,7 +390,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
+    <tr><td class="paramname">Error</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -459,7 +466,7 @@ Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_a_p_i_8c.html#a21ab1f60d9a00c021ad2ab65e19169f5" title="this function draws a single line from a to b">myLijntekenaar()</a> </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
+    <tr><td class="paramname">Error</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -537,7 +544,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">something</td><td></td></tr>
+    <tr><td class="paramname">Error</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -578,7 +585,6 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Weak decleared Draw pixel function for if the user wants to implement his own display interface. </p>
-<p>this function shows a graphics image file (bitmaps) on VGA display.</p>
 <p>By declaring this function in the user his own code the user can implement his own display interface code and still use this graphics library.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -669,7 +675,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
+    <tr><td class="paramname">Error</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -759,6 +765,12 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Error</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section author"><dt>Author</dt><dd>Djalil &amp; Tjerk </dd></dl>
 
 </div>
@@ -819,7 +831,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
+    <tr><td class="paramname">Error</td><td></td></tr>
   </table>
   </dd>
 </dl>

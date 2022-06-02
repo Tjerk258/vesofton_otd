@@ -106,32 +106,33 @@ $(document).ready(function(){initNavTree('_script.html',''); initResizable(); })
 <h1><a class="anchor" id="Line"></a>
 Line</h1>
 <p>With this script command a line can be printed on the screen. <br  />
- The syntax for this scirpt is: <br  />
+ The syntax for this script is: <br  />
  </p><pre class="fragment">lijn, x1, y1, x2, y2, kleur, dikte, middelijn
 </pre><ul>
-<li><b>x1:</b> This is the x of the first coöridnate. <br  />
+<li><b>x1:</b> This is the x of the first coordinate. <br  />
 </li>
-<li><b>y1:</b> This is the y of the first coöridnate. <br  />
+<li><b>y1:</b> This is the y of the first coordinate. <br  />
 </li>
-<li><b>x2:</b> This is the x of the second coöridnate. <br  />
+<li><b>x2:</b> This is the x of the second coordinate. <br  />
 </li>
-<li><b>y2:</b> This is the y of the second coöridnate. <br  />
+<li><b>y2:</b> This is the y of the second coordinate. <br  />
 </li>
 <li><b>kleur:</b> This is the color of the line to be draw. see <a class="el" href="_script.html#color">Colors</a> for the differnt colors to be used. <br  />
 </li>
 <li><b>dikte:</b> This is the width of the line in pixels. <br  />
 </li>
-<li><b>middelijn:</b> <em><b>???????????????????????????????????</b></em>.</li>
+<li><b>middelijn:</b> If middelijn is equal to one,the function draws a black line with the original coordinates. <br  />
+</li>
 </ul>
 <h1><a class="anchor" id="Rectangle"></a>
 Rectangle</h1>
 <p>With this script command a rectangle can be printed on the screen. <br  />
- The syntax for this scirpt is: <br  />
+ The syntax for this script is: <br  />
  </p><pre class="fragment">rechthoek, x_lup, y_lup, breedte, hoogte, kleur, gevuld, rand, randkleur
 </pre><ul>
-<li><b>x_up:</b> This is the x coördinate of the left upper cornor. <br  />
+<li><b>x_up:</b> This is the x coordinate of the left upper cornor. <br  />
 </li>
-<li><b>y_up:</b> This is the x coördinate of the left upper cornor. <br  />
+<li><b>y_up:</b> This is the x coordinate of the left upper cornor. <br  />
 </li>
 <li><b>breedte:</b> This is the width of the rectangle in pixels. <br  />
 </li>
@@ -145,23 +146,28 @@ Rectangle</h1>
 <li>1 for filled.</li>
 </ul>
 </li>
-<li><b>rand:</b> <em><b>?????????????????????????????????????????????</b></em>.</li>
-<li><b>randkleur:</b> <em><b>????????????????????????????????????????</b></em>.</li>
+<li><b>rand:</b> this is if a border around the rectangle will be drone.<ul>
+<li>0 for no border.</li>
+<li>1 for a border</li>
+</ul>
+</li>
+<li><b>randkleur:</b> this is the border color. see <a class="el" href="_script.html#color">Colors</a> for the differnt colors to be used. <br  />
+</li>
 </ul>
 <h1><a class="anchor" id="Text"></a>
 Text</h1>
 <p>With this script command a piece of text can be printed on the screen. <br  />
- The syntax for this scirpt is: <br  />
+ The syntax for this script is: <br  />
  </p><pre class="fragment">tekst, x, y, kleur, tekst, fontnaam, fontgrootte, fontstijl, space, linefeed
 </pre><ul>
-<li><b>x:</b> This is the x coördinate of the left upper cornor. <br  />
+<li><b>x:</b> This is the x coordinate of the left upper cornor. <br  />
 </li>
-<li><b>y:</b> This is the x coördinate of the left upper cornor. <br  />
+<li><b>y:</b> This is the x coordinate of the left upper cornor. <br  />
 </li>
 <li><b>kleur:</b> This is the color of the line to be draw. see <a class="el" href="_script.html#color">Colors</a> for the differnt colors to be used. <br  />
 </li>
 <li><b>tekst:</b> This is the text that will be printed on the screen. If a comma needs te be printed a backslash can be put before it to prevent it to be seen als script delimitter. If tekst ends with a backslash be sure to put a space between the backslash and de comma delimitter to prevent it to be printed on the screen.</li>
-<li><b>fontnaam:</b> This is the name of the font to be used. Standard available are: <br  />
+<li><b>fontnaam:</b> This is the name of the font to be used. Available are: <br  />
 <ul>
 <li>arial. <br  />
 </li>
@@ -169,7 +175,7 @@ Text</h1>
 </li>
 </ul>
 </li>
-<li><b>fontgrootte:</b> This is the size of the fonts. Standard available are: <br  />
+<li><b>fontgrootte:</b> This is the size of the fonts. Available are: <br  />
 <ul>
 <li>1 for 8px. <br  />
 </li>
@@ -177,7 +183,7 @@ Text</h1>
 </li>
 </ul>
 </li>
-<li><b>fontstijl:</b> This is for filling the rectangle. Standard available are: <br  />
+<li><b>fontstijl:</b> This is for filling the rectangle. Available are: <br  />
 <ul>
 <li>"normaal" for normal.</li>
 <li>"vet" for bold.</li>
@@ -187,7 +193,7 @@ Text</h1>
 <li><b>space:</b> This is the space between the characters in pixels.</li>
 <li><b>linefeed:</b> This is if you would like to go to the next line if the charchters go out of het screen.<ul>
 <li>0 for not next line.</li>
-<li>0 for next line. <br  />
+<li>1 for next line. <br  />
 </li>
 </ul>
 </li>
@@ -195,7 +201,7 @@ Text</h1>
 <h1><a class="anchor" id="Bitmap"></a>
 Bitmap</h1>
 <p>With this script command a bitmap can be printed on the screen. <br  />
- The syntax for this scirpt is: <br  />
+ The syntax for this script is: <br  />
  </p><pre class="fragment">bitmap, nr, x-lup, y-lup
 </pre><ul>
 <li><b>nr:</b> This is the number of the bitmap to be used. Standard available are: <br  />
@@ -218,17 +224,19 @@ Bitmap</h1>
 <td class="markdownTableBodyNone">6 </td><td class="markdownTableBodyNone">Smiley 2  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">7 </td><td class="markdownTableBodyNone">Angry smiley 2  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">8 </td><td class="markdownTableBodyNone">Arrow right 2  </td></tr>
 </table>
 </li>
-<li><b>x-1up:</b> This is the x coördinate of the left upper cornor. <br  />
+<li><b>x-1up:</b> This is the x coordinate of the left upper cornor. <br  />
 </li>
-<li><b>y-1up:</b> This is the x coördinate of the left upper cornor. . <br  />
+<li><b>y-1up:</b> This is the x coordinate of the left upper cornor. . <br  />
 </li>
 </ul>
 <h1><a class="anchor" id="Clearscreen"></a>
 Clearscreen</h1>
 <p>With this script command the screen can be cleared. <br  />
- The syntax for this scirpt is: <br  />
+ The syntax for this script is: <br  />
  </p><pre class="fragment">clearscherm, kleur
 </pre><ul>
 <li><b>kleur:</b> This is the color of the line to be draw. see <a class="el" href="_script.html#color">Colors</a> for the differnt colors to be used. <br  />
@@ -237,16 +245,16 @@ Clearscreen</h1>
 <h1><a class="anchor" id="Wait"></a>
 Wait</h1>
 <p>With the script a specific time to wait can be inplemented <br  />
- The syntax for this scirpt is: <br  />
+ The syntax for this script is: <br  />
  </p><pre class="fragment">wacht, msecs
 </pre><ul>
-<li><b>msecs:</b> This is the time to wait in miliseconds. <br  />
+<li><b>msecs:</b> Time to wait in miliseconds. <br  />
 </li>
 </ul>
 <h1><a class="anchor" id="Repeat"></a>
 Repeat</h1>
-<p>With the script a specific number of scirpts can be repeated. <br  />
- The syntax for this scirpt is: <br  />
+<p>With the script a specific number of scripts can be repeated. <br  />
+ The syntax for this script is: <br  />
  </p><pre class="fragment">herhaal, aantal, hoevaak, richting
 </pre><ul>
 <li><b>aantal:</b> This is the number of scripts to be repeated. <br  />
@@ -262,44 +270,45 @@ Repeat</h1>
 <h1><a class="anchor" id="Circle"></a>
 Circle</h1>
 <p>With the script a specific time to wait can be inplemented <br  />
- The syntax for this scirpt is: <br  />
+ The syntax for this script is: <br  />
  </p><pre class="fragment">cirkel, x, y, radius, kleur, lradius
 </pre><ul>
-<li><b>x:</b> This is the x coördinate of the middlepoint. <br  />
+<li><b>x:</b> This is the x coordinate of the middlepoint. <br  />
 </li>
-<li><b>y:</b> This is the y coördinate of the middlepoint. <br  />
+<li><b>y:</b> This is the y coordinate of the middlepoint. <br  />
 </li>
 <li><b>radius:</b> This is the radius of the circle. <br  />
 </li>
 <li><b>kleur:</b> This is the color of the line to be draw. see <a class="el" href="_script.html#color">Colors</a> for the differnt colors to be used. <br  />
 </li>
-<li><b>lradius:</b> <em><b>?????????????????????????????????????????????????????????????</b></em>.</li>
+<li><b>lradius:</b> This is the lower boundary radius of the circle. <br  />
+</li>
 </ul>
 <h1><a class="anchor" id="Figure"></a>
 Figure</h1>
 <p>With the script a specific figure can be printed on the screen. <br  />
- The syntax for this scirpt is: <br  />
+ The syntax for this script is: <br  />
  </p><pre class="fragment">figuur, x1,y1, x2,y2, x3,y3, x4,y4, x5,y5, kleur, dikte
 </pre><ul>
-<li><b>x1:</b> This is the x of the first coöridnate. <br  />
+<li><b>x1:</b> the x of the first coordinate. <br  />
 </li>
-<li><b>y1:</b> This is the y of the first coöridnate. <br  />
+<li><b>y1:</b> the y of the first coordinate. <br  />
 </li>
-<li><b>y2:</b> This is the y of the second coöridnate. <br  />
+<li><b>y2:</b> the y of the second coordinate. <br  />
 </li>
-<li><b>x2:</b> This is the x of the second coöridnate. <br  />
+<li><b>x2:</b> the x of the second coordinate. <br  />
 </li>
-<li><b>x3:</b> This is the x of the third coöridnate. <br  />
+<li><b>x3:</b> the x of the third coordinate. <br  />
 </li>
-<li><b>y3:</b> This is the y of the third coöridnate. <br  />
+<li><b>y3:</b> the y of the third coordinate. <br  />
 </li>
-<li><b>x4:</b> This is the x of the fourth coöridnate. <br  />
+<li><b>x4:</b> the x of the fourth coordinate. <br  />
 </li>
-<li><b>y4:</b> This is the y of the fourth coöridnate. <br  />
+<li><b>y4:</b> the y of the fourth coordinate. <br  />
 </li>
-<li><b>x5:</b> This is the x of the fifth coöridnate. <br  />
+<li><b>x5:</b> the x of the fifth coordinate. <br  />
 </li>
-<li><b>y5:</b> This is the y of the fifth coöridnate. <br  />
+<li><b>y5:</b> the y of the fifth coordinate. <br  />
 </li>
 <li><b>kleur:</b> This is the color of the line to be draw. see <a class="el" href="_script.html#color">Colors</a> for the differnt colors to be used. <br  />
 </li>
@@ -343,7 +352,7 @@ Colors</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Gray </td><td class="markdownTableBodyNone">grijs  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Pink </td><td class="markdownTableBodyNone"><b>roos??</b>  </td></tr>
+<td class="markdownTableBodyNone">Pink </td><td class="markdownTableBodyNone">roze  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Violet </td><td class="markdownTableBodyNone">paars  </td></tr>
 </table>

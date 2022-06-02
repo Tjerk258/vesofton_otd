@@ -27,7 +27,7 @@ var NAVTREE =
     [ "Script Turtorial", "_script.html", null ],
     [ "add fonts/bitmaps", "_adding.html", null ],
     [ "API", "_a_p_i_8c.html", null ],
-    [ "logic layer", "@ref logic_layer.c", null ],
+    [ "logic layer", "logic__layer_8c.html", null ],
     [ "front layer", "front__layer_8c.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -37,7 +37,8 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ]
       ] ]
     ] ]
   ] ]
@@ -45,7 +46,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"@ref logic_layer.c"
+"_a_p_i_8c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

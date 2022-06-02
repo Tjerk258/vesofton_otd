@@ -98,10 +98,10 @@ $(document).ready(function(){initNavTree('_adding.html',''); initResizable(); })
 Bitmap</h1>
 <p>To add a bitmap to the code follow the following steps. <br  />
 </p><ol type="1">
-<li>Add bitmap array into <a class="el" href="bitmap_8h_source.html">bitmap.h</a></li>
+<li>Add bitmap array into <a class="el" href="bitmap_8h.html" title=": bitmap arrays to be printed on the screen">bitmap.h</a></li>
 <li>change the first byte to the height of the picture</li>
-<li>change the second and third byte to the width of the picture wherby the second byte is the higher byte and the third byte is the lower byte.</li>
-<li>At the buttom of <a class="el" href="bitmap_8h_source.html">bitmap.h</a> change the array and add the name of bitmap. <br  />
+<li>change the second and third byte to the width of the picture whereby the second byte is the higher byte and the third byte is the lower byte.</li>
+<li>At the buttom of <a class="el" href="bitmap_8h.html" title=": bitmap arrays to be printed on the screen">bitmap.h</a> change the array and add the name of bitmap. <br  />
 </li>
 <li>You have succesfully added a bitmap to the code.</li>
 </ol>
@@ -110,17 +110,17 @@ Fonts</h1>
 <p>To add a font to the code follow the following steps. <br  />
  Credit of the script for font generation is going to <a href="https://github.com/jdmorise">https://github.com/jdmorise</a>.</p>
 <ol type="1">
-<li><p class="startli">create a font with the python scirpt included in the repository.</p><ol type="a">
-<li>run the python scirpt in folder Font generator\TTF2BMH-master\src\ttf2bmh.py with the following arguments <pre class="fragment"> python3 .\ttf2bmh.py --ascii --font &lt;font&gt; --variable_width -s &lt;Hight in pixels&gt; --square
+<li><p class="startli">create a font with the python script included in the repository.</p><ol type="a">
+<li>run the python script in folder Font generator\TTF2BMH-master\src\ttf2bmh.py with the following arguments <pre class="fragment"> python3 .\ttf2bmh.py --ascii --font &lt;font&gt; --variable_width -s &lt;Hight in pixels&gt; --square
 </pre></li>
 </ol>
 <p class="startli">and generate the font to your likings in normal, Bold and italic in 8px height and 32px height.</p>
 </li>
 <li>add the files to /Core/Inc/fonts.</li>
-<li>In <a class="el" href="_a_p_i_8h_source.html">API.h</a> increase the value of FONT_NUMBER with 1.</li>
+<li>In <a class="el" href="_a_p_i_8h.html" title=": Library for Graphics.">API.h</a> increase the value of FONT_NUMBER with 1.</li>
 <li>In <a class="el" href="_a_p_i_8c.html" title=": Library for Graphics.">API.c</a> include al the font files</li>
-<li>In <a class="el" href="_a_p_i_8c.html" title=": Library for Graphics.">API.c</a> in the function <a class="el" href="_a_p_i_8c.html#afaf02c2505034b9c3800ccf56c4fe2f1" title="Draw text function, this function prints the text on the screen.">drawText()</a> add to the variable **fonts[] the differnt fonts in the same order as the previous fonts.</li>
-<li>In <a class="el" href="_a_p_i_8c.html" title=": Library for Graphics.">API.c</a> in the function <a class="el" href="_a_p_i_8c.html#afaf02c2505034b9c3800ccf56c4fe2f1" title="Draw text function, this function prints the text on the screen.">drawText()</a> add to the variable font_name the font name you added to be called by the script.</li>
+<li>In <a class="el" href="_a_p_i_8c.html" title=": Library for Graphics.">API.c</a> in the function <a class="el" href="_a_p_i_8h.html#a61482e58d59c37f7e9768a91dd6ce1d7" title="This function prints the text on the screen.">drawText()</a> add to the variable **fonts[] the differnt fonts in the same order as the previous fonts.</li>
+<li>In <a class="el" href="_a_p_i_8c.html" title=": Library for Graphics.">API.c</a> in the function <a class="el" href="_a_p_i_8h.html#a61482e58d59c37f7e9768a91dd6ce1d7" title="This function prints the text on the screen.">drawText()</a> add to the variable font_name the font name you added to be called by the script.</li>
 <li>You now have succesfully added a font to the code. </li>
 </ol>
 </div></div><!-- contents -->

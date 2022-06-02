@@ -88,40 +88,42 @@ $(document).ready(function(){initNavTree('front__layer_8h_source.html',''); init
 <div class="title">front_layer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;error.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define BYTE_BUFLEN      1</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define LINE_BUFLEN      1024</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define CARRIAGE_RETURN  13 </span><span class="comment">/* carriage return char \r */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define LINE_FEED        10 </span><span class="comment">/* linefeed char \n        */</span><span class="preprocessor"></span></div>
+<a href="front__layer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="error_8h.html">error.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structinput__vars.html">   11</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    uint8_t byte_buffer_rx[BYTE_BUFLEN];    <span class="comment">// Store the rx byte from the USART2</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">char</span> line_rx_buffer[LINE_BUFLEN];       <span class="comment">// Buffer to hold all the bytes from rx USART2</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span> msglen;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">int</span> char_counter;              <span class="comment">// Counter for line_rx_buffer</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">char</span> command_execute_flag;              <span class="comment">/* Set = whole transmission is received, ready for processing \</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">                                               Reset = still receiving*/</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}<a class="code" href="structinput__vars.html">input_vars</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">extern</span> <a class="code" href="structinput__vars.html">input_vars</a> input;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> <a class="code" href="front__layer_8c.html#a6206b4e1a93bff0ae434d4808e3c2637">FL_UART_Init</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> FL_Parser();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> error_on_screen(uint8_t error);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define BYTE_BUFLEN      1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define LINE_BUFLEN      1024</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define CARRIAGE_RETURN  13 </span><span class="comment">/* carriage return char \r */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define LINE_FEED        10 </span><span class="comment">/* linefeed char \n        */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structinput__vars.html">   16</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    uint8_t byte_buffer_rx[BYTE_BUFLEN];    <span class="comment">// Store the rx byte from the USART2</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">char</span> line_rx_buffer[LINE_BUFLEN];       <span class="comment">// Buffer to hold all the bytes from rx USART2</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> msglen;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">int</span> char_counter;              <span class="comment">// Counter for line_rx_buffer</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">char</span> command_execute_flag;              <span class="comment">/* Set = whole transmission is received, ready for processing \</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">                                               Reset = still receiving*/</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}<a class="code" href="structinput__vars.html">input_vars</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <a class="code" href="structinput__vars.html">input_vars</a> input;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="front__layer_8h.html#a6206b4e1a93bff0ae434d4808e3c2637">FL_UART_Init</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> FL_Parser();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> error_on_screen(uint8_t error);</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="afront__layer_8c_html_a6206b4e1a93bff0ae434d4808e3c2637"><div class="ttname"><a href="front__layer_8c.html#a6206b4e1a93bff0ae434d4808e3c2637">FL_UART_Init</a></div><div class="ttdeci">void FL_UART_Init()</div><div class="ttdoc">Function for initialisatie of the UART.</div><div class="ttdef"><b>Definition:</b> front_layer.c:33</div></div>
+<div class="ttc" id="afront__layer_8h_html_a6206b4e1a93bff0ae434d4808e3c2637"><div class="ttname"><a href="front__layer_8h.html#a6206b4e1a93bff0ae434d4808e3c2637">FL_UART_Init</a></div><div class="ttdeci">void FL_UART_Init()</div><div class="ttdoc">Function for initialisatie of the UART.</div><div class="ttdef"><b>Definition:</b> front_layer.c:23</div></div>
+<div class="ttc" id="aerror_8h_html"><div class="ttname"><a href="error_8h.html">error.h</a></div><div class="ttdoc">: Defines for all error codes</div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">: Header for main.c file. This file contains the common defines of the application.</div></div>
-<div class="ttc" id="astructinput__vars_html"><div class="ttname"><a href="structinput__vars.html">input_vars</a></div><div class="ttdef"><b>Definition:</b> front_layer.h:11</div></div>
+<div class="ttc" id="astructinput__vars_html"><div class="ttname"><a href="structinput__vars.html">input_vars</a></div><div class="ttdef"><b>Definition:</b> front_layer.h:16</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li><li class="navelem"><b>front_layer.h</b></li>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li><li class="navelem"><a class="el" href="front__layer_8h.html">front_layer.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
