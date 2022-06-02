@@ -1,0 +1,73 @@
+\hypertarget{front__layer_8h}{}\doxysection{Core/\+Inc/front\+\_\+layer.h File Reference}
+\label{front__layer_8h}\index{Core/Inc/front\_layer.h@{Core/Inc/front\_layer.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structinput__vars}{input\+\_\+vars}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{front__layer_8h_a0e3eff829ed19518d75bb7d21a0ca3f6}\label{front__layer_8h_a0e3eff829ed19518d75bb7d21a0ca3f6}} 
+\#define {\bfseries BYTE\+\_\+\+BUFLEN}~1
+\item 
+\mbox{\Hypertarget{front__layer_8h_ad1cc016cd2d60fbb1dd56e7e09ecc00c}\label{front__layer_8h_ad1cc016cd2d60fbb1dd56e7e09ecc00c}} 
+\#define {\bfseries LINE\+\_\+\+BUFLEN}~1024
+\item 
+\mbox{\Hypertarget{front__layer_8h_a3b81478c7058ceb6ed610ce8e2ca3822}\label{front__layer_8h_a3b81478c7058ceb6ed610ce8e2ca3822}} 
+\#define {\bfseries CARRIAGE\+\_\+\+RETURN}~13 /$\ast$ carriage return char \textbackslash{}r $\ast$/
+\item 
+\mbox{\Hypertarget{front__layer_8h_a3c2cad5489953de23c5733e6e696a93e}\label{front__layer_8h_a3c2cad5489953de23c5733e6e696a93e}} 
+\#define {\bfseries LINE\+\_\+\+FEED}~10 /$\ast$ linefeed char \textbackslash{}n     $\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{front__layer_8h_a6206b4e1a93bff0ae434d4808e3c2637}{FL\+\_\+\+UART\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Function for initialisatie of the UART. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{front__layer_8h_a3453d42c4849d5305ce47584eee502ce}\label{front__layer_8h_a3453d42c4849d5305ce47584eee502ce}} 
+void {\bfseries FL\+\_\+\+Parser} ()
+\item 
+\mbox{\Hypertarget{front__layer_8h_a2599e45c33d2f9bb8d4a41ed3a9814dd}\label{front__layer_8h_a2599e45c33d2f9bb8d4a41ed3a9814dd}} 
+void {\bfseries error\+\_\+on\+\_\+screen} (uint8\+\_\+t error)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{front__layer_8h_a0d0c46791672d829075326a134858672}\label{front__layer_8h_a0d0c46791672d829075326a134858672}} 
+\mbox{\hyperlink{structinput__vars}{input\+\_\+vars}} {\bfseries input}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{front__layer_8h_a6206b4e1a93bff0ae434d4808e3c2637}\label{front__layer_8h_a6206b4e1a93bff0ae434d4808e3c2637}} 
+\index{front\_layer.h@{front\_layer.h}!FL\_UART\_Init@{FL\_UART\_Init}}
+\index{FL\_UART\_Init@{FL\_UART\_Init}!front\_layer.h@{front\_layer.h}}
+\doxysubsubsection{\texorpdfstring{FL\_UART\_Init()}{FL\_UART\_Init()}}
+{\footnotesize\ttfamily void FL\+\_\+\+UART\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function for initialisatie of the UART. 
+
+First the function empties out the buffer and initialist the HAL UART
+
+\begin{DoxyAuthor}{Author}
+Tjerk ten Dam 
+\end{DoxyAuthor}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{front__layer_8h_a6206b4e1a93bff0ae434d4808e3c2637_icgraph}
+\end{center}
+\end{figure}

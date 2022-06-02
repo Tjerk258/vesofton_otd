@@ -1,9 +1,10 @@
-/*
- * bitmap.h
- *
- *  Created on: 12 mei 2022
- *      Author: Djalil
- */
+/**
+  ******************************************************************************
+  * @file           : bitmap.h
+  * @brief          : bitmap arrays to be printed on the screen
+  * @author			: Djalil
+  ******************************************************************************
+  */
 #include <stdint.h>
 
 /**

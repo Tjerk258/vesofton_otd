@@ -264,9 +264,7 @@ void USART2_IRQHandler(void)
 		// By terminating your message with a dot you can ignore the CR (Enter) character
 		if((uart_char == CARRIAGE_RETURN) || (uart_char == '.'))
 		{
-			input.command_execute_flag = TRUE;
 			// Store the message length for processing
-			input.msglen = input.char_counter;
 			input.line_rx_buffer[input.char_counter] = '\0';
 			// Reset the counter for the next line
 			input.char_counter = 0;
@@ -275,7 +273,6 @@ void USART2_IRQHandler(void)
 		}
 		else
 		{
-			input.command_execute_flag = FALSE;
 			input.line_rx_buffer[input.char_counter] = uart_char;
 			input.char_counter++;
 		}

@@ -3,34 +3,35 @@
  In this explanation all the scripts will be explained what they can do. ~\newline
 \hypertarget{md__documentation_script_Line}{}\doxysection{Line}\label{md__documentation_script_Line}
 With this script command a line can be printed on the screen. ~\newline
- The syntax for this scirpt is\+: ~\newline
+ The syntax for this script is\+: ~\newline
  \begin{DoxyVerb}lijn, x1, y1, x2, y2, kleur, dikte, middelijn
 \end{DoxyVerb}
 
 \begin{DoxyItemize}
-\item {\bfseries{x1\+:}} This is the x of the first coöridnate. ~\newline
+\item {\bfseries{x1\+:}} This is the x of the first coordinate. ~\newline
 
-\item {\bfseries{y1\+:}} This is the y of the first coöridnate. ~\newline
+\item {\bfseries{y1\+:}} This is the y of the first coordinate. ~\newline
 
-\item {\bfseries{x2\+:}} This is the x of the second coöridnate. ~\newline
+\item {\bfseries{x2\+:}} This is the x of the second coordinate. ~\newline
 
-\item {\bfseries{y2\+:}} This is the y of the second coöridnate. ~\newline
+\item {\bfseries{y2\+:}} This is the y of the second coordinate. ~\newline
 
 \item {\bfseries{kleur\+:}} This is the color of the line to be draw. see \mbox{\hyperlink{md__documentation_script_color}{Colors}} for the differnt colors to be used. ~\newline
 
 \item {\bfseries{dikte\+:}} This is the width of the line in pixels. ~\newline
 
-\item {\bfseries{middelijn\+:}} {\itshape {\bfseries{???????????????????????????????????}}}.
+\item {\bfseries{middelijn\+:}} If middelijn is equal to one,the function draws a black line with the original coordinates. ~\newline
+
 \end{DoxyItemize}\hypertarget{md__documentation_script_Rectangle}{}\doxysection{Rectangle}\label{md__documentation_script_Rectangle}
 With this script command a rectangle can be printed on the screen. ~\newline
- The syntax for this scirpt is\+: ~\newline
+ The syntax for this script is\+: ~\newline
  \begin{DoxyVerb}rechthoek, x_lup, y_lup, breedte, hoogte, kleur, gevuld, rand, randkleur
 \end{DoxyVerb}
 
 \begin{DoxyItemize}
-\item {\bfseries{x\+\_\+up\+:}} This is the x coördinate of the left upper cornor. ~\newline
+\item {\bfseries{x\+\_\+up\+:}} This is the x coordinate of the left upper cornor. ~\newline
 
-\item {\bfseries{y\+\_\+up\+:}} This is the x coördinate of the left upper cornor. ~\newline
+\item {\bfseries{y\+\_\+up\+:}} This is the x coordinate of the left upper cornor. ~\newline
 
 \item {\bfseries{breedte\+:}} This is the width of the rectangle in pixels. ~\newline
 
@@ -44,23 +45,28 @@ With this script command a rectangle can be printed on the screen. ~\newline
 \item 0 for not filled.
 \item 1 for filled.
 \end{DoxyItemize}
-\item {\bfseries{rand\+:}} {\itshape {\bfseries{?????????????????????????????????????????????}}}.
-\item {\bfseries{randkleur\+:}} {\itshape {\bfseries{????????????????????????????????????????}}}.
+\item {\bfseries{rand\+:}} this is if a border around the rectangle will be drone.
+\begin{DoxyItemize}
+\item 0 for no border.
+\item 1 for a border
+\end{DoxyItemize}
+\item {\bfseries{randkleur\+:}} this is the border color. see \mbox{\hyperlink{md__documentation_script_color}{Colors}} for the differnt colors to be used. ~\newline
+
 \end{DoxyItemize}\hypertarget{md__documentation_script_Text}{}\doxysection{Text}\label{md__documentation_script_Text}
 With this script command a piece of text can be printed on the screen. ~\newline
- The syntax for this scirpt is\+: ~\newline
+ The syntax for this script is\+: ~\newline
  \begin{DoxyVerb}tekst, x, y, kleur, tekst, fontnaam, fontgrootte, fontstijl, space, linefeed
 \end{DoxyVerb}
 
 \begin{DoxyItemize}
-\item {\bfseries{x\+:}} This is the x coördinate of the left upper cornor. ~\newline
+\item {\bfseries{x\+:}} This is the x coordinate of the left upper cornor. ~\newline
 
-\item {\bfseries{y\+:}} This is the x coördinate of the left upper cornor. ~\newline
+\item {\bfseries{y\+:}} This is the x coordinate of the left upper cornor. ~\newline
 
 \item {\bfseries{kleur\+:}} This is the color of the line to be draw. see \mbox{\hyperlink{md__documentation_script_color}{Colors}} for the differnt colors to be used. ~\newline
 
 \item {\bfseries{tekst\+:}} This is the text that will be printed on the screen. If a comma needs te be printed a backslash can be put before it to prevent it to be seen als script delimitter. If tekst ends with a backslash be sure to put a space between the backslash and de comma delimitter to prevent it to be printed on the screen.
-\item {\bfseries{fontnaam\+:}} This is the name of the font to be used. Standard available are\+: ~\newline
+\item {\bfseries{fontnaam\+:}} This is the name of the font to be used. Available are\+: ~\newline
 
 \begin{DoxyItemize}
 \item arial. ~\newline
@@ -68,7 +74,7 @@ With this script command a piece of text can be printed on the screen. ~\newline
 \item consolas. ~\newline
 
 \end{DoxyItemize}
-\item {\bfseries{fontgrootte\+:}} This is the size of the fonts. Standard available are\+: ~\newline
+\item {\bfseries{fontgrootte\+:}} This is the size of the fonts. Available are\+: ~\newline
 
 \begin{DoxyItemize}
 \item 1 for 8px. ~\newline
@@ -76,7 +82,7 @@ With this script command a piece of text can be printed on the screen. ~\newline
 \item 2 for 32px. ~\newline
 
 \end{DoxyItemize}
-\item {\bfseries{fontstijl\+:}} This is for filling the rectangle. Standard available are\+: ~\newline
+\item {\bfseries{fontstijl\+:}} This is for filling the rectangle. Available are\+: ~\newline
 
 \begin{DoxyItemize}
 \item \char`\"{}normaal\char`\"{} for normal.
@@ -87,12 +93,12 @@ With this script command a piece of text can be printed on the screen. ~\newline
 \item {\bfseries{linefeed\+:}} This is if you would like to go to the next line if the charchters go out of het screen.
 \begin{DoxyItemize}
 \item 0 for not next line.
-\item 0 for next line. ~\newline
+\item 1 for next line. ~\newline
 
 \end{DoxyItemize}
 \end{DoxyItemize}\hypertarget{md__documentation__adding_Bitmap}{}\doxysection{Bitmap}\label{md__documentation__adding_Bitmap}
 With this script command a bitmap can be printed on the screen. ~\newline
- The syntax for this scirpt is\+: ~\newline
+ The syntax for this script is\+: ~\newline
  \begin{DoxyVerb}bitmap, nr, x-lup, y-lup
 \end{DoxyVerb}
 
@@ -115,16 +121,17 @@ With this script command a bitmap can be printed on the screen. ~\newline
 4   &Arrow up    \\\cline{1-2}
 5   &Arrow down    \\\cline{1-2}
 6   &Smiley 2    \\\cline{1-2}
-7   &Angry smiley 2   \\\cline{1-2}
+7   &Angry smiley 2    \\\cline{1-2}
+8   &Arrow right 2   \\\cline{1-2}
 \end{longtabu}
 
-\item {\bfseries{x-\/1up\+:}} This is the x coördinate of the left upper cornor. ~\newline
+\item {\bfseries{x-\/1up\+:}} This is the x coordinate of the left upper cornor. ~\newline
 
-\item {\bfseries{y-\/1up\+:}} This is the x coördinate of the left upper cornor. . ~\newline
+\item {\bfseries{y-\/1up\+:}} This is the x coordinate of the left upper cornor. . ~\newline
 
 \end{DoxyItemize}\hypertarget{md__documentation_script_Clearscreen}{}\doxysection{Clearscreen}\label{md__documentation_script_Clearscreen}
 With this script command the screen can be cleared. ~\newline
- The syntax for this scirpt is\+: ~\newline
+ The syntax for this script is\+: ~\newline
  \begin{DoxyVerb}clearscherm, kleur
 \end{DoxyVerb}
 
@@ -133,16 +140,16 @@ With this script command the screen can be cleared. ~\newline
 
 \end{DoxyItemize}\hypertarget{md__documentation_script_Wait}{}\doxysection{Wait}\label{md__documentation_script_Wait}
 With the script a specific time to wait can be inplemented ~\newline
- The syntax for this scirpt is\+: ~\newline
+ The syntax for this script is\+: ~\newline
  \begin{DoxyVerb}wacht, msecs
 \end{DoxyVerb}
 
 \begin{DoxyItemize}
-\item {\bfseries{msecs\+:}} This is the time to wait in miliseconds. ~\newline
+\item {\bfseries{msecs\+:}} Time to wait in miliseconds. ~\newline
 
 \end{DoxyItemize}\hypertarget{md__documentation_script_Repeat}{}\doxysection{Repeat}\label{md__documentation_script_Repeat}
-With the script a specific number of scirpts can be repeated. ~\newline
- The syntax for this scirpt is\+: ~\newline
+With the script a specific number of scripts can be repeated. ~\newline
+ The syntax for this script is\+: ~\newline
  \begin{DoxyVerb}herhaal, aantal, hoevaak, richting
 \end{DoxyVerb}
 
@@ -158,46 +165,47 @@ With the script a specific number of scirpts can be repeated. ~\newline
 \end{DoxyItemize}
 \end{DoxyItemize}\hypertarget{md__documentation_script_Circle}{}\doxysection{Circle}\label{md__documentation_script_Circle}
 With the script a specific time to wait can be inplemented ~\newline
- The syntax for this scirpt is\+: ~\newline
+ The syntax for this script is\+: ~\newline
  \begin{DoxyVerb}cirkel, x, y, radius, kleur, lradius
 \end{DoxyVerb}
 
 \begin{DoxyItemize}
-\item {\bfseries{x\+:}} This is the x coördinate of the middlepoint. ~\newline
+\item {\bfseries{x\+:}} This is the x coordinate of the middlepoint. ~\newline
 
-\item {\bfseries{y\+:}} This is the y coördinate of the middlepoint. ~\newline
+\item {\bfseries{y\+:}} This is the y coordinate of the middlepoint. ~\newline
 
 \item {\bfseries{radius\+:}} This is the radius of the circle. ~\newline
 
 \item {\bfseries{kleur\+:}} This is the color of the line to be draw. see \mbox{\hyperlink{md__documentation_script_color}{Colors}} for the differnt colors to be used. ~\newline
 
-\item {\bfseries{lradius\+:}} {\itshape {\bfseries{?????????????????????????????????????????????????????????????}}}.
+\item {\bfseries{lradius\+:}} This is the lower boundary radius of the circle. ~\newline
+
 \end{DoxyItemize}\hypertarget{md__documentation_script_Figure}{}\doxysection{Figure}\label{md__documentation_script_Figure}
 With the script a specific figure can be printed on the screen. ~\newline
- The syntax for this scirpt is\+: ~\newline
+ The syntax for this script is\+: ~\newline
  \begin{DoxyVerb}figuur, x1,y1, x2,y2, x3,y3, x4,y4, x5,y5, kleur, dikte
 \end{DoxyVerb}
 
 \begin{DoxyItemize}
-\item {\bfseries{x1\+:}} This is the x of the first coöridnate. ~\newline
+\item {\bfseries{x1\+:}} the x of the first coordinate. ~\newline
 
-\item {\bfseries{y1\+:}} This is the y of the first coöridnate. ~\newline
+\item {\bfseries{y1\+:}} the y of the first coordinate. ~\newline
 
-\item {\bfseries{y2\+:}} This is the y of the second coöridnate. ~\newline
+\item {\bfseries{y2\+:}} the y of the second coordinate. ~\newline
 
-\item {\bfseries{x2\+:}} This is the x of the second coöridnate. ~\newline
+\item {\bfseries{x2\+:}} the x of the second coordinate. ~\newline
 
-\item {\bfseries{x3\+:}} This is the x of the third coöridnate. ~\newline
+\item {\bfseries{x3\+:}} the x of the third coordinate. ~\newline
 
-\item {\bfseries{y3\+:}} This is the y of the third coöridnate. ~\newline
+\item {\bfseries{y3\+:}} the y of the third coordinate. ~\newline
 
-\item {\bfseries{x4\+:}} This is the x of the fourth coöridnate. ~\newline
+\item {\bfseries{x4\+:}} the x of the fourth coordinate. ~\newline
 
-\item {\bfseries{y4\+:}} This is the y of the fourth coöridnate. ~\newline
+\item {\bfseries{y4\+:}} the y of the fourth coordinate. ~\newline
 
-\item {\bfseries{x5\+:}} This is the x of the fifth coöridnate. ~\newline
+\item {\bfseries{x5\+:}} the x of the fifth coordinate. ~\newline
 
-\item {\bfseries{y5\+:}} This is the y of the fifth coöridnate. ~\newline
+\item {\bfseries{y5\+:}} the y of the fifth coordinate. ~\newline
 
 \item {\bfseries{kleur\+:}} This is the color of the line to be draw. see \mbox{\hyperlink{md__documentation_script_color}{Colors}} for the differnt colors to be used. ~\newline
 
@@ -230,6 +238,6 @@ Light magenta   &lichtmagenta    \\\cline{1-2}
 Brown   &bruin    \\\cline{1-2}
 Yellow   &geel    \\\cline{1-2}
 Gray   &grijs    \\\cline{1-2}
-Pink   &{\bfseries{roos??}}    \\\cline{1-2}
+Pink   &roze    \\\cline{1-2}
 Violet   &paars   \\\cline{1-2}
 \end{longtabu}

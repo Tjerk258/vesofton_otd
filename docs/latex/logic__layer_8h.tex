@@ -1,0 +1,174 @@
+\hypertarget{logic__layer_8h}{}\doxysection{Core/\+Inc/logic\+\_\+layer.h File Reference}
+\label{logic__layer_8h}\index{Core/Inc/logic\_layer.h@{Core/Inc/logic\_layer.h}}
+
+
+\+: logic layer  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}API.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structwait__vars}{wait\+\_\+vars}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logic__layer_8h_a4b2feda5201fd515eadb2b7f31acd4f2}\label{logic__layer_8h_a4b2feda5201fd515eadb2b7f31acd4f2}} 
+\#define {\bfseries NUMBER\+\_\+\+OF\+\_\+\+COMMANDS}~11
+\item 
+\mbox{\Hypertarget{logic__layer_8h_aa5866ff4af7315501b0eef4139023092}\label{logic__layer_8h_aa5866ff4af7315501b0eef4139023092}} 
+\#define {\bfseries POINT\+\_\+\+OF\+\_\+\+FIGURE}~5
+\item 
+\mbox{\Hypertarget{logic__layer_8h_a110cef3f94121351998a6030958eb19d}\label{logic__layer_8h_a110cef3f94121351998a6030958eb19d}} 
+\#define {\bfseries MAX\+\_\+\+NUMBER\+\_\+\+OF\+\_\+\+SCRIPT\+\_\+\+CHARACTER}~150
+\item 
+\mbox{\Hypertarget{logic__layer_8h_a83b1e5cfc087d691e51bf4c152ce29aa}\label{logic__layer_8h_a83b1e5cfc087d691e51bf4c152ce29aa}} 
+\#define {\bfseries MAX\+\_\+\+SCRIPT\+\_\+\+COMMANDOS}~15
+\item 
+\mbox{\Hypertarget{logic__layer_8h_a9bbfb86aa5d9e37abc8bf823e0aead27}\label{logic__layer_8h_a9bbfb86aa5d9e37abc8bf823e0aead27}} 
+\#define {\bfseries ASCII\+\_\+\+OF\+\_\+\+COMMA}~44
+\item 
+\mbox{\Hypertarget{logic__layer_8h_ac767003fe9919df62517e2afbc9dd356}\label{logic__layer_8h_ac767003fe9919df62517e2afbc9dd356}} 
+\#define {\bfseries ASCII\+\_\+\+OF\+\_\+\+BACKSLASH}~92
+\item 
+\mbox{\Hypertarget{logic__layer_8h_ab7fa0cedb9ef124c562087b194ecd27b}\label{logic__layer_8h_ab7fa0cedb9ef124c562087b194ecd27b}} 
+\#define {\bfseries COLOUR\+\_\+\+CHAR\+\_\+\+MAX}~50
+\item 
+\mbox{\Hypertarget{logic__layer_8h_ad379f027b5714b56d4e69a86b736f7b8}\label{logic__layer_8h_ad379f027b5714b56d4e69a86b736f7b8}} 
+\#define {\bfseries COLOUR\+\_\+\+LIST}~17
+\item 
+\mbox{\Hypertarget{logic__layer_8h_a3dc0fb7b0e12db0b9823d76bdf4e8e8e}\label{logic__layer_8h_a3dc0fb7b0e12db0b9823d76bdf4e8e8e}} 
+\#define {\bfseries NUMBER\+\_\+\+OF\+\_\+\+FONT\+\_\+\+STYLES}~3
+\item 
+\mbox{\Hypertarget{logic__layer_8h_a426fad069a360c3f0d23e52a0ff41926}\label{logic__layer_8h_a426fad069a360c3f0d23e52a0ff41926}} 
+\#define {\bfseries NUMBER\+\_\+\+OF\+\_\+\+COLORS}~10
+\item 
+\mbox{\Hypertarget{logic__layer_8h_a6b20d41d6252e9871430c242cb1a56e7}\label{logic__layer_8h_a6b20d41d6252e9871430c242cb1a56e7}} 
+\#define {\bfseries BUFFER\+\_\+\+SIZE}~200
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{logic__layer_8h_a25ea6b6ceef49c8e03b627cc38e9d713}{logic\+\_\+layer}} (char commando\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This function looks at input array and calls function the input array calls for. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logic__layer_8h_a8a3b0ad512a6e6c6157440b68d395eac}{HAL\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback}} (TIM\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em Tim callback when period is elapsed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logic__layer_8h_a3a2f3d15e5c1132037953ffa3397c332}{buffer\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em This function is for initilising buffer of scripts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logic__layer_8h_a9433849ebc7031495f57a2186b8bbc0b}{write\+Buffer}} (char buf\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This function writes a array to the circular script buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{logic__layer_8h_a3a708e761494884b788959d025365afe}{index\+Buffer}} (int index)
+\begin{DoxyCompactList}\small\item\em This function translates an index for the script buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logic__layer_8h_a8605754d70c876888307ceb86af8e8b2}\label{logic__layer_8h_a8605754d70c876888307ceb86af8e8b2}} 
+\mbox{\hyperlink{structwait__vars}{wait\+\_\+vars}} {\bfseries wait}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: logic layer 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{logic__layer_8h_a3a2f3d15e5c1132037953ffa3397c332}\label{logic__layer_8h_a3a2f3d15e5c1132037953ffa3397c332}} 
+\index{logic\_layer.h@{logic\_layer.h}!buffer\_init@{buffer\_init}}
+\index{buffer\_init@{buffer\_init}!logic\_layer.h@{logic\_layer.h}}
+\doxysubsubsection{\texorpdfstring{buffer\_init()}{buffer\_init()}}
+{\footnotesize\ttfamily void buffer\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function is for initilising buffer of scripts. 
+
+\begin{DoxyAuthor}{Authors}
+Tjerk ten Dam 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{logic__layer_8h_a8a3b0ad512a6e6c6157440b68d395eac}\label{logic__layer_8h_a8a3b0ad512a6e6c6157440b68d395eac}} 
+\index{logic\_layer.h@{logic\_layer.h}!HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}}
+\index{HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}!logic\_layer.h@{logic\_layer.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_PeriodElapsedCallback()}{HAL\_TIM\_PeriodElapsedCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Tim callback when period is elapsed. 
+
+This callback functions gets called when the timer period is elapsed for the wait function and when elapsed the wait flag gets reset.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$htim} & handle of the timer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Authors}
+Tjerk ten Dam 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{logic__layer_8h_a3a708e761494884b788959d025365afe}\label{logic__layer_8h_a3a708e761494884b788959d025365afe}} 
+\index{logic\_layer.h@{logic\_layer.h}!indexBuffer@{indexBuffer}}
+\index{indexBuffer@{indexBuffer}!logic\_layer.h@{logic\_layer.h}}
+\doxysubsubsection{\texorpdfstring{indexBuffer()}{indexBuffer()}}
+{\footnotesize\ttfamily int index\+Buffer (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+This function translates an index for the script buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index for the script buffer\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em correct} & index for the circulair buffer\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyAuthor}{Authors}
+Tjerk ten Dam 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{logic__layer_8h_a25ea6b6ceef49c8e03b627cc38e9d713}\label{logic__layer_8h_a25ea6b6ceef49c8e03b627cc38e9d713}} 
+\index{logic\_layer.h@{logic\_layer.h}!logic\_layer@{logic\_layer}}
+\index{logic\_layer@{logic\_layer}!logic\_layer.h@{logic\_layer.h}}
+\doxysubsubsection{\texorpdfstring{logic\_layer()}{logic\_layer()}}
+{\footnotesize\ttfamily int logic\+\_\+layer (\begin{DoxyParamCaption}\item[{char}]{commando\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This function looks at input array and calls function the input array calls for. 
+
+First script commando\textquotesingle{}s are split up and put into array\+: commando\+\_\+filled. Then the function looks which script is called. If the function found the script that is called, the corresponding function is called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em commando} & This is the script commando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Authors}
+Osman Pekcan,Tjerk ten Dam 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{logic__layer_8h_a9433849ebc7031495f57a2186b8bbc0b}\label{logic__layer_8h_a9433849ebc7031495f57a2186b8bbc0b}} 
+\index{logic\_layer.h@{logic\_layer.h}!writeBuffer@{writeBuffer}}
+\index{writeBuffer@{writeBuffer}!logic\_layer.h@{logic\_layer.h}}
+\doxysubsubsection{\texorpdfstring{writeBuffer()}{writeBuffer()}}
+{\footnotesize\ttfamily void write\+Buffer (\begin{DoxyParamCaption}\item[{char}]{buf\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This function writes a array to the circular script buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & array to be write to the script buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Authors}
+Tjerk ten Dam 
+\end{DoxyAuthor}
