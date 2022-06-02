@@ -1,169 +1,169 @@
 \begin{theindex}
 
   \item {API.c}
-    \subitem {drawBitmap}, \hyperpage{217}
-    \subitem {drawCircle}, \hyperpage{217}
-    \subitem {drawCircleplus}, \hyperpage{218}
-    \subitem {drawFigure}, \hyperpage{219}
-    \subitem {drawLines}, \hyperpage{219}
-    \subitem {drawParallelogram}, \hyperpage{220}
-    \subitem {drawPixel}, \hyperpage{221}
-    \subitem {drawRect}, \hyperpage{221}
-    \subitem {drawText}, \hyperpage{222}
-    \subitem {myLijntekenaar}, \hyperpage{223}
+    \subitem {drawBitmap}, \hyperpage{219}
+    \subitem {drawCircle}, \hyperpage{219}
+    \subitem {drawCircleplus}, \hyperpage{220}
+    \subitem {drawFigure}, \hyperpage{221}
+    \subitem {drawLines}, \hyperpage{221}
+    \subitem {drawParallelogram}, \hyperpage{222}
+    \subitem {drawPixel}, \hyperpage{223}
+    \subitem {drawRect}, \hyperpage{223}
+    \subitem {drawText}, \hyperpage{224}
+    \subitem {myLijntekenaar}, \hyperpage{225}
   \item {API.h}
-    \subitem {drawBitmap}, \hyperpage{18}
-    \subitem {drawCircle}, \hyperpage{19}
-    \subitem {drawCircleplus}, \hyperpage{20}
-    \subitem {drawFigure}, \hyperpage{21}
-    \subitem {drawLines}, \hyperpage{22}
-    \subitem {drawParallelogram}, \hyperpage{23}
-    \subitem {drawPixel}, \hyperpage{23}
-    \subitem {drawRect}, \hyperpage{24}
-    \subitem {drawText}, \hyperpage{25}
-    \subitem {myLijntekenaar}, \hyperpage{26}
+    \subitem {drawBitmap}, \hyperpage{20}
+    \subitem {drawCircle}, \hyperpage{21}
+    \subitem {drawCircleplus}, \hyperpage{22}
+    \subitem {drawFigure}, \hyperpage{23}
+    \subitem {drawLines}, \hyperpage{24}
+    \subitem {drawParallelogram}, \hyperpage{25}
+    \subitem {drawPixel}, \hyperpage{25}
+    \subitem {drawRect}, \hyperpage{26}
+    \subitem {drawText}, \hyperpage{27}
+    \subitem {myLijntekenaar}, \hyperpage{28}
 
   \indexspace
 
   \item {bitmap.h}
-    \subitem {smiley\_map}, \hyperpage{29}
+    \subitem {smiley\_map}, \hyperpage{31}
   \item {buffer\_init}
-    \subitem {logic\_layer.c}, \hyperpage{226}
-    \subitem {logic\_layer.h}, \hyperpage{208}
+    \subitem {logic\_layer.c}, \hyperpage{228}
+    \subitem {logic\_layer.h}, \hyperpage{210}
 
   \indexspace
 
-  \item {Core/Inc/API.h}, \hyperpage{17}, \hyperpage{27}
-  \item {Core/Inc/bitmap.h}, \hyperpage{28, 29}
-  \item {Core/Inc/error.h}, \hyperpage{204, 205}
-  \item {Core/Inc/front\_layer.h}, \hyperpage{206, 207}
-  \item {Core/Inc/logic\_layer.h}, \hyperpage{207}, \hyperpage{210}
-  \item {Core/Inc/main.h}, \hyperpage{211}, \hyperpage{213}
-  \item {Core/Inc/stm32f4xx\_it.h}, \hyperpage{214, 215}
-  \item {Core/Src/API.c}, \hyperpage{216}
-  \item {Core/Src/front\_layer.c}, \hyperpage{224}
-  \item {Core/Src/logic\_layer.c}, \hyperpage{225}
-  \item {Core/Src/main.c}, \hyperpage{228}
-  \item {Core/Src/stm32f4xx\_it.c}, \hyperpage{231}
+  \item {Core/Inc/API.h}, \hyperpage{19}, \hyperpage{29}
+  \item {Core/Inc/bitmap.h}, \hyperpage{30, 31}
+  \item {Core/Inc/error.h}, \hyperpage{206, 207}
+  \item {Core/Inc/front\_layer.h}, \hyperpage{208, 209}
+  \item {Core/Inc/logic\_layer.h}, \hyperpage{209}, \hyperpage{212}
+  \item {Core/Inc/main.h}, \hyperpage{213}, \hyperpage{215}
+  \item {Core/Inc/stm32f4xx\_it.h}, \hyperpage{216, 217}
+  \item {Core/Src/API.c}, \hyperpage{218}
+  \item {Core/Src/front\_layer.c}, \hyperpage{226}
+  \item {Core/Src/logic\_layer.c}, \hyperpage{227}
+  \item {Core/Src/main.c}, \hyperpage{230}
+  \item {Core/Src/stm32f4xx\_it.c}, \hyperpage{233}
 
   \indexspace
 
   \item {drawBitmap}
-    \subitem {API.c}, \hyperpage{217}
-    \subitem {API.h}, \hyperpage{18}
-  \item {drawCircle}
-    \subitem {API.c}, \hyperpage{217}
-    \subitem {API.h}, \hyperpage{19}
-  \item {drawCircleplus}
-    \subitem {API.c}, \hyperpage{218}
+    \subitem {API.c}, \hyperpage{219}
     \subitem {API.h}, \hyperpage{20}
-  \item {drawFigure}
+  \item {drawCircle}
     \subitem {API.c}, \hyperpage{219}
     \subitem {API.h}, \hyperpage{21}
-  \item {drawLines}
-    \subitem {API.c}, \hyperpage{219}
-    \subitem {API.h}, \hyperpage{22}
-  \item {drawParallelogram}
+  \item {drawCircleplus}
     \subitem {API.c}, \hyperpage{220}
-    \subitem {API.h}, \hyperpage{23}
-  \item {drawPixel}
+    \subitem {API.h}, \hyperpage{22}
+  \item {drawFigure}
     \subitem {API.c}, \hyperpage{221}
     \subitem {API.h}, \hyperpage{23}
-  \item {drawRect}
+  \item {drawLines}
     \subitem {API.c}, \hyperpage{221}
     \subitem {API.h}, \hyperpage{24}
-  \item {drawText}
+  \item {drawParallelogram}
     \subitem {API.c}, \hyperpage{222}
     \subitem {API.h}, \hyperpage{25}
+  \item {drawPixel}
+    \subitem {API.c}, \hyperpage{223}
+    \subitem {API.h}, \hyperpage{25}
+  \item {drawRect}
+    \subitem {API.c}, \hyperpage{223}
+    \subitem {API.h}, \hyperpage{26}
+  \item {drawText}
+    \subitem {API.c}, \hyperpage{224}
+    \subitem {API.h}, \hyperpage{27}
 
   \indexspace
 
   \item {Error\_Handler}
-    \subitem {main.c}, \hyperpage{229}
-    \subitem {main.h}, \hyperpage{212}
+    \subitem {main.c}, \hyperpage{231}
+    \subitem {main.h}, \hyperpage{214}
 
   \indexspace
 
   \item {FL\_UART\_Init}
-    \subitem {front\_layer.c}, \hyperpage{225}
-    \subitem {front\_layer.h}, \hyperpage{206}
+    \subitem {front\_layer.c}, \hyperpage{227}
+    \subitem {front\_layer.h}, \hyperpage{208}
   \item {font\_style}
-    \subitem {logic\_layer.c}, \hyperpage{226}
+    \subitem {logic\_layer.c}, \hyperpage{228}
   \item {front\_layer.c}
-    \subitem {FL\_UART\_Init}, \hyperpage{225}
+    \subitem {FL\_UART\_Init}, \hyperpage{227}
   \item {front\_layer.h}
-    \subitem {FL\_UART\_Init}, \hyperpage{206}
+    \subitem {FL\_UART\_Init}, \hyperpage{208}
 
   \indexspace
 
   \item {HAL\_TIM\_PeriodElapsedCallback}
-    \subitem {logic\_layer.c}, \hyperpage{226}
-    \subitem {logic\_layer.h}, \hyperpage{209}
+    \subitem {logic\_layer.c}, \hyperpage{228}
+    \subitem {logic\_layer.h}, \hyperpage{211}
 
   \indexspace
 
   \item {indexBuffer}
-    \subitem {logic\_layer.c}, \hyperpage{227}
-    \subitem {logic\_layer.h}, \hyperpage{209}
-  \item {input\_vars}, \hyperpage{15}
+    \subitem {logic\_layer.c}, \hyperpage{229}
+    \subitem {logic\_layer.h}, \hyperpage{211}
+  \item {input\_vars}, \hyperpage{17}
 
   \indexspace
 
   \item {logic\_layer}
-    \subitem {logic\_layer.c}, \hyperpage{227}
-    \subitem {logic\_layer.h}, \hyperpage{210}
+    \subitem {logic\_layer.c}, \hyperpage{229}
+    \subitem {logic\_layer.h}, \hyperpage{212}
   \item {logic\_layer.c}
-    \subitem {buffer\_init}, \hyperpage{226}
-    \subitem {font\_style}, \hyperpage{226}
-    \subitem {HAL\_TIM\_PeriodElapsedCallback}, \hyperpage{226}
-    \subitem {indexBuffer}, \hyperpage{227}
-    \subitem {logic\_layer}, \hyperpage{227}
-    \subitem {r3g3b2\_Colour}, \hyperpage{228}
-    \subitem {writeBuffer}, \hyperpage{228}
+    \subitem {buffer\_init}, \hyperpage{228}
+    \subitem {font\_style}, \hyperpage{228}
+    \subitem {HAL\_TIM\_PeriodElapsedCallback}, \hyperpage{228}
+    \subitem {indexBuffer}, \hyperpage{229}
+    \subitem {logic\_layer}, \hyperpage{229}
+    \subitem {r3g3b2\_Colour}, \hyperpage{230}
+    \subitem {writeBuffer}, \hyperpage{230}
   \item {logic\_layer.h}
-    \subitem {buffer\_init}, \hyperpage{208}
-    \subitem {HAL\_TIM\_PeriodElapsedCallback}, \hyperpage{209}
-    \subitem {indexBuffer}, \hyperpage{209}
-    \subitem {logic\_layer}, \hyperpage{210}
-    \subitem {writeBuffer}, \hyperpage{210}
+    \subitem {buffer\_init}, \hyperpage{210}
+    \subitem {HAL\_TIM\_PeriodElapsedCallback}, \hyperpage{211}
+    \subitem {indexBuffer}, \hyperpage{211}
+    \subitem {logic\_layer}, \hyperpage{212}
+    \subitem {writeBuffer}, \hyperpage{212}
 
   \indexspace
 
   \item {main}
-    \subitem {main.c}, \hyperpage{230}
+    \subitem {main.c}, \hyperpage{232}
   \item {main.c}
-    \subitem {Error\_Handler}, \hyperpage{229}
-    \subitem {main}, \hyperpage{230}
-    \subitem {SystemClock\_Config}, \hyperpage{230}
-    \subitem {USART\_PRINTF}, \hyperpage{231}
+    \subitem {Error\_Handler}, \hyperpage{231}
+    \subitem {main}, \hyperpage{232}
+    \subitem {SystemClock\_Config}, \hyperpage{232}
+    \subitem {USART\_PRINTF}, \hyperpage{233}
   \item {main.h}
-    \subitem {Error\_Handler}, \hyperpage{212}
+    \subitem {Error\_Handler}, \hyperpage{214}
   \item {myLijntekenaar}
-    \subitem {API.c}, \hyperpage{223}
-    \subitem {API.h}, \hyperpage{26}
+    \subitem {API.c}, \hyperpage{225}
+    \subitem {API.h}, \hyperpage{28}
 
   \indexspace
 
   \item {r3g3b2\_Colour}
-    \subitem {logic\_layer.c}, \hyperpage{228}
+    \subitem {logic\_layer.c}, \hyperpage{230}
 
   \indexspace
 
   \item {smiley\_map}
-    \subitem {bitmap.h}, \hyperpage{29}
+    \subitem {bitmap.h}, \hyperpage{31}
   \item {SystemClock\_Config}
-    \subitem {main.c}, \hyperpage{230}
+    \subitem {main.c}, \hyperpage{232}
 
   \indexspace
 
   \item {USART\_PRINTF}
-    \subitem {main.c}, \hyperpage{231}
+    \subitem {main.c}, \hyperpage{233}
 
   \indexspace
 
-  \item {wait\_vars}, \hyperpage{15}
+  \item {wait\_vars}, \hyperpage{17}
   \item {writeBuffer}
-    \subitem {logic\_layer.c}, \hyperpage{228}
-    \subitem {logic\_layer.h}, \hyperpage{210}
+    \subitem {logic\_layer.c}, \hyperpage{230}
+    \subitem {logic\_layer.h}, \hyperpage{212}
 
 \end{theindex}

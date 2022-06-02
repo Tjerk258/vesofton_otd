@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.1)  2 JUN 2022 09:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.1)  2 JUN 2022 11:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -917,7 +917,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
  []
 
  <./Flowcharts_softon.jpg>
-<Flowcharts_softon.jpg, id=579, 870.25125pt x 1437.87187pt>
+<Flowcharts_softon.jpg, id=584, 870.25125pt x 1437.87187pt>
 File: Flowcharts_softon.jpg Graphic file (type jpg)
 <use Flowcharts_softon.jpg>
 Package pdftex.def Info: Flowcharts_softon.jpg  used on input line 10.
@@ -1140,22 +1140,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--160
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--169
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
 
  []
 
@@ -1165,57 +1160,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--180
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
 
  []
 
@@ -1235,11 +1215,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--213
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--217
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
-[7]) [8]
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--235
+
+ []
+
+[8]) [9] [10
+
+]
 Chapter 3.
 (./md__documentation__adding.tex
 pdfTeX warning (ext4): destination with the same identifier (name{md__documenta
@@ -1269,24 +1296,22 @@ Overfull \hbox (23.7562pt too wide) in paragraph at lines 22--22
 s <Hight in pixels> --square 
  []
 
-) [9
-
-] [10
+) [11] [12
 
 ]
 Chapter 4.
-(./annotated.tex) [11] [12
+(./annotated.tex) [13] [14
 
 ]
 Chapter 5.
-(./files.tex) [13] [14
+(./files.tex) [15] [16
 
 ]
 Chapter 6.
 (./structinput__vars.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 10.79993pt on input line 3.
-) (./structwait__vars.tex) [15] [16
+) (./structwait__vars.tex) [17] [18
 
 ]
 Chapter 7.
@@ -1301,12 +1326,12 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 91.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 91.
-[17]
+[19]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 122.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 122.
- [18]
+ [20]
 Underfull \hbox (badness 10000) detected at line 142
 [][][]
  []
@@ -1326,7 +1351,7 @@ Underfull \hbox (badness 10000) detected at line 167
 [][][]
  []
 
-[19]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
@@ -1341,7 +1366,7 @@ Underfull \hbox (badness 10000) detected at line 224
 [][][]
  []
 
-[20]
+[22]
 Underfull \hbox (badness 10000) detected at line 255
 [][][]
  []
@@ -1350,7 +1375,7 @@ Underfull \hbox (badness 10000) detected at line 255
 Overfull \vbox (18.02269pt too high) has occurred while \output is active []
 
 
-[21]
+[23]
 Underfull \hbox (badness 10000) detected at line 282
 [][][]
  []
@@ -1371,7 +1396,7 @@ pdfTeX warning: pdflatex.exe (file ./_a_p_i_8h_a4e7bde3fbe7108c08e94968a7ba1bff
 6_cgraph.pdf): PDF inclusion: multiple pdfs with page group included in a singl
 e page
 >
-<_a_p_i_8h_a4e7bde3fbe7108c08e94968a7ba1bff6_cgraph.pdf, id=855, 259.97125pt x 
+<_a_p_i_8h_a4e7bde3fbe7108c08e94968a7ba1bff6_cgraph.pdf, id=870, 259.97125pt x 
 100.375pt>
 File: _a_p_i_8h_a4e7bde3fbe7108c08e94968a7ba1bff6_cgraph.pdf Graphic file (type
  pdf)
@@ -1379,17 +1404,17 @@ File: _a_p_i_8h_a4e7bde3fbe7108c08e94968a7ba1bff6_cgraph.pdf Graphic file (type
 Package pdftex.def Info: _a_p_i_8h_a4e7bde3fbe7108c08e94968a7ba1bff6_cgraph.pdf
   used on input line 319.
 (pdftex.def)             Requested size: 259.0pt x 99.9995pt.
- [22]
+ [24]
 Underfull \hbox (badness 10000) detected at line 352
 [][][]
  []
 
-[23]
+[25]
 Underfull \hbox (badness 10000) detected at line 376
 [][][]
  []
 
-[24]
+[26]
 Underfull \hbox (badness 10000) detected at line 411
 [][][]
  []
@@ -1404,7 +1429,7 @@ Underfull \hbox (badness 10000) detected at line 449
 [][][]
  []
 
-[25]
+[27]
 Underfull \hbox (badness 10000) detected at line 452
 [][][]
  []
@@ -1414,7 +1439,7 @@ Underfull \hbox (badness 10000) detected at line 479
 [][][]
  []
 
-[26]
+[28]
 Underfull \hbox (badness 10000) detected at line 508
 [][][]
  []
@@ -1435,7 +1460,7 @@ pdfTeX warning: pdflatex.exe (file ./_a_p_i_8h_a21ab1f60d9a00c021ad2ab65e19169f
 5_icgraph.pdf): PDF inclusion: multiple pdfs with page group included in a sing
 le page
 >
-<_a_p_i_8h_a21ab1f60d9a00c021ad2ab65e19169f5_icgraph.pdf, id=898, 259.97125pt x
+<_a_p_i_8h_a21ab1f60d9a00c021ad2ab65e19169f5_icgraph.pdf, id=913, 259.97125pt x
  100.375pt>
 File: _a_p_i_8h_a21ab1f60d9a00c021ad2ab65e19169f5_icgraph.pdf Graphic file (typ
 e pdf)
@@ -1443,17 +1468,17 @@ e pdf)
 Package pdftex.def Info: _a_p_i_8h_a21ab1f60d9a00c021ad2ab65e19169f5_icgraph.pd
 f  used on input line 521.
 (pdftex.def)             Requested size: 259.0pt x 99.9995pt.
-) (./_a_p_i_8h_source.tex [27]) (./bitmap_8h.tex
+) (./_a_p_i_8h_source.tex [29]) (./bitmap_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-[28]
+[30]
 Underfull \hbox (badness 10000) detected at line 49
 [][][]
  []
 
-) (./bitmap_8h_source.tex [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]
+) (./bitmap_8h_source.tex [31] [32] [33] [34] [35] [36] [37] [38] [39] [40]
 
 Package textcomp Warning: Symbol \textleftarrow not provided by
 (textcomp)                font family pcr in TS1 encoding.
@@ -1469,54 +1494,54 @@ LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line
 
 (c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [39]
+) [41]
 
 Package textcomp Warning: Symbol \textrightarrow not provided by
 (textcomp)                font family pcr in TS1 encoding.
 (textcomp)                Default family used instead on input line 237.
 
-[40] [41]
+[42] [43]
 
 Package textcomp Warning: Symbol \textuparrow not provided by
 (textcomp)                font family pcr in TS1 encoding.
 (textcomp)                Default family used instead on input line 286.
 
-[42]
+[44]
 
 Package textcomp Warning: Symbol \textdownarrow not provided by
 (textcomp)                font family pcr in TS1 encoding.
 (textcomp)                Default family used instead on input line 340.
 
-[43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57]
-[58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72]
-[73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87]
-[88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101]
-[102] [103] [104] [105] [106] [107] [108] [109] [110] [111] [112] [113]
-[114] [115] [116] [117] [118] [119] [120] [121] [122] [123] [124] [125]
-[126] [127] [128] [129] [130] [131] [132] [133] [134] [135] [136] [137]
-[138] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149]
+[45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59]
+[60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74]
+[75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89]
+[90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101] [102] [103]
+[104] [105] [106] [107] [108] [109] [110] [111] [112] [113] [114] [115]
+[116] [117] [118] [119] [120] [121] [122] [123] [124] [125] [126] [127]
+[128] [129] [130] [131] [132] [133] [134] [135] [136] [137] [138] [139]
+[140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150] [151]
 
 Package textcomp Warning: Symbol \textrightarrow not provided by
 (textcomp)                font family pcr in TS1 encoding.
 (textcomp)                Default family used instead on input line 891.
 
-[150]
+[152]
 
 Package textcomp Warning: Symbol \textrightarrow not provided by
 (textcomp)                font family pcr in TS1 encoding.
 (textcomp)                Default family used instead on input line 940.
 
-[151] [152] [153] [154] [155] [156] [157] [158] [159] [160] [161] [162]
-[163] [164] [165] [166] [167] [168] [169] [170] [171] [172] [173] [174]
-[175] [176] [177] [178] [179] [180] [181] [182] [183] [184] [185] [186]
-[187] [188] [189] [190] [191] [192] [193] [194] [195] [196] [197] [198]
-[199] [200] [201] [202] [203]) (./error_8h.tex
+[153] [154] [155] [156] [157] [158] [159] [160] [161] [162] [163] [164]
+[165] [166] [167] [168] [169] [170] [171] [172] [173] [174] [175] [176]
+[177] [178] [179] [180] [181] [182] [183] [184] [185] [186] [187] [188]
+[189] [190] [191] [192] [193] [194] [195] [196] [197] [198] [199] [200]
+[201] [202] [203] [204] [205]) (./error_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
 
-[204]
-Underfull \hbox (badness 10000) detected at line 102
+[206]
+Underfull \hbox (badness 10000) detected at line 96
 [][][]
  []
 
@@ -1525,7 +1550,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
 
-[205]
+[207]
 Underfull \hbox (badness 10000) detected at line 46
 [][][]
  []
@@ -1541,7 +1566,7 @@ pdfTeX warning: pdflatex.exe (file ./front__layer_8h_a6206b4e1a93bff0ae434d4808
 e3c2637_icgraph.pdf): PDF inclusion: multiple pdfs with page group included in 
 a single page
 >
-<front__layer_8h_a6206b4e1a93bff0ae434d4808e3c2637_icgraph.pdf, id=1729, 231.86
+<front__layer_8h_a6206b4e1a93bff0ae434d4808e3c2637_icgraph.pdf, id=1742, 231.86
 626pt x 100.375pt>
 File: front__layer_8h_a6206b4e1a93bff0ae434d4808e3c2637_icgraph.pdf Graphic fil
 e (type pdf)
@@ -1549,22 +1574,22 @@ e (type pdf)
 Package pdftex.def Info: front__layer_8h_a6206b4e1a93bff0ae434d4808e3c2637_icgr
 aph.pdf  used on input line 71.
 (pdftex.def)             Requested size: 231.0pt x 100.00255pt.
-) (./front__layer_8h_source.tex [206]) (./logic__layer_8h.tex
+) (./front__layer_8h_source.tex [208]) (./logic__layer_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--13
 
  []
 
-[207]
+[209]
 Underfull \hbox (badness 10000) detected at line 91
 [][][]
  []
 
-[208]
+[210]
 Underfull \hbox (badness 10000) detected at line 111
 [][][]
  []
 
-[209]
+[211]
 Underfull \hbox (badness 10000) detected at line 134
 [][][]
  []
@@ -1579,25 +1604,25 @@ Underfull \hbox (badness 10000) detected at line 172
 [][][]
  []
 
-) (./logic__layer_8h_source.tex [210]) (./main_8h.tex
+) (./logic__layer_8h_source.tex [212]) (./main_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--14
 
  []
 
-[211]
+[213]
 Underfull \hbox (badness 10000) detected at line 105
 [][][]
  []
 
 LaTeX Font Info:    Font shape `TS1/phv/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 108.
-[212] <./main_8h_a1730ffe1e560465665eb47d9264826f9_icgraph.pdf
+[214] <./main_8h_a1730ffe1e560465665eb47d9264826f9_icgraph.pdf
 
 pdfTeX warning: pdflatex.exe (file ./main_8h_a1730ffe1e560465665eb47d9264826f9_
 icgraph.pdf): PDF inclusion: multiple pdfs with page group included in a single
  page
 >
-<main_8h_a1730ffe1e560465665eb47d9264826f9_icgraph.pdf, id=1866, 374.39874pt x 
+<main_8h_a1730ffe1e560465665eb47d9264826f9_icgraph.pdf, id=1879, 374.39874pt x 
 100.375pt>
 File: main_8h_a1730ffe1e560465665eb47d9264826f9_icgraph.pdf Graphic file (type 
 pdf)
@@ -1605,22 +1630,22 @@ pdf)
 Package pdftex.def Info: main_8h_a1730ffe1e560465665eb47d9264826f9_icgraph.pdf 
  used on input line 132.
 (pdftex.def)             Requested size: 350.0pt x 93.8394pt.
-) (./main_8h_source.tex [213]) (./stm32f4xx__it_8h.tex [214]
+) (./main_8h_source.tex [215]) (./stm32f4xx__it_8h.tex [216]
 Underfull \hbox (badness 10000) detected at line 55
 [][][]
  []
 
-) (./stm32f4xx__it_8h_source.tex [215]) (./_a_p_i_8c.tex
+) (./stm32f4xx__it_8h_source.tex [217]) (./_a_p_i_8c.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--24
 
  []
 
-[216]
+[218]
 Underfull \hbox (badness 10000) detected at line 81
 [][][]
  []
 
-[217]
+[219]
 Underfull \hbox (badness 10000) detected at line 114
 [][][]
  []
@@ -1629,7 +1654,7 @@ Underfull \hbox (badness 10000) detected at line 114
 Overfull \vbox (44.79214pt too high) has occurred while \output is active []
 
 
-[218]
+[220]
 Underfull \hbox (badness 10000) detected at line 145
 [][][]
  []
@@ -1639,7 +1664,7 @@ Underfull \hbox (badness 10000) detected at line 172
 [][][]
  []
 
-[219]
+[221]
 Underfull \hbox (badness 10000) detected at line 194
 [][][]
  []
@@ -1655,7 +1680,7 @@ pdfTeX warning: pdflatex.exe (file ./_a_p_i_8c_a4e7bde3fbe7108c08e94968a7ba1bff
 6_cgraph.pdf): PDF inclusion: multiple pdfs with page group included in a singl
 e page
 >
-<_a_p_i_8c_a4e7bde3fbe7108c08e94968a7ba1bff6_cgraph.pdf, id=1976, 259.97125pt x
+<_a_p_i_8c_a4e7bde3fbe7108c08e94968a7ba1bff6_cgraph.pdf, id=1989, 259.97125pt x
  100.375pt>
 File: _a_p_i_8c_a4e7bde3fbe7108c08e94968a7ba1bff6_cgraph.pdf Graphic file (type
  pdf)
@@ -1663,7 +1688,7 @@ File: _a_p_i_8c_a4e7bde3fbe7108c08e94968a7ba1bff6_cgraph.pdf Graphic file (type
 Package pdftex.def Info: _a_p_i_8c_a4e7bde3fbe7108c08e94968a7ba1bff6_cgraph.pdf
   used on input line 209.
 (pdftex.def)             Requested size: 259.0pt x 99.9995pt.
- [220]
+ [222]
 Underfull \hbox (badness 10000) detected at line 242
 [][][]
  []
@@ -1673,17 +1698,17 @@ Underfull \hbox (badness 10000) detected at line 266
 [][][]
  []
 
-[221]
+[223]
 Underfull \hbox (badness 10000) detected at line 301
 [][][]
  []
 
-[222]
+[224]
 Underfull \hbox (badness 10000) detected at line 338
 [][][]
  []
 
-[223]
+[225]
 Underfull \hbox (badness 10000) detected at line 367
 [][][]
  []
@@ -1704,7 +1729,7 @@ pdfTeX warning: pdflatex.exe (file ./_a_p_i_8c_a21ab1f60d9a00c021ad2ab65e19169f
 5_icgraph.pdf): PDF inclusion: multiple pdfs with page group included in a sing
 le page
 >
-<_a_p_i_8c_a21ab1f60d9a00c021ad2ab65e19169f5_icgraph.pdf, id=2014, 259.97125pt 
+<_a_p_i_8c_a21ab1f60d9a00c021ad2ab65e19169f5_icgraph.pdf, id=2027, 259.97125pt 
 x 100.375pt>
 File: _a_p_i_8c_a21ab1f60d9a00c021ad2ab65e19169f5_icgraph.pdf Graphic file (typ
 e pdf)
@@ -1727,13 +1752,13 @@ Underfull \hbox (badness 10000) detected at line 30
 [][][]
  []
 
-[224]
+[226]
 Underfull \hbox (badness 10000) detected at line 48
 [][][]
  []
 
  <./front__layer_8c_a6206b4e1a93bff0ae434d4808e3c2637_icgraph.pdf>
-<front__layer_8c_a6206b4e1a93bff0ae434d4808e3c2637_icgraph.pdf, id=2036, 231.86
+<front__layer_8c_a6206b4e1a93bff0ae434d4808e3c2637_icgraph.pdf, id=2049, 231.86
 626pt x 100.375pt>
 File: front__layer_8c_a6206b4e1a93bff0ae434d4808e3c2637_icgraph.pdf Graphic fil
 e (type pdf)
@@ -1747,7 +1772,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--13
 
  []
 
-[225]
+[227]
 Underfull \hbox (badness 10000) detected at line 54
 [][][]
  []
@@ -1757,7 +1782,7 @@ Underfull \hbox (badness 10000) detected at line 83
 [][][]
  []
 
-[226]
+[228]
 Underfull \hbox (badness 10000) detected at line 103
 [][][]
  []
@@ -1767,7 +1792,7 @@ Underfull \hbox (badness 10000) detected at line 126
 [][][]
  []
 
-[227]
+[229]
 Underfull \hbox (badness 10000) detected at line 146
 [][][]
  []
@@ -1787,18 +1812,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--15
 
  []
 
-[228]
+[230]
 Underfull \hbox (badness 10000) detected at line 52
 [][][]
  []
 
-[229] <./main_8c_a1730ffe1e560465665eb47d9264826f9_icgraph.pdf
+[231] <./main_8c_a1730ffe1e560465665eb47d9264826f9_icgraph.pdf
 
 pdfTeX warning: pdflatex.exe (file ./main_8c_a1730ffe1e560465665eb47d9264826f9_
 icgraph.pdf): PDF inclusion: multiple pdfs with page group included in a single
  page
 >
-<main_8c_a1730ffe1e560465665eb47d9264826f9_icgraph.pdf, id=2112, 374.39874pt x 
+<main_8c_a1730ffe1e560465665eb47d9264826f9_icgraph.pdf, id=2125, 374.39874pt x 
 100.375pt>
 File: main_8c_a1730ffe1e560465665eb47d9264826f9_icgraph.pdf Graphic file (type 
 pdf)
@@ -1812,7 +1837,7 @@ pdfTeX warning: pdflatex.exe (file ./main_8c_a840291bc02cba5474a4cb46a9b9566fe_
 cgraph.pdf): PDF inclusion: multiple pdfs with page group included in a single 
 page
 >
-<main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.pdf, id=2120, 374.39874pt x 1
+<main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.pdf, id=2133, 374.39874pt x 1
 38.5175pt>
 File: main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.pdf Graphic file (type p
 df)
@@ -1820,8 +1845,8 @@ df)
 Package pdftex.def Info: main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.pdf  
 used on input line 101.
 (pdftex.def)             Requested size: 350.0pt x 129.4984pt.
- [230] <./main_8c_a70af21c671abfcc773614a9a4f63d920_cgraph.pdf>
-<main_8c_a70af21c671abfcc773614a9a4f63d920_cgraph.pdf, id=2137, 300.12125pt x 1
+ [232] <./main_8c_a70af21c671abfcc773614a9a4f63d920_cgraph.pdf>
+<main_8c_a70af21c671abfcc773614a9a4f63d920_cgraph.pdf, id=2150, 300.12125pt x 1
 00.375pt>
 File: main_8c_a70af21c671abfcc773614a9a4f63d920_cgraph.pdf Graphic file (type p
 df)
@@ -1835,7 +1860,7 @@ pdfTeX warning: pdflatex.exe (file ./main_8c_a70af21c671abfcc773614a9a4f63d920_
 icgraph.pdf): PDF inclusion: multiple pdfs with page group included in a single
  page
 >
-<main_8c_a70af21c671abfcc773614a9a4f63d920_icgraph.pdf, id=2145, 261.97874pt x 
+<main_8c_a70af21c671abfcc773614a9a4f63d920_icgraph.pdf, id=2158, 261.97874pt x 
 100.375pt>
 File: main_8c_a70af21c671abfcc773614a9a4f63d920_icgraph.pdf Graphic file (type 
 pdf)
@@ -1848,28 +1873,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--12
 
  []
 
-[231]
+[233]
 Underfull \hbox (badness 10000) detected at line 77
 [][][]
  []
 
-) [232] (./refman.ind [233
+) [234] (./refman.ind [235
 
 
 
-] [234
+] [236
 
 ]) (./refman.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 2ACAB31F1BAE6D720818FE34CA068726;20398.
+(rerunfilecheck)             Checksum: 5545E254CD2356AFC04E97FFFF423076;20533.
  ) 
 Here is how much of TeX's memory you used:
- 19175 strings out of 478293
- 321225 string characters out of 5848966
- 647213 words of memory out of 5000000
+ 19177 strings out of 478293
+ 321167 string characters out of 5848966
+ 647335 words of memory out of 5000000
  36254 multiletter control sequences out of 15000+600000
  529557 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1887,10 +1912,10 @@ ype1/urw/courier/ucrro8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/helvet
 ic/uhvb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb>
 <c:/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/202
 2/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (240 pages, 786982 bytes).
+Output written on refman.pdf (242 pages, 788348 bytes).
 PDF statistics:
- 2511 PDF objects out of 2984 (max. 8388607)
- 2176 compressed objects within 22 object streams
- 703 named destinations out of 1000 (max. 500000)
- 941 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2525 PDF objects out of 2984 (max. 8388607)
+ 2188 compressed objects within 22 object streams
+ 705 named destinations out of 1000 (max. 500000)
+ 949 words of extra memory for PDF output out of 10000 (max. 10000000)
 

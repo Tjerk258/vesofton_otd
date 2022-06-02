@@ -114,8 +114,23 @@ The syntax for this script is:
     - 0 for normal order.
     - 1 for turned order.
 
+
+@section Circleplus
+With the script a specific circle can be printed.  
+The syntax for this script is: 
+
+    cirkel2, x, y, laagradius, hoogradius, laagangle, hoogangle, kleur
+
+- **x:** This is the x coordinate of the middlepoint.   
+- **y:** This is the y coordinate of the middlepoint.   
+- **laagradius:** This is the Lower boundary radius of the circle.  
+- **hoogradius:** This is the higher boundary radius of the circle.
+- **laagangle:** This is the Lower boundary anlge of the circle.  
+- **hoogangle:** This is the higher boundary angle of the circle.
+- **kleur:** This is the color of the line to be draw. see @ref color for the differnt colors to be used.    
+
 @section Circle
-With the script a specific time to wait can be inplemented  
+With the script a specific circle can be printed.  
 The syntax for this script is:  
 
     cirkel, x, y, radius, kleur, lradius
